@@ -1,4 +1,4 @@
-# Testing
+# Final Project
 <h3>Cloning Project</h3>
 <ol>
   <li>Create a GitHub Account at <a href="https://github.com/join?source=header-home">https://github.com/join?source=header-home</a></li>
