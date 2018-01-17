@@ -120,7 +120,7 @@
             <div>
                 <div>
                     <h5>Louis Pharmacy</h5>
-                    <p>Made by CNSA Class of 2018.</p>
+                    <p>Copyright Evan Tempelin, Nick Luongo, Jesse Killinger 2018.</p>
                 </div>
             </div>
         </div>
