@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <row>
+    <Degree>Abdominal Radiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Addiction Psychiatry Psychiatry</Degree>
+  </row>
+  <row>
+    <Degree>Adolescent Medicine Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Adult Cardiothoracic Anesthesiology Anesthesiology</Degree>
+  </row>
+  <row>
+    <Degree>Adult Reconstructive Orthopaedics Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Advanced Heart Failure &amp; Transplant Cardiology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Allergy &amp; Immunology</Degree>
+  </row>
+  <row>
+    <Degree>Anesthesiology</Degree>
+  </row>
+  <row>
+    <Degree>Biochemical Genetics Medical Genetics</Degree>
+  </row>
+  <row>
+    <Degree>Blood Banking - Transfusion Medicine Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Cardiothoracic Radiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Cardiovascular Disease Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Chemical Pathology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Child &amp; Adolescent Psychiatry Psychiatry</Degree>
+  </row>
+  <row>
+    <Degree>Child Abuse Pediatrics Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Child Neurology Neurology</Degree>
+  </row>
+  <row>
+    <Degree>Clinical &amp; Laboratory Immunology Allergy &amp; Immunology</Degree>
+  </row>
+  <row>
+    <Degree>Clinical Cardiac Electrophysiology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Clinical Neurophysiology Neurology</Degree>
+  </row>
+  <row>
+    <Degree>Colon &amp; Rectal Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Congenital Cardiac Surgery Thoracic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Craniofacial Surgery Plastic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Critical Care Medicine Anesthesiology</Degree>
+  </row>
+  <row>
+    <Degree>Critical Care Medicine Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Cytopathology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Dermatology</Degree>
+  </row>
+  <row>
+    <Degree>Dermatopathology Dermatology</Degree>
+  </row>
+  <row>
+    <Degree>Developmental-Behavioral Pediatrics Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Emergency Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Endocrinology, Diabetes &amp; Metabolism Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Endovascular Surgical Neuroradiology Neurological Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Endovascular Surgical Neuroradiology Neurology</Degree>
+  </row>
+  <row>
+    <Degree>Endovascular Surgical Neuroradiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Family Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Family Practice</Degree>
+  </row>
+  <row>
+    <Degree>Female Pelvic Medicine &amp; Reconstructive Surgery Obstetrics &amp; Gynecology</Degree>
+  </row>
+  <row>
+    <Degree>Foot &amp; Ankle Orthopaedics Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Forensic Pathology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Forensic Psychiatry Psychiatry</Degree>
+  </row>
+  <row>
+    <Degree>Gastroenterology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Geriatric Medicine Family Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Geriatric Medicine Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Geriatric Medicine Family Practice</Degree>
+  </row>
+  <row>
+    <Degree>Geriatric Psychiatry Psychiatry</Degree>
+  </row>
+  <row>
+    <Degree>Hand Surgery Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Hand Surgery Plastic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Hand Surgery Surgery-General</Degree>
+  </row>
+  <row>
+    <Degree>Hematology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Hematology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Hematology &amp; Oncology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Infectious Disease Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Internal Medicine-Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Interventional Cardiology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Medical Genetics</Degree>
+  </row>
+  <row>
+    <Degree>Medical Microbiology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Medical Toxicology Emergency Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Medical Toxicology Preventive Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Molecular Genetic Pathology Medical Genetics</Degree>
+  </row>
+  <row>
+    <Degree>Muscoskeletal Radiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Musculoskeletal Oncology Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Neonatal-Perinatal Medicine Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Nephrology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Neurological Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Neurology</Degree>
+  </row>
+  <row>
+    <Degree>Neuromuscular Medicine Neurology</Degree>
+  </row>
+  <row>
+    <Degree>Neuromuscular Medicine Physical Medicine &amp; Rehabilitation</Degree>
+  </row>
+  <row>
+    <Degree>Neuropathology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Neuroradiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Nuclear Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Nuclear Radiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Obstetric Anesthesiology Anesthesiology</Degree>
+  </row>
+  <row>
+    <Degree>Obstetrics &amp; Gynecology</Degree>
+  </row>
+  <row>
+    <Degree>Oncology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Ophthalmic Plastic &amp; Reconstructive Surgery Ophthalmology</Degree>
+  </row>
+  <row>
+    <Degree>Ophthalmology</Degree>
+  </row>
+  <row>
+    <Degree>Orthopaedic Sports Medicine Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Orthopaedic Surgery of the Spine Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Orthopaedic Trauma Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Otolaryngology</Degree>
+  </row>
+  <row>
+    <Degree>Otology - Neurotology Otolaryngology</Degree>
+  </row>
+  <row>
+    <Degree>Pain Medicine Anesthesiology</Degree>
+  </row>
+  <row>
+    <Degree>Pain Medicine Neurology</Degree>
+  </row>
+  <row>
+    <Degree>Pain Medicine Physical Medicine &amp; Rehabilitation</Degree>
+  </row>
+  <row>
+    <Degree>Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Anesthesiology Anesthesiology</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Cardiology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Critical Care Medicine Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Emergency Medicine Emergency Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Emergency Medicine Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Endocrinology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Gastroenterology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Hematology-Oncology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Infectious Diseases Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Nephrology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Orthopaedics Orthopaedic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Otolaryngology Otolaryngology</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Pathology Pathology-Anatomic &amp; Clinical</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Pulmonology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Radiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Rheumatology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Sports Medicine Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Surgery Surgery-General</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Transplant Hepatology Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Pediatric Urology Urology</Degree>
+  </row>
+  <row>
+    <Degree>Pediatrics</Degree>
+  </row>
+  <row>
+    <Degree>Physical Medicine &amp; Rehabilitation</Degree>
+  </row>
+  <row>
+    <Degree>Plastic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Preventive Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Procedural Dermatology Dermatology</Degree>
+  </row>
+  <row>
+    <Degree>Psychiatry</Degree>
+  </row>
+  <row>
+    <Degree>Pulmonary Disease Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Pulmonary Disease &amp; Critical Care Medicine Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Radiation Oncology</Degree>
+  </row>
+  <row>
+    <Degree>Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Rheumatology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Sleep Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Spinal Cord Injury Medicine Physical Medicine &amp; Rehabilitation</Degree>
+  </row>
+  <row>
+    <Degree>Sports Medicine Emergency Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Sports Medicine Family Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Sports Medicine Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Sports Medicine Physical Medicine &amp; Rehabilitation</Degree>
+  </row>
+  <row>
+    <Degree>Surgery-General</Degree>
+  </row>
+  <row>
+    <Degree>Surgical Critical Care Surgery-General</Degree>
+  </row>
+  <row>
+    <Degree>Thoracic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Thoracic Surgery-Integrated Thoracic Surgery</Degree>
+  </row>
+  <row>
+    <Degree>Transplant Hepatology Internal Medicine</Degree>
+  </row>
+  <row>
+    <Degree>Urology</Degree>
+  </row>
+  <row>
+    <Degree>Vascular &amp; Interventional Radiology Radiology-Diagnostic</Degree>
+  </row>
+  <row>
+    <Degree>Vascular Surgery Surgery-General</Degree>
+  </row>
+</root>
