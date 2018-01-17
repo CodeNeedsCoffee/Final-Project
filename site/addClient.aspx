@@ -80,9 +80,8 @@
                     <label>First</label>
                     <br />
                     <div class="uk-inline">
-
                         <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <input class="uk-input" type="text" style="width: 500px" />
+                        <asp:TextBox ID="txtClientFname" runat="server" CssClass="uk-input" style="width: 500px"></asp:TextBox>
                     </div>
                     <br />
                     <label>Last</label>
@@ -90,7 +89,7 @@
                     <div class="uk-inline">
 
                         <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <input class="uk-input" type="text" style="width: 500px" />
+                        <asp:TextBox ID="txtClientLname" runat="server" CssClass="uk-input" style="width: 500px"></asp:TextBox>
                     </div>
                 </div>
             </div>
