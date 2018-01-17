@@ -1,0 +1,56 @@
+About Us 
+
+Add client -
+
+NEEDS TO HAVE
+
+ClientID
+Fname
+Middle Initial
+Lname
+Phone # 
+Email
+Address (Street City State Zip)
+Gender
+Date of Birth
+
+no need to update client
+
+Add physician 
+
+NEEDS TO HAVE
+
+PhysicianID
+Fname
+Middle Initial
+Lname
+Home Phone
+Work Phone
+email
+gender
+date of birth
+address (street city state zip)
+specialty  https://www.aamc.org/cim/specialty/exploreoptions/list/
+
+Add perscription 
+
+RxNumber
+Client ID
+PhysicianID
+# of refills
+medicine name 
+date ordered
+medicine type
+dosage
+intake method
+dispense
+frequency
+
+Modify Perscription
+*The same as add, but we need to be able to select the perscription*
+
+Delete perscription
+based on RX number
+
+View perscription 
+select statement 
