@@ -81,7 +81,7 @@
                     <br />
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <asp:TextBox ID="txtClientFname" runat="server" CssClass="uk-input" style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtClientFname" runat="server" CssClass="uk-input" style="width: 501px"></asp:TextBox>
                     </div>
                     <br />
                     <label>Last</label>
