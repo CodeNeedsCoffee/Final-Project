@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="addClient.aspx.vb" Inherits="addPatient" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="updateClient.aspx.vb" Inherits="addPatient" %>
 
 <!DOCTYPE html>
 
@@ -181,7 +181,6 @@
             </div>
         </div>
         <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="uk-button uk-button-secondary uk-width-1-1" style="height: 50px; font-size: 25px;" />
         </div>
     </form>
 
