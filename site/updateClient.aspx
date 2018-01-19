@@ -33,9 +33,9 @@
                         <a href="#">Doctor</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Add Doctor</a></li>
+                                <li><a href="/addDoctor.aspx">Add Doctor</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Update Doctor</a></li>
+                                <li><a href="/updateDoctor.aspx">Update Doctor</a></li>
                             </ul>
                         </div>
                     </li>
@@ -62,22 +62,36 @@
                             </ul>
                         </div>
                     </li>
+                </ul>
             </div>
         </nav>
     </div>
     <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -510" style="background-image: url('img/patients.jpg');">
         <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%; text-align: left;">Add Client</h1>
+            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%; text-align: left;">Update Client</h1>
         </div>
     </div>
     <form id="form1" runat="server">
         <div class="uk-card uk-card-hover uk-card-body">
 
-            <h3 class="uk-card-title">Add Client</h3>
+            <h3 class="uk-card-title">Update Client</h3>
             <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
                 <div>
                     <label style="vertical-align: text-top;">Client ID</label>
-                    <asp:TextBox ID="txtClientID" runat="server" CssClass="uk-input" Style="width: 10%; height: 75%;"></asp:TextBox>
+                    <div uk-form-custom="target: > * > span:first-child">
+                        <asp:DropDownList ID="ddlUpdateClientID" runat="server">
+                            <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
+                            <asp:ListItem>01</asp:ListItem>
+                            <asp:ListItem>02</asp:ListItem>
+                            <asp:ListItem>03</asp:ListItem>
+                            <asp:ListItem>04</asp:ListItem>
+                        </asp:DropDownList>
+                            <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                <span></span>
+                                <span uk-icon="icon: chevron-down"></span>
+                            </button>
+                        </div>
+                   
                 </div>
                 <h3 class="uk-card-title">Personal Information</h3>
                 <div class="uk-margin">
@@ -181,6 +195,7 @@
             </div>
         </div>
         <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="uk-button uk-button-secondary uk-width-1-1" Style="height: 50px; font-size: 25px;" />
         </div>
     </form>
 
@@ -197,24 +212,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $(document).ready(function () {
-            // create DatePicker from input HTML element
-            $("#datepicker").kendoDatePicker();
-
-            $("#monthpicker").kendoDatePicker({
-                // defines the start view
-                start: "year",
-
-                // defines when the calendar should return date
-                depth: "year",
-
-                // display month and year in the input
-                format: "MMMM yyyy",
-
-                // specifies that DateInput is used for masking the input element
-                dateInput: true
-            });
-        });
+        var autocomplete = UIkit.autocomplete(element, { /* options */ });
     </script>
 
 </body>

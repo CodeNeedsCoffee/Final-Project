@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="addClient.aspx.vb" Inherits="addPatient" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="addDoctor.aspx.vb" Inherits="addPatient" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li><a href="/index.html">Loius Pharmacy</a></li>
-                    <li class="uk-active">
+                    <li>
                         <a href="#">Client</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -29,7 +29,7 @@
                             </ul>
                         </div>
                     </li>
-                   <li>
+                   <li class="uk-active">
                         <a href="#">Doctor</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -66,18 +66,18 @@
             </div>
         </nav>
     </div>
-    <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -510" style="background-image: url('img/patients.jpg');">
+    <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -510" style="background-image: url('img/doctor.jpg');">
         <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%; text-align: left;">Add Client</h1>
+            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%; text-align: left;">Add Doctor</h1>
         </div>
     </div>
     <form id="form1" runat="server">
         <div class="uk-card uk-card-hover uk-card-body">
 
-            <h3 class="uk-card-title">Add Client</h3>
+            <h3 class="uk-card-title">Add Doctor</h3>
             <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
                 <div>
-                    <label style="vertical-align: text-top;">Client ID</label>
+                    <label style="vertical-align: text-top;">Doctor ID</label>
                     <div class="uk-margin">
                          <asp:TextBox ID="txtClientID" runat="server" CssClass="uk-input" style="width: 10%; height: 75%;"></asp:TextBox>
                     </div>
