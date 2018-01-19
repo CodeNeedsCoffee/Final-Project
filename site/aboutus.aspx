@@ -7,7 +7,7 @@
         <h1 style="text-align: center">About Us</h1>
     </p>
 
-    <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+    <div class="uk-child-width-1-1@m uk-grid-small uk-grid-match" uk-grid>
         <div>
             <div class="uk-card uk-card-default uk-card-body">
                 <div class="uk-card uk-card-default uk-width-1-2@m">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="uk-card uk-card-default uk-width-1-2@m">
+                <div class="uk-card uk-card-default uk-width-1-1@m">
                     <div class="uk-card-header">
                         <div class="uk-grid-small uk-flex-middle" uk-grid>
                             <div class="uk-width-auto">
