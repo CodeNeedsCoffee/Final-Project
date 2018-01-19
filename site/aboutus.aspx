@@ -11,7 +11,7 @@
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
             <div class="uk-width-auto">
-                <img class="uk-border-circle" width="40" height="40" src="../docs/images/avatar.jpg">
+                <img class="uk-border-circle" width="40" height="40" src="./img/jesse.jpg">
             </div>
             <div class="uk-width-expand">
                 <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
@@ -31,7 +31,7 @@
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
             <div class="uk-width-auto">
-                <img class="uk-border-circle" width="40" height="40" src="../docs/images/avatar.jpg">
+                <img class="uk-border-circle" width="40" height="40" src="./img/evan.jpg">
             </div>
             <div class="uk-width-expand">
                 <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
@@ -51,7 +51,7 @@
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
             <div class="uk-width-auto">
-                <img class="uk-border-circle" width="40" height="40" src="../docs/images/avatar.jpg">
+                <img class="uk-border-circle" width="40" height="40" src="./img/nick.jpg">
             </div>
             <div class="uk-width-expand">
                 <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
