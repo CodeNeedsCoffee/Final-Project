@@ -95,8 +95,8 @@
     </footer>
     </form>
     <script>
-        UIkit.navbar(element, options);
-        UIkit.parallax(element, options);
+        //UIkit.navbar(element, options);
+        //UIkit.parallax(element, options);
     </script>
 </body>
 </html>
