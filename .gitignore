@@ -15,4 +15,7 @@ LuisPharmacy/.vs/LuisPharmacy/v15/.suo
 *.ide
 *.ide
 LuisPharmacy/.vs/
+*.*
 LuisPharmacy/.vs/config/applicationhost.config
+*.ide
+LuisPharmacy/.vs/LuisPharmacy/v15/Server/sqlite3/storage.ide
