@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="updateClient.aspx.vb" Inherits="addPatient" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="OldaddClient.aspx.vb" Inherits="addPatient" %>
 
 <!DOCTYPE html>
 
@@ -25,11 +25,11 @@
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li><a href="/addClient.aspx">Add Client</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Update Client</a></li>
+                                <li><a href="/updateClient.aspx">Update Client</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li>
+                   <li>
                         <a href="#">Doctor</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -68,30 +68,19 @@
     </div>
     <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -510" style="background-image: url('img/patients.jpg');">
         <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%; text-align: left;">Update Client</h1>
+            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%; text-align: left;">Add Client</h1>
         </div>
     </div>
     <form id="form1" runat="server">
         <div class="uk-card uk-card-hover uk-card-body">
 
-            <h3 class="uk-card-title">Update Client</h3>
+            <h3 class="uk-card-title">Add Client</h3>
             <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
                 <div>
                     <label style="vertical-align: text-top;">Client ID</label>
-                    <div uk-form-custom="target: > * > span:first-child">
-                        <asp:DropDownList ID="ddlUpdateClientID" runat="server">
-                            <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
-                        </asp:DropDownList>
-                            <button class="uk-button uk-button-default" type="button" tabindex="-1">
-                                <span></span>
-                                <span uk-icon="icon: chevron-down"></span>
-                            </button>
-                        </div>
-                   
+                    <div class="uk-margin">
+                         <asp:TextBox ID="txtClientID" runat="server" CssClass="uk-input" style="width: 10%; height: 75%;"></asp:TextBox>
+                    </div>
                 </div>
                 <h3 class="uk-card-title">Personal Information</h3>
                 <div class="uk-margin">
@@ -212,7 +201,24 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        var autocomplete = UIkit.autocomplete(element, { /* options */ });
+        $(document).ready(function () {
+            // create DatePicker from input HTML element
+            $("#datepicker").kendoDatePicker();
+
+            $("#monthpicker").kendoDatePicker({
+                // defines the start view
+                start: "year",
+
+                // defines when the calendar should return date
+                depth: "year",
+
+                // display month and year in the input
+                format: "MMMM yyyy",
+
+                // specifies that DateInput is used for masking the input element
+                dateInput: true
+            });
+        });
     </script>
 
 </body>

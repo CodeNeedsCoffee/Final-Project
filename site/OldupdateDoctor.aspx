@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="updateDoctor.aspx.vb" Inherits="addPatient" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="OldupdateDoctor.aspx.vb" Inherits="addPatient" %>
 
 <!DOCTYPE html>
 
