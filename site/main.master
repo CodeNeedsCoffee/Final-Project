@@ -20,7 +20,7 @@
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">Loius Pharmacy</a></li>
+                    <li class="uk-active"><a href="index.aspx">Loius Pharmacy</a></li>
                     <li>
                         <a href="#">Client</a>
                         <div class="uk-navbar-dropdown">
