@@ -57,8 +57,10 @@
                             <img class="uk-border-circle" width="40" height="40" src="./img/nick.jpg">
                         </div>
                         <div class="uk-width-expand">
-                            <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                            <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                            <h3 class="uk-card-title uk-margin-remove-bottom">Nick Luongo</h3>
+                            <p class="uk-text-meta uk-margin-remove-top">Undergraduate at&nbsp; Thaddeus Stevens College of Technology CNSA</p>
+                            <p class="uk-text-meta uk-margin-remove-top">&nbsp;</p>
+                            <p class="uk-text-meta uk-margin-remove-top">&nbsp;</p>
                         </div>
                     </div>
                 </div>

@@ -7240,7 +7240,8 @@ iframe.uk-cover {
 }
 
 .uk-margin-remove-top {
-    margin-top: 0!important
+    margin-top: 0!important;
+    width: 286px;
 }
 
 .uk-margin-remove-bottom {
