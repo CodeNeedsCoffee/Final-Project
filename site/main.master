@@ -45,22 +45,11 @@
                         <a href="#">Prescription</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Add Prescription</a></li>
+                                <li><a href="/addPrescription.aspx">Add Prescription</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Update Prescription</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a href="#">Refill</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Add Refill</a></li>
+                                <li><a href="/updatePrescription.aspx">Update Prescription</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li><a href="#">Update Refill</a></li>
-                                <li class="uk-nav-divider"></li>
-                                <li><a href="#">Delete Refill</a></li>
+                                <li><a href="/deletePrescription.aspx">Delete Prescription</a></li>
                             </ul>
                         </div>
                     </li>
