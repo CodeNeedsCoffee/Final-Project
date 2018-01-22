@@ -10,7 +10,7 @@
     <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
         <div>
             <div class="uk-card uk-card-default uk-card-body">
-                <h3 class="uk-card-title">Default</h3>
+                <h3 class="uk-card-title">&nbsp;</h3>
 
 
                 <div class="uk-card-header">
@@ -28,7 +28,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                 </div>
                 <div class="uk-card-footer">
-                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                    <a href="https://www.linkedin.com/in/jesse-killinger-a38902137/" class="uk-button uk-button-text">Contact</a>
                 </div>
 
                 <div class="uk-grid-small uk-card uk-card-body">
@@ -48,7 +48,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                 </div>
                 <div class="uk-card-footer">
-                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                    <a href="https://www.linkedin.com/in/evan-templin-ba862384/" class="uk-button uk-button-text">Contact</a>
                 </div>
 
                 <div class="uk-card-header">
@@ -68,7 +68,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                 </div>
                 <div class="uk-card-footer">
-                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                    <a href="https://www.linkedin.com/in/nicholas-luongo-19b147149/" class="uk-button uk-button-text">Contact</a>
                 </div>
 
 
@@ -79,7 +79,7 @@
 
         <div>
             <div class="uk-card uk-card-default uk-card-body">
-                <h3 class="uk-card-title">Team</h3>
+                <h3 class="uk-card-title">&nbsp;</h3>
 
 
 
