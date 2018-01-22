@@ -54,3 +54,9 @@ based on RX number
 
 View perscription 
 select statement 
+
+data connection 
+
+get local computer (machine.name)?
+inside web.config 
+
