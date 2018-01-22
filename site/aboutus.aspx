@@ -39,7 +39,7 @@
                             </div>
                             <div class="uk-width-expand">
                                 <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                                <p class="uk-text-meta uk-margin-remove-top">Programming GOD and hung like a horse</p>
                             </div>
                         </div>
                     </div>
