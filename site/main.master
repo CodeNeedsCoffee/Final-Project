@@ -74,8 +74,6 @@
             <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%;">Louis Pharmacy</h1>
         </div>
     </div>
-
-    <form id="form1" runat="server">
         <div class="uk-card uk-card-hover uk-card-body">
             <asp:ContentPlaceHolder ID="Body" runat="server">
             </asp:ContentPlaceHolder>
@@ -93,7 +91,6 @@
             </div>
         </div>
     </footer>
-    </form>
     <script>
         //UIkit.navbar(element, options);
         //UIkit.parallax(element, options);
