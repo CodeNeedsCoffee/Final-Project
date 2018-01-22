@@ -54,7 +54,7 @@
                 <div class="uk-card-header">
                     <div class="uk-grid-small uk-flex-middle" uk-grid>
                         <div class="uk-width-auto">
-                            <img class="uk-border-circle" width="40" height="40" src="./img/nick.jpg">
+                            <img class="uk-border-circle" src="./img/nick.jpg">
                         </div>
                         <div class="uk-width-expand">
                             <h3 class="uk-card-title uk-margin-remove-bottom">Nick Luongo</h3>

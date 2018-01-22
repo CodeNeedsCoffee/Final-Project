@@ -116,7 +116,7 @@ canvas,
 img,
 video {
     max-width: 100%;
-    height: auto;
+    height: 71px;
     box-sizing: border-box
 }
 
@@ -6472,7 +6472,8 @@ iframe.uk-cover {
 }
 
 .uk-border-circle {
-    border-radius: 50%
+    border-radius: 50%;
+    width: 67px;
 }
 
 .uk-border-rounded {
@@ -7243,6 +7244,7 @@ iframe.uk-cover {
 .uk-margin-remove-top {
     margin-top: 0!important;
     width: 498px;
+    text-align: center;
 }
 
 .uk-margin-remove-bottom {
