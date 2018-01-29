@@ -1,10 +1,9 @@
 ﻿Imports Microsoft.VisualBasic, System.Data, System.Web, System.Configuration.ConfigurationManager, System.Collections, System.Collections.Generic
 
-Public Class ClientDataTier
+Public Class PrescriptionDataTier
     Dim connString As New SqlClient.SqlConnection(ConnectionStrings("connstring").ConnectionString)
     Dim cmdstring As New SqlClient.SqlCommand
-
-    Public Function GetAllClients() As DataSet
+    Public Function GetAllPrescriptions() As DataSet
         Try
             'open connection
             connString.Open()
@@ -13,7 +12,7 @@ Public Class ClientDataTier
             cmdstring.Connection = connString
             cmdstring.CommandType = CommandType.StoredProcedure
             cmdstring.CommandTimeout = 1500
-            cmdstring.CommandText = "GetAllClients"
+            cmdstring.CommandText = "getAllPrescriptions"
 
             'adapter and dataset
             Dim aAdapter As New SqlClient.SqlDataAdapter
@@ -30,12 +29,11 @@ Public Class ClientDataTier
             Throw New ArgumentException(ex.Message)
         Finally
             connString.Close()
-
         End Try
+
     End Function
 
-
-    Public Function GetClientByID(ByVal CliID As String) As DataSet
+    Public Function GetPrescriptionsByRxNumber(ByVal RxNumber As String) As DataSet
 
         Try
             'open connection
@@ -47,9 +45,9 @@ Public Class ClientDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 150
-                .CommandText = “GetClientID”
+                .CommandText = “GetStudentID”
                 'Define input parameter
-                .Parameters.Add(“@CliID”, SqlDbType.VarChar, 6).Value = CliID
+                .Parameters.Add(“@RxNumber”, SqlDbType.Int).Value = RxNumber
                 ''execute command
                 '.ExecuteNonQuery()
             End With
@@ -68,7 +66,8 @@ Public Class ClientDataTier
         End Try
     End Function
 
-    Public Sub DeleteClient(ByVal CliID As String)
+
+    Public Sub DeletePrescription(ByVal RxNumber As String)
 
         Try
             connString.Open()
@@ -77,8 +76,8 @@ Public Class ClientDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 900
-                .CommandText = "DeleteClientByID"
-                .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = CliID
+                .CommandText = "DeleteStudentByID"
+                .Parameters.Add("@RxNumber", SqlDbType.Int).Value = RxNumber
                 .ExecuteNonQuery()
             End With
         Catch ex As Exception
@@ -86,3 +85,4 @@ Public Class ClientDataTier
         End Try
     End Sub
 End Class
+
