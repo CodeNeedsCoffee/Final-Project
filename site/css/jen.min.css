@@ -1,3 +1,5 @@
+/* Made by Our Own Squad, Team JEN */
+
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
@@ -1000,7 +1002,7 @@ button.jen-icon:not(:disabled) {
 
 .jen-input {
     overflow: visible;
-        width: 500px;
+    width: 500px;
 }
 
 .jen-select {
