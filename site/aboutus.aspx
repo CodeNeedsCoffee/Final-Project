@@ -83,28 +83,30 @@
                 <div class="jen-card-header">
                     <div class="jen-grid-small jen-flex-middle" jen-grid>
                         <div class="jen-width-auto">
-                            &nbsp;</div>
+                            &nbsp;
+                        </div>
                         <div class="jen-width-expand">
-                            <h1>Our Goal</h1>
-                            <center><p class="jen-text-meta jen-margin-remove-top">At Louis Pharmacy, we strive to provide the outmost care for all our patients. We&#39;ve spent years in the medical industry and have gained invaluable knowledge. Utilizing our extensive database, we are able to maintain and organize your medical records with the outmost accuracy. This allows us as a pharmacy to provide quick, and consistent service to all our patients.</p></center>
+                            <div class="jen-card-body">
+                                <h1>Our Goal</h1>
+                                <p>At Louis Pharmacy, we strive to provide the outmost care for all our patients. We&#39;ve spent years in the medical industry and have gained invaluable knowledge. Utilizing our extensive database, we are able to maintain and organize your medical records with the outmost accuracy. This allows us as a pharmacy to provide quick, and consistent service to all our patients.</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="jen-card-body">
+                        <h1>Team JEN</h1>
+                        <p>Team JEN was created by three mind that worked well as collaborators. Jesse, Evan, and Nick (or JEN), started off by responding to a request maybe by Luis Pharmacy on GitHub. The three amigos quickly formed together a well knit thinking machine and produced a brand new website for Luis Pharamacy baseed on the modern material website style.</p>
+                    </div>
+                    <div class="jen-card-body">
+                        <h1>What is CNSA?</h1>
+                        <p>CNSA stands for Computer and Network Systems Administation. This is a degree that is held to the highest standards at the prestigous Thaddeus Stevens College of Technology. The technoloigy has been recognized by ASPEN as the one of the top 150 technical colleges in the country for 5 consectives times.</p>
+                        <div class="jen-card-footer">
+                            <a href="https://stevenscollege.edu/academics/associate-degrees/computer-network-systems-administration/" class="jen-button jen-button-text">Read more</a>
+
+                        </div>
+
+                    </div>
                 </div>
-                <div class="jen-card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                </div>
-                <div class="jen-card-footer">
-                    <a href="#" class="jen-button jen-button-text">Read more</a>
-                </div>
-
-
-
-
-
             </div>
         </div>
-
-    </div>
-
 </asp:Content>
 
