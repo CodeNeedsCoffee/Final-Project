@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p> He is the took charge of the "Code Behind" while working along side both Evan and Nick. Shortly He will be graduating from TSCT and looking for full time employment.</p>
+                    <p>Jesse is the took charge of the "Code Behind" while working along side both Evan and Nick. Shortly He will be graduating from TSCT and looking for full time employment.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/jesse-killinger-a38902137/" class="jen-button jen-button-text">Contact</a>
@@ -37,14 +37,14 @@
                                 <img class="jen-border-circle" width="40" height="40" src="./img/evan.jpg">
                             </div>
                             <div class="jen-width-expand">
-                                <h3 class="jen-card-title jen-margin-remove-bottom">Title</h3>
-                                <p class="jen-text-meta jen-margin-remove-top">Programming GOD and hung like a horse</p>
+                                <h3 class="jen-card-title jen-margin-remove-bottom">Evan Templin</h3>
+                                <p class="jen-text-meta jen-margin-remove-top">CNSA Student at Thaddeus Stevens College of Technology.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <p>Evan was focused on the styling of the page. He worked on not only the creation by the visual appeal of the website while colaboratin with both Jesse and Nick. Shortly He will be graduating from TSCT and looking to come back for Computer Software Engineering.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/evan-templin-ba862384/" class="jen-button jen-button-text">Contact</a>
@@ -58,13 +58,11 @@
                         <div class="jen-width-expand">
                             <h3 class="jen-card-title jen-margin-remove-bottom">Nick Luongo</h3>
                             <p class="jen-text-meta jen-margin-remove-top">Undergraduate at&nbsp; Thaddeus Stevens College of Technology CNSA</p>
-                            <p class="jen-text-meta jen-margin-remove-top">&nbsp;</p>
-                            <p class="jen-text-meta jen-margin-remove-top">&nbsp;</p>
                         </div>
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursing full time employmen after graduating from TSCT.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/nicholas-luongo-19b147149/" class="jen-button jen-button-text">Contact</a>
