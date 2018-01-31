@@ -86,7 +86,7 @@
                             &nbsp;</div>
                         <div class="jen-width-expand">
                             <h1>Our Goal</h1>
-                            <p class="jen-text-meta jen-margin-remove-top">At Louis Pharmacy, we strive to provide the outmost care for all our patients. We&#39;ve spent years in the medical industry and have gained invaluable knowledge. Utilizing our extensive database, we are able to maintain and organize your medical records with the outmost accuracy. This allows us as a pharmacy to provide quick, and consistent service to all our patients.</p>
+                            <center><p class="jen-text-meta jen-margin-remove-top">At Louis Pharmacy, we strive to provide the outmost care for all our patients. We&#39;ve spent years in the medical industry and have gained invaluable knowledge. Utilizing our extensive database, we are able to maintain and organize your medical records with the outmost accuracy. This allows us as a pharmacy to provide quick, and consistent service to all our patients.</p></center>
                         </div>
                     </div>
                 </div>
