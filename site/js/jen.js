@@ -1,9 +1,9 @@
-/*! UIkit 3.0.0-beta.35 | http://www.getuikit.com | (c) 2014 - 2017 YOOtheme | MIT License */
+/*! jen 3.0.0-beta.35 | http://www.getjen.com | (c) 2014 - 2017 YOOtheme | MIT License */
 
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define('uikit', factory) :
-	(global.UIkit = factory());
+	typeof define === 'function' && define.amd ? define('jen', factory) :
+	(global.jen = factory());
 }(this, (function () { 'use strict';
 
 /**
@@ -512,7 +512,7 @@ function transition(element, props, duration, transition) {
                 var type = ref.type;
 
                 clearTimeout(timer);
-                removeClass(element, 'uk-transition');
+                removeClass(element, 'jen-transition');
                 css(element, 'transition', '');
                 type === transitioncancel ? reject() : resolve();
             }, false, function (ref) {
@@ -521,7 +521,7 @@ function transition(element, props, duration, transition) {
                 return element === target;
             });
 
-            addClass(element, 'uk-transition');
+            addClass(element, 'jen-transition');
             css(element, assign({transition: ("all " + duration + "ms " + transition)}, props));
 
         }); }
@@ -543,14 +543,14 @@ var Transition = {
     },
 
     inProgress: function inProgress(element) {
-        return hasClass(element, 'uk-transition');
+        return hasClass(element, 'jen-transition');
     }
 
 };
 
 var animationcancel = 'animationcancel';
-var animationPrefix = 'uk-animation-';
-var clsCancelAnimation = 'uk-cancel-animation';
+var animationPrefix = 'jen-animation-';
+var clsCancelAnimation = 'jen-cancel-animation';
 
 function animate(element, animation, duration, origin, out) {
     var arguments$1 = arguments;
@@ -970,7 +970,7 @@ function _query(selector, context, queryFn) {
             }
 
             if (!ctx.id) {
-                ctx.id = "uk-" + (Date.now()) + i;
+                ctx.id = "jen-" + (Date.now()) + i;
                 removes.push(function () { return removeAttr(ctx, 'id'); });
             }
 
@@ -2481,10 +2481,10 @@ var util = Object.freeze({
 	getPos: getPos$1
 });
 
-var boot = function (UIkit) {
+var boot = function (jen) {
 
-    var connect = UIkit.connect;
-    var disconnect = UIkit.disconnect;
+    var connect = jen.connect;
+    var disconnect = jen.disconnect;
 
     if (Observer) {
 
@@ -2535,7 +2535,7 @@ var boot = function (UIkit) {
                     apply(removedNodes[i], disconnect);
                 }
 
-                UIkit.update(createEvent('update', true, false, {mutation: true}), target, true);
+                jen.update(createEvent('update', true, false, {mutation: true}), target, true);
 
             }); }
         )).observe(docEl, {
@@ -2546,12 +2546,12 @@ var boot = function (UIkit) {
             attributeFilter: ['href']
         });
 
-        UIkit._initialized = true;
+        jen._initialized = true;
     }
 
     function apply(node, fn) {
 
-        if (node.nodeType !== 1 || hasAttr(node, 'uk-no-boot')) {
+        if (node.nodeType !== 1 || hasAttr(node, 'jen-no-boot')) {
             return;
         }
 
@@ -2566,11 +2566,11 @@ var boot = function (UIkit) {
 
 };
 
-var globalAPI = function (UIkit) {
+var globalAPI = function (jen) {
 
-    var DATA = UIkit.data;
+    var DATA = jen.data;
 
-    UIkit.use = function (plugin) {
+    jen.use = function (plugin) {
 
         if (plugin.installed) {
             return;
@@ -2582,20 +2582,20 @@ var globalAPI = function (UIkit) {
         return this;
     };
 
-    UIkit.mixin = function (mixin, component) {
-        component = (isString(component) ? UIkit.components[component] : component) || this;
+    jen.mixin = function (mixin, component) {
+        component = (isString(component) ? jen.components[component] : component) || this;
         mixin = mergeOptions({}, mixin);
         mixin.mixins = component.options.mixins;
         delete component.options.mixins;
         component.options = mergeOptions(mixin, component.options);
     };
 
-    UIkit.extend = function (options) {
+    jen.extend = function (options) {
 
         options = options || {};
 
         var Super = this, name = options.name || Super.options.name;
-        var Sub = createClass(name || 'UIkitComponent');
+        var Sub = createClass(name || 'jenComponent');
 
         Sub.prototype = Object.create(Super.prototype);
         Sub.prototype.constructor = Sub;
@@ -2607,7 +2607,7 @@ var globalAPI = function (UIkit) {
         return Sub;
     };
 
-    UIkit.update = function (e, element, parents) {
+    jen.update = function (e, element, parents) {
         if ( parents === void 0 ) parents = false;
 
 
@@ -2615,7 +2615,7 @@ var globalAPI = function (UIkit) {
 
         if (!element) {
 
-            update(UIkit.instances, e);
+            update(jen.instances, e);
             return;
 
         }
@@ -2640,7 +2640,7 @@ var globalAPI = function (UIkit) {
     };
 
     var container;
-    Object.defineProperty(UIkit, 'container', {
+    Object.defineProperty(jen, 'container', {
 
         get: function get() {
             return container || doc.body;
@@ -2686,9 +2686,9 @@ var globalAPI = function (UIkit) {
 
 };
 
-var hooksAPI = function (UIkit) {
+var hooksAPI = function (jen) {
 
-    UIkit.prototype._callHook = function (hook) {
+    jen.prototype._callHook = function (hook) {
         var this$1 = this;
 
 
@@ -2699,7 +2699,7 @@ var hooksAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._callReady = function () {
+    jen.prototype._callReady = function () {
 
         if (this._isReady) {
             return;
@@ -2711,7 +2711,7 @@ var hooksAPI = function (UIkit) {
         this._callUpdate();
     };
 
-    UIkit.prototype._callConnected = function () {
+    jen.prototype._callConnected = function () {
         var this$1 = this;
 
 
@@ -2719,11 +2719,11 @@ var hooksAPI = function (UIkit) {
             return;
         }
 
-        if (!includes(UIkit.elements, this.$options.el)) {
-            UIkit.elements.push(this.$options.el);
+        if (!includes(jen.elements, this.$options.el)) {
+            jen.elements.push(this.$options.el);
         }
 
-        UIkit.instances[this._uid] = this;
+        jen.instances[this._uid] = this;
 
         this._initEvents();
 
@@ -2739,7 +2739,7 @@ var hooksAPI = function (UIkit) {
         this._callUpdate();
     };
 
-    UIkit.prototype._callDisconnected = function () {
+    jen.prototype._callDisconnected = function () {
 
         if (!this._connected) {
             return;
@@ -2750,13 +2750,13 @@ var hooksAPI = function (UIkit) {
             this._observer = null;
         }
 
-        var index = UIkit.elements.indexOf(this.$options.el);
+        var index = jen.elements.indexOf(this.$options.el);
 
         if (~index) {
-            UIkit.elements.splice(index, 1);
+            jen.elements.splice(index, 1);
         }
 
-        delete UIkit.instances[this._uid];
+        delete jen.instances[this._uid];
 
         this._unbindEvents();
         this._callHook('disconnected');
@@ -2765,7 +2765,7 @@ var hooksAPI = function (UIkit) {
 
     };
 
-    UIkit.prototype._callUpdate = function (e) {
+    jen.prototype._callUpdate = function (e) {
         var this$1 = this;
 
 
@@ -2820,19 +2820,19 @@ var hooksAPI = function (UIkit) {
 
 };
 
-var stateAPI = function (UIkit) {
+var stateAPI = function (jen) {
 
     var uid = 0;
 
-    UIkit.prototype.props = {};
+    jen.prototype.props = {};
 
-    UIkit.prototype._init = function (options) {
+    jen.prototype._init = function (options) {
 
         options = options || {};
         options = this.$options = mergeOptions(this.constructor.options, options, this);
 
         this.$el = null;
-        this.$name = UIkit.prefix + hyphenate(this.$options.name);
+        this.$name = jen.prefix + hyphenate(this.$options.name);
         this.$props = {};
 
         this._frames = {reads: {}, writes: {}};
@@ -2849,7 +2849,7 @@ var stateAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._initData = function () {
+    jen.prototype._initData = function () {
         var this$1 = this;
 
 
@@ -2880,7 +2880,7 @@ var stateAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._initMethods = function () {
+    jen.prototype._initMethods = function () {
         var this$1 = this;
 
 
@@ -2893,7 +2893,7 @@ var stateAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._initComputeds = function () {
+    jen.prototype._initComputeds = function () {
         var this$1 = this;
 
 
@@ -2908,11 +2908,11 @@ var stateAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._resetComputeds = function () {
+    jen.prototype._resetComputeds = function () {
         this._computeds = {};
     };
 
-    UIkit.prototype._initProps = function (props) {
+    jen.prototype._initProps = function (props) {
         var this$1 = this;
 
 
@@ -2927,7 +2927,7 @@ var stateAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._initEvents = function () {
+    jen.prototype._initEvents = function () {
         var this$1 = this;
 
 
@@ -2949,12 +2949,12 @@ var stateAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype._unbindEvents = function () {
+    jen.prototype._unbindEvents = function () {
         this._events.forEach(function (unbind) { return unbind(); });
         this._events = [];
     };
 
-    UIkit.prototype._initObserver = function () {
+    jen.prototype._initObserver = function () {
         var this$1 = this;
 
 
@@ -3136,11 +3136,11 @@ var stateAPI = function (UIkit) {
 
 };
 
-var instanceAPI = function (UIkit) {
+var instanceAPI = function (jen) {
 
-    var DATA = UIkit.data;
+    var DATA = jen.data;
 
-    UIkit.prototype.$mount = function (el) {
+    jen.prototype.$mount = function (el) {
 
         var name = this.$options.name;
 
@@ -3165,21 +3165,21 @@ var instanceAPI = function (UIkit) {
         }
     };
 
-    UIkit.prototype.$emit = function (e) {
+    jen.prototype.$emit = function (e) {
         this._callUpdate(e);
     };
 
-    UIkit.prototype.$update = function (e, parents) {
-        UIkit.update(e, this.$options.el, parents);
+    jen.prototype.$update = function (e, parents) {
+        jen.update(e, this.$options.el, parents);
     };
 
-    UIkit.prototype.$reset = function (data) {
+    jen.prototype.$reset = function (data) {
         this._callDisconnected();
         this._initProps(data);
         this._callConnected();
     };
 
-    UIkit.prototype.$destroy = function (removeEl) {
+    jen.prototype.$destroy = function (removeEl) {
         if ( removeEl === void 0 ) removeEl = false;
 
 
@@ -3210,59 +3210,59 @@ var instanceAPI = function (UIkit) {
 
 };
 
-var componentAPI = function (UIkit) {
+var componentAPI = function (jen) {
 
-    var DATA = UIkit.data;
+    var DATA = jen.data;
 
-    UIkit.components = {};
+    jen.components = {};
 
-    UIkit.component = function (id, options) {
+    jen.component = function (id, options) {
 
         var name = camelize(id);
 
         if (isPlainObject(options)) {
             options.name = name;
-            options = UIkit.extend(options);
+            options = jen.extend(options);
         } else if (isUndefined(options)) {
-            return UIkit.components[name]
+            return jen.components[name]
         } else {
             options.options.name = name;
         }
 
-        UIkit.components[name] = options;
+        jen.components[name] = options;
 
-        UIkit[name] = function (element, data) {
+        jen[name] = function (element, data) {
             var i = arguments.length, argsArray = Array(i);
             while ( i-- ) argsArray[i] = arguments[i];
 
 
             if (isPlainObject(element)) {
-                return new UIkit.components[name]({data: element});
+                return new jen.components[name]({data: element});
             }
 
-            if (UIkit.components[name].options.functional) {
-                return new UIkit.components[name]({data: [].concat( argsArray )});
+            if (jen.components[name].options.functional) {
+                return new jen.components[name]({data: [].concat( argsArray )});
             }
 
             return element && element.nodeType ? init(element) : $$(element).map(init)[0];
 
             function init(element) {
-                return UIkit.getComponent(element, name) || new UIkit.components[name]({el: element, data: data || {}});
+                return jen.getComponent(element, name) || new jen.components[name]({el: element, data: data || {}});
             }
 
         };
 
-        if (UIkit._initialized && !options.options.functional) {
-            fastdom.read(function () { return UIkit[name](("[uk-" + id + "],[data-uk-" + id + "]")); });
+        if (jen._initialized && !options.options.functional) {
+            fastdom.read(function () { return jen[name](("[jen-" + id + "],[data-jen-" + id + "]")); });
         }
 
-        return UIkit.components[name];
+        return jen.components[name];
     };
 
-    UIkit.getComponents = function (element) { return element && (element = isJQuery(element) ? element[0] : element) && element[DATA] || {}; };
-    UIkit.getComponent = function (element, name) { return UIkit.getComponents(element)[name]; };
+    jen.getComponents = function (element) { return element && (element = isJQuery(element) ? element[0] : element) && element[DATA] || {}; };
+    jen.getComponent = function (element, name) { return jen.getComponents(element)[name]; };
 
-    UIkit.connect = function (node) {
+    jen.connect = function (node) {
 
         var name;
 
@@ -3276,19 +3276,19 @@ var componentAPI = function (UIkit) {
 
             name = node.attributes[i].name;
 
-            if (startsWith(name, 'uk-') || startsWith(name, 'data-uk-')) {
+            if (startsWith(name, 'jen-') || startsWith(name, 'data-jen-')) {
 
-                name = camelize(name.replace('data-uk-', '').replace('uk-', ''));
+                name = camelize(name.replace('data-jen-', '').replace('jen-', ''));
 
-                if (UIkit[name]) {
-                    UIkit[name](node);
+                if (jen[name]) {
+                    jen[name](node);
                 }
             }
         }
 
     };
 
-    UIkit.disconnect = function (node) {
+    jen.disconnect = function (node) {
         for (var name in node[DATA]) {
             node[DATA][name]._callDisconnected();
         }
@@ -3296,22 +3296,22 @@ var componentAPI = function (UIkit) {
 
 };
 
-var UIkit$2 = function (options) {
+var jen$2 = function (options) {
     this._init(options);
 };
 
-UIkit$2.util = util;
-UIkit$2.data = '__uikit__';
-UIkit$2.prefix = 'uk-';
-UIkit$2.options = {};
-UIkit$2.instances = {};
-UIkit$2.elements = [];
+jen$2.util = util;
+jen$2.data = '__jen__';
+jen$2.prefix = 'jen-';
+jen$2.options = {};
+jen$2.instances = {};
+jen$2.elements = [];
 
-globalAPI(UIkit$2);
-hooksAPI(UIkit$2);
-stateAPI(UIkit$2);
-instanceAPI(UIkit$2);
-componentAPI(UIkit$2);
+globalAPI(jen$2);
+hooksAPI(jen$2);
+stateAPI(jen$2);
+instanceAPI(jen$2);
+componentAPI(jen$2);
 
 var Class = {
 
@@ -3336,7 +3336,7 @@ var Container = {
         container: function container(ref) {
             var container = ref.container;
 
-            return container === true && UIkit$2.container || container && $(container) || UIkit$2.container;
+            return container === true && jen$2.container || container && $(container) || jen$2.container;
         }
 
     }
@@ -3421,7 +3421,7 @@ var Togglable = {
                     var body = doc.body,
                         scroll = body.scrollTop,
                         el = toggled[0],
-                        inProgress = Animation.inProgress(el) && hasClass(el, 'uk-animation-leave')
+                        inProgress = Animation.inProgress(el) && hasClass(el, 'jen-animation-leave')
                             || Transition.inProgress(el) && el.style.height === '0px';
 
                     p = all(toggled);
@@ -3467,7 +3467,7 @@ var Togglable = {
             show = isBoolean(show)
                 ? show
                 : Animation.inProgress(el)
-                    ? hasClass(el, 'uk-animation-leave')
+                    ? hasClass(el, 'jen-animation-leave')
                     : Transition.inProgress(el)
                         ? el.style.height === '0px'
                         : !this.isToggled(el);
@@ -3487,7 +3487,7 @@ var Togglable = {
 
             return promise.then(function () {
                 trigger(el, show ? 'shown' : 'hidden', [this$1]);
-                UIkit$2.update(null, el);
+                jen$2.update(null, el);
             });
         },
 
@@ -3506,7 +3506,7 @@ var Togglable = {
             $$('[autofocus]', el).some(function (el) { return isVisible(el) && (el.focus() || true); });
 
             this.updateAria(el);
-            UIkit$2.update(null, el);
+            jen$2.update(null, el);
         },
 
         _toggleImmediate: function _toggleImmediate(el, show) {
@@ -3577,7 +3577,7 @@ var Modal = {
     },
 
     defaults: {
-        cls: 'uk-open',
+        cls: 'jen-open',
         escClose: true,
         bgClose: true,
         overlay: true,
@@ -3866,19 +3866,19 @@ var Position = {
 
 };
 
-var mixin = function (UIkit) {
+var mixin = function (jen) {
 
-    UIkit.mixin.class = Class;
-    UIkit.mixin.container = Container;
-    UIkit.mixin.modal = Modal;
-    UIkit.mixin.position = Position;
-    UIkit.mixin.togglable = Togglable;
+    jen.mixin.class = Class;
+    jen.mixin.container = Container;
+    jen.mixin.modal = Modal;
+    jen.mixin.position = Position;
+    jen.mixin.togglable = Togglable;
 
 };
 
-var Accordion = function (UIkit) {
+var Accordion = function (jen) {
 
-    UIkit.component('accordion', {
+    jen.component('accordion', {
 
         mixins: [Class, Togglable],
 
@@ -3898,9 +3898,9 @@ var Accordion = function (UIkit) {
             animation: [true],
             collapsible: true,
             multiple: false,
-            clsOpen: 'uk-open',
-            toggle: '> .uk-accordion-title',
-            content: '> .uk-accordion-content',
+            clsOpen: 'jen-open',
+            toggle: '> .jen-accordion-title',
+            content: '> .jen-accordion-content',
             transition: 'ease'
         },
 
@@ -4004,9 +4004,9 @@ var Accordion = function (UIkit) {
 
 };
 
-var Alert = function (UIkit) {
+var Alert = function (jen) {
 
-    UIkit.component('alert', {
+    jen.component('alert', {
 
         attrs: true,
 
@@ -4020,7 +4020,7 @@ var Alert = function (UIkit) {
 
         defaults: {
             animation: [true],
-            selClose: '.uk-alert-close',
+            selClose: '.jen-alert-close',
             duration: 150,
             hideProps: assign({opacity: 0}, Togglable.defaults.hideProps)
         },
@@ -4058,11 +4058,11 @@ var Alert = function (UIkit) {
 
 };
 
-var Cover = function (UIkit) {
+var Cover = function (jen) {
 
-    UIkit.component('cover', {
+    jen.component('cover', {
 
-        mixins: [Class, UIkit.components.video.options],
+        mixins: [Class, jen.components.video.options],
 
         props: {
             width: Number,
@@ -4119,11 +4119,11 @@ var Cover = function (UIkit) {
 
 };
 
-var Drop = function (UIkit) {
+var Drop = function (jen) {
 
     var active;
 
-    UIkit.component('drop', {
+    jen.component('drop', {
 
         mixins: [Position, Togglable],
 
@@ -4148,13 +4148,13 @@ var Drop = function (UIkit) {
             delayHide: 800,
             clsDrop: false,
             hoverIdle: 200,
-            animation: ['uk-animation-fade'],
-            cls: 'uk-open'
+            animation: ['jen-animation-fade'],
+            cls: 'jen-open'
         },
 
         init: function init() {
             this.tracker = new MouseTracker();
-            this.clsDrop = this.clsDrop || ("uk-" + (this.$options.name));
+            this.clsDrop = this.clsDrop || ("jen-" + (this.$options.name));
             this.clsPos = this.clsDrop;
 
             addClass(this.$el, this.clsDrop);
@@ -4165,7 +4165,7 @@ var Drop = function (UIkit) {
             this.updateAria(this.$el);
 
             if (this.toggle) {
-                this.toggle = UIkit.toggle(isString(this.toggle) ? query(this.toggle, this.$el) : this.$el.previousElementSibling, {target: this.$el, mode: this.mode});
+                this.toggle = jen.toggle(isString(this.toggle) ? query(this.toggle, this.$el) : this.$el.previousElementSibling, {target: this.$el, mode: this.mode});
             }
 
         },
@@ -4514,7 +4514,7 @@ var Drop = function (UIkit) {
 
     });
 
-    UIkit.drop.getActive = function () { return active; };
+    jen.drop.getActive = function () { return active; };
 
     var registered;
 
@@ -4544,15 +4544,15 @@ var Drop = function (UIkit) {
 
 };
 
-var Dropdown = function (UIkit) {
+var Dropdown = function (jen) {
 
-    UIkit.component('dropdown', UIkit.components.drop.extend({name: 'dropdown'}));
+    jen.component('dropdown', jen.components.drop.extend({name: 'dropdown'}));
 
 };
 
-var FormCustom = function (UIkit) {
+var FormCustom = function (jen) {
 
-    UIkit.component('form-custom', {
+    jen.component('form-custom', {
 
         mixins: [Class],
 
@@ -4606,7 +4606,7 @@ var FormCustom = function (UIkit) {
                     if (current === this.input) {
                         toggleClass(
                             this.state,
-                            ("uk-" + (includes(type, 'focus') ? 'focus' : 'hover')),
+                            ("jen-" + (includes(type, 'focus') ? 'focus' : 'hover')),
                             includes(['focusin', 'mouseenter'], type)
                         );
                     }
@@ -4641,9 +4641,9 @@ var FormCustom = function (UIkit) {
 
 };
 
-var Gif = function (UIkit) {
+var Gif = function (jen) {
 
-    UIkit.component('gif', {
+    jen.component('gif', {
 
         update: {
 
@@ -4665,17 +4665,17 @@ var Gif = function (UIkit) {
 
 };
 
-var Grid = function (UIkit) {
+var Grid = function (jen) {
 
-    UIkit.component('grid', UIkit.components.margin.extend({
+    jen.component('grid', jen.components.margin.extend({
 
         mixins: [Class],
 
         name: 'grid',
 
         defaults: {
-            margin: 'uk-grid-margin',
-            clsStack: 'uk-grid-stack'
+            margin: 'jen-grid-margin',
+            clsStack: 'jen-grid-stack'
         },
 
         update: {
@@ -4694,9 +4694,9 @@ var Grid = function (UIkit) {
 
 };
 
-var HeightMatch = function (UIkit) {
+var HeightMatch = function (jen) {
 
-    UIkit.component('height-match', {
+    jen.component('height-match', {
 
         args: 'target',
 
@@ -4806,9 +4806,9 @@ var HeightMatch = function (UIkit) {
 
 };
 
-var HeightViewport = function (UIkit) {
+var HeightViewport = function (jen) {
 
-    UIkit.component('height-viewport', {
+    jen.component('height-viewport', {
 
         props: {
             expand: Boolean,
@@ -4903,7 +4903,7 @@ var HeightViewport = function (UIkit) {
 
 };
 
-var Hover = function (UIkit) {
+var Hover = function (jen) {
 
     ready(function () {
 
@@ -4911,7 +4911,7 @@ var Hover = function (UIkit) {
             return;
         }
 
-        var cls = 'uk-hover';
+        var cls = 'jen-hover';
 
         on(doc, 'tap', function (ref) {
                 var target = ref.target;
@@ -4921,7 +4921,7 @@ var Hover = function (UIkit) {
         }
         );
 
-        Object.defineProperty(UIkit, 'hoverSelector', {
+        Object.defineProperty(jen, 'hoverSelector', {
 
             set: function set(selector) {
                 on(doc, 'tap', selector, function (ref) {
@@ -4933,7 +4933,7 @@ var Hover = function (UIkit) {
 
         });
 
-        UIkit.hoverSelector = '.uk-animation-toggle, .uk-transition-toggle, [uk-hover]';
+        jen.hoverSelector = '.jen-animation-toggle, .jen-transition-toggle, [jen-hover]';
 
     });
 
@@ -4971,7 +4971,7 @@ var spinner = "<svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns=\"htt
 
 var totop = "<svg width=\"18\" height=\"10\" viewBox=\"0 0 18 10\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" stroke=\"#000\" stroke-width=\"1.2\" points=\"1 9 9 1 17 9 \"></polyline></svg>";
 
-var Icon = function (UIkit) {
+var Icon = function (jen) {
 
     var parsed = {},
         icons = {
@@ -4993,7 +4993,7 @@ var Icon = function (UIkit) {
             'slidenav-previous-large': slidenavPreviousLarge
         };
 
-    UIkit.component('icon', UIkit.components.svg.extend({
+    jen.component('icon', jen.components.svg.extend({
 
         attrs: ['icon', 'ratio'],
 
@@ -5008,7 +5008,7 @@ var Icon = function (UIkit) {
         defaults: {exclude: ['id', 'style', 'class', 'src', 'icon']},
 
         init: function init() {
-            addClass(this.$el, 'uk-icon');
+            addClass(this.$el, 'jen-icon');
 
             if (isRtl) {
                 this.icon = swap(swap(this.icon, 'left', 'right'), 'previous', 'next');
@@ -5051,9 +5051,9 @@ var Icon = function (UIkit) {
     ].forEach(function (name) { return registerComponent(name, {
 
         init: function init() {
-            addClass(this.$el, 'uk-slidenav');
+            addClass(this.$el, 'jen-slidenav');
 
-            if (hasClass(this.$el, 'uk-slidenav-large')) {
+            if (hasClass(this.$el, 'jen-slidenav-large')) {
                 this.icon += '-large';
             }
         }
@@ -5063,9 +5063,9 @@ var Icon = function (UIkit) {
     registerComponent('search-icon', {
 
         init: function init() {
-            if (hasClass(this.$el, 'uk-search-icon') && parents(this.$el, '.uk-search-large').length) {
+            if (hasClass(this.$el, 'jen-search-icon') && parents(this.$el, '.jen-search-large').length) {
                 this.icon = 'search-large';
-            } else if (parents(this.$el, '.uk-search-navbar').length) {
+            } else if (parents(this.$el, '.jen-search-navbar').length) {
                 this.icon = 'search-navbar';
             }
         }
@@ -5075,7 +5075,7 @@ var Icon = function (UIkit) {
     registerComponent('close', {
 
         init: function init() {
-            this.icon = "close-" + (hasClass(this.$el, 'uk-close-large') ? 'large' : 'icon');
+            this.icon = "close-" + (hasClass(this.$el, 'jen-close-large') ? 'large' : 'icon');
         }
 
     });
@@ -5090,14 +5090,14 @@ var Icon = function (UIkit) {
 
     });
 
-    UIkit.icon.add = function (added) {
+    jen.icon.add = function (added) {
         Object.keys(added).forEach(function (name) {
             icons[name] = added[name];
             delete parsed[name];
         });
 
-        if (UIkit._initialized) {
-            each(UIkit.instances, function (component) {
+        if (jen._initialized) {
+            each(jen.instances, function (component) {
                 if (component.$options.name === 'icon') {
                     component.$reset();
                 }
@@ -5107,7 +5107,7 @@ var Icon = function (UIkit) {
 
     function registerComponent(name, mixin$$1) {
 
-        UIkit.component(name, UIkit.components.icon.extend({
+        jen.component(name, jen.components.icon.extend({
 
             name: name,
 
@@ -5135,9 +5135,9 @@ var Icon = function (UIkit) {
 
 };
 
-var Leader = function (UIkit) {
+var Leader = function (jen) {
 
-    UIkit.component('leader', {
+    jen.component('leader', {
 
         mixins: [Class],
 
@@ -5149,8 +5149,8 @@ var Leader = function (UIkit) {
         defaults: {
             fill: '',
             media: false,
-            clsWrapper: 'uk-leader-fill',
-            clsHide: 'uk-leader-hide',
+            clsWrapper: 'jen-leader-fill',
+            clsHide: 'jen-leader-hide',
             attrFill: 'data-fill'
         },
 
@@ -5203,9 +5203,9 @@ var Leader = function (UIkit) {
 
 };
 
-var Margin = function (UIkit) {
+var Margin = function (jen) {
 
-    UIkit.component('margin', {
+    jen.component('margin', {
 
         props: {
             margin: String,
@@ -5213,8 +5213,8 @@ var Margin = function (UIkit) {
         },
 
         defaults: {
-            margin: 'uk-margin-small-top',
-            firstColumn: 'uk-first-column'
+            margin: 'jen-margin-small-top',
+            firstColumn: 'jen-first-column'
         },
 
         update: {
@@ -5305,16 +5305,16 @@ var Margin = function (UIkit) {
 
 };
 
-var Modal$1 = function (UIkit) {
+var Modal$1 = function (jen) {
 
-    UIkit.component('modal', {
+    jen.component('modal', {
 
         mixins: [Modal],
 
         defaults: {
-            clsPage: 'uk-modal-page',
-            clsPanel: 'uk-modal-dialog',
-            selClose: '.uk-modal-close, .uk-modal-close-default, .uk-modal-close-outside, .uk-modal-close-full'
+            clsPage: 'jen-modal-page',
+            clsPanel: 'jen-modal-dialog',
+            selClose: '.jen-modal-close, .jen-modal-close-default, .jen-modal-close-outside, .jen-modal-close-full'
         },
 
         events: [
@@ -5326,8 +5326,8 @@ var Modal$1 = function (UIkit) {
 
                 handler: function handler() {
 
-                    if (hasClass(this.panel, 'uk-margin-auto-vertical')) {
-                        addClass(this.$el, 'uk-flex');
+                    if (hasClass(this.panel, 'jen-margin-auto-vertical')) {
+                        addClass(this.$el, 'jen-flex');
                     } else {
                         css(this.$el, 'display', 'block');
                     }
@@ -5344,7 +5344,7 @@ var Modal$1 = function (UIkit) {
                 handler: function handler() {
 
                     css(this.$el, 'display', '');
-                    removeClass(this.$el, 'uk-flex');
+                    removeClass(this.$el, 'jen-flex');
 
                 }
             }
@@ -5353,18 +5353,18 @@ var Modal$1 = function (UIkit) {
 
     });
 
-    UIkit.component('overflow-auto', {
+    jen.component('overflow-auto', {
 
         mixins: [Class],
 
         computed: {
 
             modal: function modal(_, $el) {
-                return closest($el, '.uk-modal');
+                return closest($el, '.jen-modal');
             },
 
             panel: function panel(_, $el) {
-                return closest($el, '.uk-modal-dialog');
+                return closest($el, '.jen-modal-dialog');
             }
 
         },
@@ -5395,9 +5395,9 @@ var Modal$1 = function (UIkit) {
 
     });
 
-    UIkit.modal.dialog = function (content, options) {
+    jen.modal.dialog = function (content, options) {
 
-        var dialog = UIkit.modal((" <div class=\"uk-modal\"> <div class=\"uk-modal-dialog\">" + content + "</div> </div> "), options);
+        var dialog = jen.modal((" <div class=\"jen-modal\"> <div class=\"jen-modal-dialog\">" + content + "</div> </div> "), options);
 
         on(dialog.$el, 'hidden', function (ref) {
             var target = ref.target;
@@ -5412,21 +5412,21 @@ var Modal$1 = function (UIkit) {
         return dialog;
     };
 
-    UIkit.modal.alert = function (message, options) {
+    jen.modal.alert = function (message, options) {
 
-        options = assign({bgClose: false, escClose: false, labels: UIkit.modal.labels}, options);
+        options = assign({bgClose: false, escClose: false, labels: jen.modal.labels}, options);
 
         return new Promise(
-            function (resolve) { return on(UIkit.modal.dialog((" <div class=\"uk-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-primary uk-modal-close\" autofocus>" + (options.labels.ok) + "</button> </div> "), options).$el, 'hide', resolve); }
+            function (resolve) { return on(jen.modal.dialog((" <div class=\"jen-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"jen-modal-footer jen-text-right\"> <button class=\"jen-button jen-button-primary jen-modal-close\" autofocus>" + (options.labels.ok) + "</button> </div> "), options).$el, 'hide', resolve); }
         );
     };
 
-    UIkit.modal.confirm = function (message, options) {
+    jen.modal.confirm = function (message, options) {
 
-        options = assign({bgClose: false, escClose: false, labels: UIkit.modal.labels}, options);
+        options = assign({bgClose: false, escClose: false, labels: jen.modal.labels}, options);
 
         return new Promise(
-            function (resolve, reject) { return on(UIkit.modal.dialog((" <div class=\"uk-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\">" + (options.labels.cancel) + "</button> <button class=\"uk-button uk-button-primary uk-modal-close\" autofocus>" + (options.labels.ok) + "</button> </div> "), options).$el, 'click', '.uk-modal-footer button', function (ref) {
+            function (resolve, reject) { return on(jen.modal.dialog((" <div class=\"jen-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"jen-modal-footer jen-text-right\"> <button class=\"jen-button jen-button-default jen-modal-close\">" + (options.labels.cancel) + "</button> <button class=\"jen-button jen-button-primary jen-modal-close\" autofocus>" + (options.labels.ok) + "</button> </div> "), options).$el, 'click', '.jen-modal-footer button', function (ref) {
                 var target = ref.target;
 
                 return index(target) === 0 ? reject() : resolve();
@@ -5434,14 +5434,14 @@ var Modal$1 = function (UIkit) {
         );
     };
 
-    UIkit.modal.prompt = function (message, value, options) {
+    jen.modal.prompt = function (message, value, options) {
 
-        options = assign({bgClose: false, escClose: false, labels: UIkit.modal.labels}, options);
+        options = assign({bgClose: false, escClose: false, labels: jen.modal.labels}, options);
 
         return new Promise(function (resolve) {
 
             var resolved = false,
-                prompt = UIkit.modal.dialog((" <form class=\"uk-form-stacked\"> <div class=\"uk-modal-body\"> <label>" + (isString(message) ? message : html(message)) + "</label> <input class=\"uk-input\" autofocus> </div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" + (options.labels.cancel) + "</button> <button class=\"uk-button uk-button-primary\">" + (options.labels.ok) + "</button> </div> </form> "), options),
+                prompt = jen.modal.dialog((" <form class=\"jen-form-stacked\"> <div class=\"jen-modal-body\"> <label>" + (isString(message) ? message : html(message)) + "</label> <input class=\"jen-input\" autofocus> </div> <div class=\"jen-modal-footer jen-text-right\"> <button class=\"jen-button jen-button-default jen-modal-close\" type=\"button\">" + (options.labels.cancel) + "</button> <button class=\"jen-button jen-button-primary\">" + (options.labels.ok) + "</button> </div> </form> "), options),
                 input = $$1('input', prompt.$el);
 
             input.value = value;
@@ -5461,21 +5461,21 @@ var Modal$1 = function (UIkit) {
         });
     };
 
-    UIkit.modal.labels = {
+    jen.modal.labels = {
         ok: 'Ok',
         cancel: 'Cancel'
     };
 
 };
 
-var Nav = function (UIkit) {
+var Nav = function (jen) {
 
-    UIkit.component('nav', UIkit.components.accordion.extend({
+    jen.component('nav', jen.components.accordion.extend({
 
         name: 'nav',
 
         defaults: {
-            targets: '> .uk-parent',
+            targets: '> .jen-parent',
             toggle: '> a',
             content: '> ul'
         }
@@ -5484,9 +5484,9 @@ var Nav = function (UIkit) {
 
 };
 
-var Navbar = function (UIkit) {
+var Navbar = function (jen) {
 
-    UIkit.component('navbar', {
+    jen.component('navbar', {
 
         mixins: [Class],
 
@@ -5507,9 +5507,9 @@ var Navbar = function (UIkit) {
         },
 
         defaults: {
-            dropdown: '.uk-navbar-nav > li',
+            dropdown: '.jen-navbar-nav > li',
             align: !isRtl ? 'left' : 'right',
-            clsDrop: 'uk-navbar-dropdown',
+            clsDrop: 'jen-navbar-dropdown',
             mode: undefined,
             offset: undefined,
             delayShow: undefined,
@@ -5543,7 +5543,7 @@ var Navbar = function (UIkit) {
         ready: function ready() {
 
             if (this.dropbar) {
-                UIkit.navbarDropbar(
+                jen.navbarDropbar(
                     query(this.dropbar, this.$el) || after(this.dropbarAnchor || this.$el, '<div></div>'),
                     {clsDrop: this.clsDrop, mode: this.dropbarMode, duration: this.duration, navbar: this}
                 );
@@ -5553,8 +5553,8 @@ var Navbar = function (UIkit) {
 
         update: function update() {
 
-            UIkit.drop(
-                $$(((this.dropdown) + " ." + (this.clsDrop)), this.$el).filter(function (el) { return !UIkit.getComponent(el, 'dropdown'); }),
+            jen.drop(
+                $$(((this.dropdown) + " ." + (this.clsDrop)), this.$el).filter(function (el) { return !jen.getComponent(el, 'dropdown'); }),
                 assign({}, this.$props, {boundary: this.boundary, pos: this.pos})
             );
 
@@ -5585,7 +5585,7 @@ var Navbar = function (UIkit) {
         methods: {
 
             getActive: function getActive() {
-                var active = UIkit.drop.getActive();
+                var active = jen.drop.getActive();
                 return active && includes(active.mode, 'hover') && within(active.toggle.$el, this.$el) && active;
             }
 
@@ -5593,7 +5593,7 @@ var Navbar = function (UIkit) {
 
     });
 
-    UIkit.component('navbar-dropbar', {
+    jen.component('navbar-dropbar', {
 
         mixins: [Class],
 
@@ -5607,7 +5607,7 @@ var Navbar = function (UIkit) {
         init: function init() {
 
             if (this.mode === 'slide') {
-                addClass(this.$el, 'uk-navbar-dropbar-slide');
+                addClass(this.$el, 'jen-navbar-dropbar-slide');
             }
 
         },
@@ -5703,9 +5703,9 @@ var Navbar = function (UIkit) {
 
 var scroll;
 
-var Offcanvas = function (UIkit) {
+var Offcanvas = function (jen) {
 
-    UIkit.component('offcanvas', {
+    jen.component('offcanvas', {
 
         mixins: [Modal],
 
@@ -5719,20 +5719,20 @@ var Offcanvas = function (UIkit) {
         },
 
         defaults: {
-            content: '.uk-offcanvas-content',
+            content: '.jen-offcanvas-content',
             mode: 'slide',
             flip: false,
             overlay: false,
-            clsPage: 'uk-offcanvas-page',
-            clsContainer: 'uk-offcanvas-container',
-            clsPanel: 'uk-offcanvas-bar',
-            clsFlip: 'uk-offcanvas-flip',
-            clsContent: 'uk-offcanvas-content',
-            clsContentAnimation: 'uk-offcanvas-content-animation',
-            clsSidebarAnimation: 'uk-offcanvas-bar-animation',
-            clsMode: 'uk-offcanvas',
-            clsOverlay: 'uk-offcanvas-overlay',
-            selClose: '.uk-offcanvas-close'
+            clsPage: 'jen-offcanvas-page',
+            clsContainer: 'jen-offcanvas-container',
+            clsPanel: 'jen-offcanvas-bar',
+            clsFlip: 'jen-offcanvas-flip',
+            clsContent: 'jen-offcanvas-content',
+            clsContentAnimation: 'jen-offcanvas-content-animation',
+            clsSidebarAnimation: 'jen-offcanvas-bar-animation',
+            clsMode: 'jen-offcanvas',
+            clsOverlay: 'jen-offcanvas-overlay',
+            selClose: '.jen-offcanvas-close'
         },
 
         computed: {
@@ -5946,14 +5946,14 @@ var Offcanvas = function (UIkit) {
 
 };
 
-var Responsive = function (UIkit) {
+var Responsive = function (jen) {
 
-    UIkit.component('responsive', {
+    jen.component('responsive', {
 
         props: ['width', 'height'],
 
         init: function init() {
-            addClass(this.$el, 'uk-responsive-width');
+            addClass(this.$el, 'jen-responsive-width');
         },
 
         update: {
@@ -5982,9 +5982,9 @@ var Responsive = function (UIkit) {
 
 };
 
-var Scroll = function (UIkit) {
+var Scroll = function (jen) {
 
-    UIkit.component('scroll', {
+    jen.component('scroll', {
 
         props: {
             duration: Number,
@@ -6059,9 +6059,9 @@ var Scroll = function (UIkit) {
 
 };
 
-var Scrollspy = function (UIkit) {
+var Scrollspy = function (jen) {
 
-    UIkit.component('scrollspy', {
+    jen.component('scrollspy', {
 
         args: 'cls',
 
@@ -6076,14 +6076,14 @@ var Scrollspy = function (UIkit) {
         },
 
         defaults: {
-            cls: ['uk-scrollspy-inview'],
+            cls: ['jen-scrollspy-inview'],
             target: false,
             hidden: true,
             offsetTop: 0,
             offsetLeft: 0,
             repeat: false,
             delay: 0,
-            inViewClass: 'uk-scrollspy-inview'
+            inViewClass: 'jen-scrollspy-inview'
         },
 
         computed: {
@@ -6114,14 +6114,14 @@ var Scrollspy = function (UIkit) {
                     var this$1 = this;
 
 
-                    if (!UIkit._initialized) {
+                    if (!jen._initialized) {
                         return false;
                     }
 
                     this.elements.forEach(function (el) {
 
                         if (!el._scrollspy) {
-                            var cls = attr(el, 'uk-scrollspy-class');
+                            var cls = attr(el, 'jen-scrollspy-class');
                             el._scrollspy = {toggles: cls && cls.split(',') || this$1.cls};
                         }
 
@@ -6204,9 +6204,9 @@ var Scrollspy = function (UIkit) {
 
 };
 
-var ScrollspyNav = function (UIkit) {
+var ScrollspyNav = function (jen) {
 
-    UIkit.component('scrollspy-nav', {
+    jen.component('scrollspy-nav', {
 
         props: {
             cls: String,
@@ -6217,7 +6217,7 @@ var ScrollspyNav = function (UIkit) {
         },
 
         defaults: {
-            cls: 'uk-active',
+            cls: 'jen-active',
             closest: false,
             scroll: false,
             overflow: true,
@@ -6246,7 +6246,7 @@ var ScrollspyNav = function (UIkit) {
 
                 read: function read() {
                     if (this.scroll) {
-                        UIkit.scroll(this.links, {offset: this.offset || 0});
+                        jen.scroll(this.links, {offset: this.offset || 0});
                     }
                 }
 
@@ -6313,9 +6313,9 @@ var ScrollspyNav = function (UIkit) {
 
 };
 
-var Sticky = function (UIkit) {
+var Sticky = function (jen) {
 
-    UIkit.component('sticky', {
+    jen.component('sticky', {
 
         mixins: [Class],
 
@@ -6342,10 +6342,10 @@ var Sticky = function (UIkit) {
             bottom: false,
             offset: 0,
             animation: '',
-            clsActive: 'uk-active',
+            clsActive: 'jen-active',
             clsInactive: '',
-            clsFixed: 'uk-sticky-fixed',
-            clsBelow: 'uk-sticky-below',
+            clsFixed: 'jen-sticky-fixed',
+            clsBelow: 'jen-sticky-below',
             selTarget: '',
             widthElement: false,
             showOnUp: false,
@@ -6365,7 +6365,7 @@ var Sticky = function (UIkit) {
 
         connected: function connected() {
 
-            this.placeholder = $$1('<div class="uk-sticky-placeholder"></div>');
+            this.placeholder = $$1('<div class="jen-sticky-placeholder"></div>');
             this.widthElement = this.$props.widthElement || this.placeholder;
 
             if (!this.isActive) {
@@ -6631,9 +6631,9 @@ var Sticky = function (UIkit) {
 
 var svgs = {};
 
-var Svg = function (UIkit) {
+var Svg = function (jen) {
 
-    UIkit.component('svg', {
+    jen.component('svg', {
 
         attrs: true,
 
@@ -6656,7 +6656,7 @@ var Svg = function (UIkit) {
         },
 
         init: function init() {
-            this.class += ' uk-svg';
+            this.class += ' jen-svg';
         },
 
         connected: function connected() {
@@ -6827,9 +6827,9 @@ var Svg = function (UIkit) {
 
 };
 
-var Switcher = function (UIkit) {
+var Switcher = function (jen) {
 
-    UIkit.component('switcher', {
+    jen.component('switcher', {
 
         mixins: [Togglable],
 
@@ -6843,13 +6843,13 @@ var Switcher = function (UIkit) {
         },
 
         defaults: {
-            connect: '~.uk-switcher',
+            connect: '~.jen-switcher',
             toggle: '> *',
             active: 0,
             swiping: true,
-            cls: 'uk-active',
-            clsContainer: 'uk-switcher',
-            attrItem: 'uk-switcher-item',
+            cls: 'jen-active',
+            clsContainer: 'jen-switcher',
+            attrItem: 'jen-switcher-item',
             queued: true
         },
 
@@ -6876,7 +6876,7 @@ var Switcher = function (UIkit) {
                 name: 'click',
 
                 delegate: function delegate() {
-                    return ((this.toggle) + ":not(.uk-disabled)");
+                    return ((this.toggle) + ":not(.jen-disabled)");
                 },
 
                 handler: function handler(e) {
@@ -6951,7 +6951,7 @@ var Switcher = function (UIkit) {
                     toggle;
 
                 for (var i = 0; i < length; i++, next = (next + dir + length) % length) {
-                    if (!matches(this$1.toggles[next], '.uk-disabled, [disabled]')) {
+                    if (!matches(this$1.toggles[next], '.jen-disabled, [disabled]')) {
                         toggle = this$1.toggles[next];
                         break;
                     }
@@ -6982,9 +6982,9 @@ var Switcher = function (UIkit) {
 
 };
 
-var Tab = function (UIkit) {
+var Tab = function (jen) {
 
-    UIkit.component('tab', UIkit.components.switcher.extend({
+    jen.component('tab', jen.components.switcher.extend({
 
         mixins: [Class],
 
@@ -6996,19 +6996,19 @@ var Tab = function (UIkit) {
 
         defaults: {
             media: 960,
-            attrItem: 'uk-tab-item'
+            attrItem: 'jen-tab-item'
         },
 
         init: function init() {
 
-            var cls = hasClass(this.$el, 'uk-tab-left')
-                ? 'uk-tab-left'
-                : hasClass(this.$el, 'uk-tab-right')
-                    ? 'uk-tab-right'
+            var cls = hasClass(this.$el, 'jen-tab-left')
+                ? 'jen-tab-left'
+                : hasClass(this.$el, 'jen-tab-right')
+                    ? 'jen-tab-right'
                     : false;
 
             if (cls) {
-                UIkit.toggle(this.$el, {cls: cls, mode: 'media', media: this.media});
+                jen.toggle(this.$el, {cls: cls, mode: 'media', media: this.media});
             }
         }
 
@@ -7016,11 +7016,11 @@ var Tab = function (UIkit) {
 
 };
 
-var Toggle = function (UIkit) {
+var Toggle = function (jen) {
 
-    UIkit.component('toggle', {
+    jen.component('toggle', {
 
-        mixins: [UIkit.mixin.togglable],
+        mixins: [jen.mixin.togglable],
 
         args: 'target',
 
@@ -7134,9 +7134,9 @@ var Toggle = function (UIkit) {
 
 };
 
-var Video = function (UIkit) {
+var Video = function (jen) {
 
-    UIkit.component('video', {
+    jen.component('video', {
 
         props: {
             automute: Boolean,
@@ -7179,21 +7179,21 @@ var Video = function (UIkit) {
 
 };
 
-var core = function (UIkit) {
+var core = function (jen) {
 
     var scroll = 0, started = 0;
 
-    on(win, 'load resize', UIkit.update);
+    on(win, 'load resize', jen.update);
     on(win, 'scroll', function (e) {
         e.dir = scroll <= win.pageYOffset ? 'down' : 'up';
         e.scrollY = scroll = win.pageYOffset;
-        UIkit.update(e);
+        jen.update(e);
     });
 
     animationstart && on(doc, animationstart, function (ref) {
         var target = ref.target;
 
-        if ((css(target, 'animationName') || '').match(/^uk-.*(left|right)/)) {
+        if ((css(target, 'animationName') || '').match(/^jen-.*(left|right)/)) {
             started++;
             doc.body.style.overflowX = 'hidden';
             setTimeout(function () {
@@ -7205,57 +7205,57 @@ var core = function (UIkit) {
     }, true);
 
     // core components
-    UIkit.use(Toggle);
-    UIkit.use(Accordion);
-    UIkit.use(Alert);
-    UIkit.use(Video);
-    UIkit.use(Cover);
-    UIkit.use(Drop);
-    UIkit.use(Dropdown);
-    UIkit.use(FormCustom);
-    UIkit.use(HeightMatch);
-    UIkit.use(HeightViewport);
-    UIkit.use(Hover);
-    UIkit.use(Margin);
-    UIkit.use(Gif);
-    UIkit.use(Grid);
-    UIkit.use(Leader);
-    UIkit.use(Modal$1);
-    UIkit.use(Nav);
-    UIkit.use(Navbar);
-    UIkit.use(Offcanvas);
-    UIkit.use(Responsive);
-    UIkit.use(Scroll);
-    UIkit.use(Scrollspy);
-    UIkit.use(ScrollspyNav);
-    UIkit.use(Sticky);
-    UIkit.use(Svg);
-    UIkit.use(Icon);
-    UIkit.use(Switcher);
-    UIkit.use(Tab);
+    jen.use(Toggle);
+    jen.use(Accordion);
+    jen.use(Alert);
+    jen.use(Video);
+    jen.use(Cover);
+    jen.use(Drop);
+    jen.use(Dropdown);
+    jen.use(FormCustom);
+    jen.use(HeightMatch);
+    jen.use(HeightViewport);
+    jen.use(Hover);
+    jen.use(Margin);
+    jen.use(Gif);
+    jen.use(Grid);
+    jen.use(Leader);
+    jen.use(Modal$1);
+    jen.use(Nav);
+    jen.use(Navbar);
+    jen.use(Offcanvas);
+    jen.use(Responsive);
+    jen.use(Scroll);
+    jen.use(Scrollspy);
+    jen.use(ScrollspyNav);
+    jen.use(Sticky);
+    jen.use(Svg);
+    jen.use(Icon);
+    jen.use(Switcher);
+    jen.use(Tab);
 
 };
 
-UIkit$2.version = '3.0.0-beta.35';
+jen$2.version = '3.0.0-beta.35';
 
-mixin(UIkit$2);
-core(UIkit$2);
+mixin(jen$2);
+core(jen$2);
 
-function plugin(UIkit) {
+function plugin(jen) {
 
     if (plugin.installed) {
         return;
     }
 
-    var ref = UIkit.util;
+    var ref = jen.util;
     var $ = ref.$;
     var doc = ref.doc;
     var empty = ref.empty;
     var html = ref.html;
 
-    UIkit.component('countdown', {
+    jen.component('countdown', {
 
-        mixins: [UIkit.mixin.class],
+        mixins: [jen.mixin.class],
 
         attrs: true,
 
@@ -7266,7 +7266,7 @@ function plugin(UIkit) {
 
         defaults: {
             date: '',
-            clsWrapper: '.uk-countdown-%unit%'
+            clsWrapper: '.jen-countdown-%unit%'
         },
 
         computed: {
@@ -7425,17 +7425,17 @@ function plugin(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin);
 }
 
-function plugin$1(UIkit) {
+function plugin$1(jen) {
 
     if (plugin$1.installed) {
         return;
     }
 
-    var ref = UIkit.util;
+    var ref = jen.util;
     var $$ = ref.$$;
     var addClass = ref.addClass;
     var css = ref.css;
@@ -7443,7 +7443,7 @@ function plugin$1(UIkit) {
     var toFloat = ref.toFloat;
     var toNodes = ref.toNodes;
 
-    UIkit.component('grid-parallax', UIkit.components.grid.extend({
+    jen.component('grid-parallax', jen.components.grid.extend({
 
         props: {
             target: String,
@@ -7472,7 +7472,7 @@ function plugin$1(UIkit) {
         },
 
         init: function init() {
-            addClass(this.$el, 'uk-grid');
+            addClass(this.$el, 'jen-grid');
         },
 
         disconnected: function disconnected() {
@@ -7534,7 +7534,7 @@ function plugin$1(UIkit) {
 
     }));
 
-    UIkit.component('grid-parallax').options.update.unshift({
+    jen.component('grid-parallax').options.update.unshift({
 
         read: function read() {
             this.reset();
@@ -7555,13 +7555,13 @@ function plugin$1(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$1);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$1);
 }
 
-var Animations = function (UIkit) {
+var Animations = function (jen) {
 
-    var ref = UIkit.util;
+    var ref = jen.util;
     var css = ref.css;
 
     var Animations = {
@@ -7608,13 +7608,13 @@ function scale3d(value) {
     return ("scale3d(" + value + ", " + value + ", 1)");
 }
 
-function plugin$3(UIkit) {
+function plugin$3(jen) {
 
     if (plugin$3.installed) {
         return;
     }
 
-    var ref = UIkit.util;
+    var ref = jen.util;
     var $$ = ref.$$;
     var $ = ref.$;
     var addClass = ref.addClass;
@@ -7647,7 +7647,7 @@ function plugin$3(UIkit) {
 
     var abs = Math.abs;
 
-    UIkit.mixin.slideshow = {
+    jen.mixin.slideshow = {
 
         attrs: true,
 
@@ -7671,10 +7671,10 @@ function plugin$3(UIkit) {
             stack: [],
             threshold: 10,
             percent: 0,
-            clsActive: 'uk-active',
-            clsActivated: 'uk-transition-active',
+            clsActive: 'jen-active',
+            clsActivated: 'jen-transition-active',
             initialAnimation: false,
-            Animations: Animations(UIkit)
+            Animations: Animations(jen)
         },
 
         computed: {
@@ -7915,7 +7915,7 @@ function plugin$3(UIkit) {
                 handler: function handler(ref) {
                     var target = ref.target;
 
-                    UIkit.update(null, target);
+                    jen.update(null, target);
                 }
 
             },
@@ -8014,8 +8014,8 @@ function plugin$3(UIkit) {
 
                 this.percent = percent;
 
-                UIkit.update(null, current);
-                UIkit.update(null, next);
+                jen.update(null, current);
+                jen.update(null, next);
             },
 
             end: function end() {
@@ -8073,7 +8073,7 @@ function plugin$3(UIkit) {
 
                 var prevIndex = this.index,
                     nextIndex = this.getIndex(index),
-                    prev = hasClass(this.slides, 'uk-active') && this.slides[prevIndex],
+                    prev = hasClass(this.slides, 'jen-active') && this.slides[prevIndex],
                     next = this.slides[nextIndex];
 
                 if (prev === next) {
@@ -8285,10 +8285,10 @@ function plugin$3(UIkit) {
 
 }
 
-var Animations$1 = function (UIkit) {
+var Animations$1 = function (jen) {
 
-    var mixin = UIkit.mixin;
-    var ref = UIkit.util;
+    var mixin = jen.mixin;
+    var ref = jen.util;
     var assign = ref.assign;
     var css = ref.css;
 
@@ -8342,16 +8342,16 @@ var Animations$1 = function (UIkit) {
 
 };
 
-function plugin$2(UIkit) {
+function plugin$2(jen) {
 
     if (plugin$2.installed) {
         return;
     }
 
-    UIkit.use(plugin$3);
+    jen.use(plugin$3);
 
-    var mixin = UIkit.mixin;
-    var util = UIkit.util;
+    var mixin = jen.mixin;
+    var util = jen.util;
     var $ = util.$;
     var $$ = util.$$;
     var addClass = util.addClass;
@@ -8373,7 +8373,7 @@ function plugin$2(UIkit) {
     var Transition = util.Transition;
     var trigger = util.trigger;
 
-    UIkit.component('lightbox', {
+    jen.component('lightbox', {
 
         attrs: true,
 
@@ -8425,7 +8425,7 @@ function plugin$2(UIkit) {
                 name: 'click',
 
                 delegate: function delegate() {
-                    return ((this.toggle) + ":not(.uk-disabled)");
+                    return ((this.toggle) + ":not(.jen-disabled)");
                 },
 
                 handler: function handler(e) {
@@ -8457,7 +8457,7 @@ function plugin$2(UIkit) {
         methods: {
 
             _init: function _init() {
-                return this.panel = this.panel || UIkit.lightboxPanel(assign({}, this.$props, {
+                return this.panel = this.panel || jen.lightboxPanel(assign({}, this.$props, {
                     items: this.toggles.reduce(function (items, el) {
                         items.push(['href', 'caption', 'type', 'poster'].reduce(function (obj, attr) {
                             obj[attr === 'href' ? 'source' : attr] = data(el, attr);
@@ -8488,7 +8488,7 @@ function plugin$2(UIkit) {
 
     });
 
-    UIkit.component('lightbox-panel', {
+    jen.component('lightbox-panel', {
 
         mixins: [mixin.container, mixin.togglable, mixin.slideshow],
 
@@ -8499,15 +8499,15 @@ function plugin$2(UIkit) {
             videoAutoplay: false,
             delayControls: 3000,
             items: [],
-            cls: 'uk-open',
-            clsPage: 'uk-lightbox-page',
-            selList: '.uk-lightbox-items',
-            attrItem: 'uk-lightbox-item',
+            cls: 'jen-open',
+            clsPage: 'jen-lightbox-page',
+            selList: '.jen-lightbox-items',
+            attrItem: 'jen-lightbox-item',
             initialAnimation: 'scale',
             pauseOnHover: false,
             velocity: 2,
-            Animations: Animations$1(UIkit),
-            template: "<div class=\"uk-lightbox uk-overflow-hidden\"> <ul class=\"uk-lightbox-items\"></ul> <div class=\"uk-lightbox-toolbar uk-position-top uk-text-right uk-transition-slide-top uk-transition-opaque\"> <button class=\"uk-lightbox-toolbar-icon uk-close-large\" type=\"button\" uk-close uk-toggle=\"!.uk-lightbox\"></button> </div> <a class=\"uk-lightbox-button uk-position-center-left uk-position-medium uk-transition-fade\" href=\"#\" uk-slidenav-previous uk-lightbox-item=\"previous\"></a> <a class=\"uk-lightbox-button uk-position-center-right uk-position-medium uk-transition-fade\" href=\"#\" uk-slidenav-next uk-lightbox-item=\"next\"></a> <div class=\"uk-lightbox-toolbar uk-lightbox-caption uk-position-bottom uk-text-center uk-transition-slide-bottom uk-transition-opaque\"></div> </div>"
+            Animations: Animations$1(jen),
+            template: "<div class=\"jen-lightbox jen-overflow-hidden\"> <ul class=\"jen-lightbox-items\"></ul> <div class=\"jen-lightbox-toolbar jen-position-top jen-text-right jen-transition-slide-top jen-transition-opaque\"> <button class=\"jen-lightbox-toolbar-icon jen-close-large\" type=\"button\" jen-close jen-toggle=\"!.jen-lightbox\"></button> </div> <a class=\"jen-lightbox-button jen-position-center-left jen-position-medium jen-transition-fade\" href=\"#\" jen-slidenav-previous jen-lightbox-item=\"previous\"></a> <a class=\"jen-lightbox-button jen-position-center-right jen-position-medium jen-transition-fade\" href=\"#\" jen-slidenav-next jen-lightbox-item=\"next\"></a> <div class=\"jen-lightbox-toolbar jen-lightbox-caption jen-position-bottom jen-text-center jen-transition-slide-bottom jen-transition-opaque\"></div> </div>"
         },
 
         created: function created() {
@@ -8516,7 +8516,7 @@ function plugin$2(UIkit) {
 
             this.$mount(append(this.container, this.template));
 
-            this.caption = $('.uk-lightbox-caption', this.$el);
+            this.caption = $('.jen-lightbox-caption', this.$el);
 
             this.items.forEach(function (el, i) { return append(this$1.list, "<li></li>"); });
 
@@ -8687,7 +8687,7 @@ function plugin$2(UIkit) {
                     var type = item.type;
                     var matches;
 
-                    this.setItem(item, '<span uk-spinner></span>');
+                    this.setItem(item, '<span jen-spinner></span>');
 
                     if (!source) {
                         return;
@@ -8704,7 +8704,7 @@ function plugin$2(UIkit) {
                     // Video
                     } else if (type === 'video' || source.match(/\.(mp4|webm|ogv)$/i)) {
 
-                        var video = $(("<video controls playsinline" + (item.poster ? (" poster=\"" + (item.poster) + "\"") : '') + " uk-video=\"autoplay: " + (this.videoAutoplay) + "\"></video>"));
+                        var video = $(("<video controls playsinline" + (item.poster ? (" poster=\"" + (item.poster) + "\"") : '') + " jen-video=\"autoplay: " + (this.videoAutoplay) + "\"></video>"));
                         attr(video, 'src', source);
 
                         on(video, 'error', function () { return this$1.setError(item); });
@@ -8716,7 +8716,7 @@ function plugin$2(UIkit) {
                     // Iframe
                     } else if (type === 'iframe') {
 
-                        this.setItem(item, ("<iframe class=\"uk-lightbox-iframe\" src=\"" + source + "\" frameborder=\"0\" allowfullscreen></iframe>"));
+                        this.setItem(item, ("<iframe class=\"jen-lightbox-iframe\" src=\"" + source + "\" frameborder=\"0\" allowfullscreen></iframe>"));
 
                     // Youtube
                     } else if (matches = source.match(/\/\/.*?youtube\.[a-z]+\/watch\?v=([^&\s]+)/) || source.match(/youtu\.be\/(.*)/)) {
@@ -8817,11 +8817,11 @@ function plugin$2(UIkit) {
                 assign(item, {content: content});
                 var el = html(this.slides[this.items.indexOf(item)], content);
                 trigger(this.$el, 'itemloaded', [this, el]);
-                UIkit.update(null, el);
+                jen.update(null, el);
             },
 
             setError: function setError(item) {
-                this.setItem(item, '<span uk-icon="icon: bolt; ratio: 2"></span>');
+                this.setItem(item, '<span jen-icon="icon: bolt; ratio: 2"></span>');
             },
 
             showControls: function showControls() {
@@ -8831,12 +8831,12 @@ function plugin$2(UIkit) {
 
                 attr($$(("[" + (this.attrItem) + "],[data-" + (this.attrItem) + "]"), this.$el), 'hidden', this.items.length < 2 ? '' : null);
 
-                addClass(this.$el, 'uk-active uk-transition-active');
+                addClass(this.$el, 'jen-active jen-transition-active');
 
             },
 
             hideControls: function hideControls() {
-                removeClass(this.$el, 'uk-active uk-transition-active');
+                removeClass(this.$el, 'jen-active jen-transition-active');
             }
 
         }
@@ -8844,22 +8844,22 @@ function plugin$2(UIkit) {
     });
 
     function getIframe(src, width, height, autoplay) {
-        return ("<iframe src=\"" + src + "\" width=\"" + width + "\" height=\"" + height + "\" style=\"max-width: 100%; box-sizing: border-box;\" frameborder=\"0\" allowfullscreen uk-video=\"autoplay: " + autoplay + "\" uk-responsive></iframe>");
+        return ("<iframe src=\"" + src + "\" width=\"" + width + "\" height=\"" + height + "\" style=\"max-width: 100%; box-sizing: border-box;\" frameborder=\"0\" allowfullscreen jen-video=\"autoplay: " + autoplay + "\" jen-responsive></iframe>");
     }
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$2);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$2);
 }
 
-function plugin$4(UIkit) {
+function plugin$4(jen) {
 
     if (plugin$4.installed) {
         return;
     }
 
-    var ref = UIkit.util;
+    var ref = jen.util;
     var append = ref.append;
     var closest = ref.closest;
     var css = ref.css;
@@ -8872,7 +8872,7 @@ function plugin$4(UIkit) {
     var trigger = ref.trigger;
     var containers = {};
 
-    UIkit.component('notification', {
+    jen.component('notification', {
 
         functional: true,
 
@@ -8884,20 +8884,20 @@ function plugin$4(UIkit) {
             timeout: 5000,
             group: null,
             pos: 'top-center',
-            clsClose: 'uk-notification-close',
-            clsMsg: 'uk-notification-message'
+            clsClose: 'jen-notification-close',
+            clsMsg: 'jen-notification-message'
         },
 
         created: function created() {
 
             if (!containers[this.pos]) {
-                containers[this.pos] = append(UIkit.container, ("<div class=\"uk-notification uk-notification-" + (this.pos) + "\"></div>"));
+                containers[this.pos] = append(jen.container, ("<div class=\"jen-notification jen-notification-" + (this.pos) + "\"></div>"));
             }
 
             var container = css(containers[this.pos], 'display', 'block');
 
             this.$mount(append(container,
-                ("<div class=\"" + (this.clsMsg) + (this.status ? (" " + (this.clsMsg) + "-" + (this.status)) : '') + "\"> <a href=\"#\" class=\"" + (this.clsClose) + "\" data-uk-close></a> <div>" + (this.message) + "</div> </div>")
+                ("<div class=\"" + (this.clsMsg) + (this.status ? (" " + (this.clsMsg) + "-" + (this.status)) : '') + "\"> <a href=\"#\" class=\"" + (this.clsClose) + "\" data-jen-close></a> <div>" + (this.message) + "</div> </div>")
             ));
 
         },
@@ -8974,8 +8974,8 @@ function plugin$4(UIkit) {
     });
     var obj;
 
-    UIkit.notification.closeAll = function (group, immediate) {
-        each(UIkit.instances, function (component) {
+    jen.notification.closeAll = function (group, immediate) {
+        each(jen.instances, function (component) {
             if (component.$options.name === 'notification' && (!group || group === component.group)) {
                 component.close(immediate);
             }
@@ -8984,18 +8984,18 @@ function plugin$4(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$4);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$4);
 }
 
-function plugin$5(UIkit) {
+function plugin$5(jen) {
 
     if (plugin$5.installed) {
         return;
     }
 
-    var mixin = UIkit.mixin;
-    var util = UIkit.util;
+    var mixin = jen.mixin;
+    var util = jen.util;
     var clamp = util.clamp;
     var css = util.css;
     var Dimensions = util.Dimensions;
@@ -9318,7 +9318,7 @@ function plugin$5(UIkit) {
 
     };
 
-    UIkit.component('parallax', {
+    jen.component('parallax', {
 
         mixins: [mixin.parallax],
 
@@ -9416,14 +9416,14 @@ function plugin$5(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$5);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$5);
 }
 
-var Animations$2 = function (UIkit) {
+var Animations$2 = function (jen) {
 
-    var mixin = UIkit.mixin;
-    var ref = UIkit.util;
+    var mixin = jen.mixin;
+    var ref = jen.util;
     var assign = ref.assign;
     var css = ref.css;
 
@@ -9543,17 +9543,17 @@ var Animations$2 = function (UIkit) {
 
 };
 
-function plugin$6(UIkit) {
+function plugin$6(jen) {
 
     if (plugin$6.installed) {
         return;
     }
 
-    UIkit.use(plugin$5);
-    UIkit.use(plugin$3);
+    jen.use(plugin$5);
+    jen.use(plugin$3);
 
-    var mixin = UIkit.mixin;
-    var ref = UIkit.util;
+    var mixin = jen.mixin;
+    var ref = jen.util;
     var closest = ref.closest;
     var css = ref.css;
     var fastdom = ref.fastdom;
@@ -9562,7 +9562,7 @@ function plugin$6(UIkit) {
     var noop = ref.noop;
     var Transition = ref.Transition;
 
-    UIkit.component('slideshow', {
+    jen.component('slideshow', {
 
         mixins: [mixin.class, mixin.slideshow],
 
@@ -9576,9 +9576,9 @@ function plugin$6(UIkit) {
             ratio: '16:9',
             minHeight: false,
             maxHeight: false,
-            selList: '.uk-slideshow-items',
-            attrItem: 'uk-slideshow-item',
-            Animations: Animations$2(UIkit)
+            selList: '.jen-slideshow-items',
+            attrItem: 'jen-slideshow-item',
+            Animations: Animations$2(jen)
         },
 
         ready: function ready() {
@@ -9616,14 +9616,14 @@ function plugin$6(UIkit) {
 
     });
 
-    UIkit.component('slideshow-parallax', {
+    jen.component('slideshow-parallax', {
 
         mixins: [mixin.parallax],
 
         computed: {
 
             item: function item() {
-                var slideshow = UIkit.getComponent(closest(this.$el, '.uk-slideshow'), 'slideshow');
+                var slideshow = jen.getComponent(closest(this.$el, '.jen-slideshow'), 'slideshow');
                 return slideshow && closest(this.$el, ((slideshow.selList) + " > *"));
             }
 
@@ -9736,18 +9736,18 @@ function plugin$6(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$6);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$6);
 }
 
-function plugin$7(UIkit) {
+function plugin$7(jen) {
 
     if (plugin$7.installed) {
         return;
     }
 
-    var mixin = UIkit.mixin;
-    var util = UIkit.util;
+    var mixin = jen.mixin;
+    var util = jen.util;
     var addClass = util.addClass;
     var after = util.after;
     var assign = util.assign;
@@ -9783,7 +9783,7 @@ function plugin$7(UIkit) {
     var win = util.win;
     var within = util.within;
 
-    UIkit.component('sortable', {
+    jen.component('sortable', {
 
         mixins: [mixin.class],
 
@@ -9806,13 +9806,13 @@ function plugin$7(UIkit) {
             group: false,
             animation: 150,
             threshold: 5,
-            clsItem: 'uk-sortable-item',
-            clsPlaceholder: 'uk-sortable-placeholder',
-            clsDrag: 'uk-sortable-drag',
-            clsDragState: 'uk-drag',
-            clsBase: 'uk-sortable',
-            clsNoDrag: 'uk-sortable-nodrag',
-            clsEmpty: 'uk-sortable-empty',
+            clsItem: 'jen-sortable-item',
+            clsPlaceholder: 'jen-sortable-placeholder',
+            clsDrag: 'jen-sortable-drag',
+            clsDragState: 'jen-drag',
+            clsBase: 'jen-sortable',
+            clsNoDrag: 'jen-sortable-nodrag',
+            clsEmpty: 'jen-sortable-empty',
             clsCustom: '',
             handle: false
         },
@@ -9902,14 +9902,14 @@ function plugin$7(UIkit) {
 
             start: function start(e) {
 
-                this.drag = append(UIkit.container, this.placeholder.outerHTML.replace(/^<li/i, '<div').replace(/li>$/i, 'div>'));
+                this.drag = append(jen.container, this.placeholder.outerHTML.replace(/^<li/i, '<div').replace(/li>$/i, 'div>'));
 
                 css(this.drag, assign({
                     boxSizing: 'border-box',
                     width: this.placeholder.offsetWidth,
                     height: this.placeholder.offsetHeight
                 }, css(this.placeholder, ['paddingLeft', 'paddingRight', 'paddingTop', 'paddingBottom'])));
-                attr(this.drag, 'uk-no-boot', '');
+                attr(this.drag, 'jen-no-boot', '');
                 addClass(this.drag, ((this.clsDrag) + " " + (this.clsCustom)));
 
                 height(this.drag.firstElementChild, height(this.placeholder.firstElementChild));
@@ -10102,7 +10102,7 @@ function plugin$7(UIkit) {
     var obj;
 
     function getSortable(element) {
-        return element && (UIkit.getComponent(element, 'sortable') || getSortable(element.parentNode));
+        return element && (jen.getComponent(element, 'sortable') || getSortable(element.parentNode));
     }
 
     function isPredecessor(element, target) {
@@ -10111,18 +10111,18 @@ function plugin$7(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$7);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$7);
 }
 
-function plugin$8(UIkit) {
+function plugin$8(jen) {
 
     if (plugin$8.installed) {
         return;
     }
 
-    var util = UIkit.util;
-    var mixin = UIkit.mixin;
+    var util = jen.util;
+    var mixin = jen.mixin;
     var append = util.append;
     var attr = util.attr;
     var doc = util.doc;
@@ -10141,7 +10141,7 @@ function plugin$8(UIkit) {
 
     var actives = [];
 
-    UIkit.component('tooltip', {
+    jen.component('tooltip', {
 
         attrs: true,
 
@@ -10156,10 +10156,10 @@ function plugin$8(UIkit) {
             pos: 'top',
             title: '',
             delay: 0,
-            animation: ['uk-animation-scale-up'],
+            animation: ['jen-animation-scale-up'],
             duration: 100,
-            cls: 'uk-active',
-            clsPos: 'uk-tooltip'
+            cls: 'jen-active',
+            clsPos: 'jen-tooltip'
         },
 
         connected: function connected() {
@@ -10253,17 +10253,17 @@ function plugin$8(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$8);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$8);
 }
 
-function plugin$9(UIkit) {
+function plugin$9(jen) {
 
     if (plugin$9.installed) {
         return;
     }
 
-    var ref = UIkit.util;
+    var ref = jen.util;
     var addClass = ref.addClass;
     var ajax = ref.ajax;
     var matches = ref.matches;
@@ -10272,7 +10272,7 @@ function plugin$9(UIkit) {
     var removeClass = ref.removeClass;
     var trigger = ref.trigger;
 
-    UIkit.component('upload', {
+    jen.component('upload', {
 
         props: {
             allow: String,
@@ -10290,7 +10290,7 @@ function plugin$9(UIkit) {
 
         defaults: {
             allow: false,
-            clsDragover: 'uk-dragover',
+            clsDragover: 'jen-dragover',
             concurrent: 1,
             mime: false,
             msgInvalidMime: 'Invalid File Type: %s',
@@ -10468,24 +10468,24 @@ function plugin$9(UIkit) {
 
 }
 
-if (!true && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin$9);
+if (!true && typeof window !== 'undefined' && window.jen) {
+    window.jen.use(plugin$9);
 }
 
-UIkit$2.use(plugin);
-UIkit$2.use(plugin$1);
-UIkit$2.use(plugin$2);
-UIkit$2.use(plugin$4);
-UIkit$2.use(plugin$5);
-UIkit$2.use(plugin$6);
-UIkit$2.use(plugin$7);
-UIkit$2.use(plugin$8);
-UIkit$2.use(plugin$9);
+jen$2.use(plugin);
+jen$2.use(plugin$1);
+jen$2.use(plugin$2);
+jen$2.use(plugin$4);
+jen$2.use(plugin$5);
+jen$2.use(plugin$6);
+jen$2.use(plugin$7);
+jen$2.use(plugin$8);
+jen$2.use(plugin$9);
 
 {
-    boot(UIkit$2);
+    boot(jen$2);
 }
 
-return UIkit$2;
+return jen$2;
 
 })));

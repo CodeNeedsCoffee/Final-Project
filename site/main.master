@@ -7,48 +7,48 @@
     <title>Louis Pharmacy</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/uikit.min.css" />
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/jen.min.css" />
+    <script src="js/jen.min.js"></script>
+    <script src="js/jen-icons.min.js"></script>
     <link rel="shortcut icon" href="./img/logo.ico">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
 
-    <div class="uk-position-top">
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="index.aspx">Loius Pharmacy</a></li>
+    <div class="jen-position-top">
+        <nav class="jen-navbar-container jen-navbar-transparent" jen-navbar>
+            <div class="jen-navbar-left">
+                <ul class="jen-navbar-nav">
+                    <li class="jen-active"><a href="index.aspx">Loius Pharmacy</a></li>
                     <li>
                         <a href="#">Client</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <div class="jen-navbar-dropdown">
+                            <ul class="jen-nav jen-navbar-dropdown-nav">
                                 <li><a href="/addClient.aspx">Add Client</a></li>
-                                <li class="uk-nav-divider"></li>
+                                <li class="jen-nav-divider"></li>
                                 <li><a href="/updateClient.aspx">Update Client</a></li>
                             </ul>
                         </div>
                     </li>
                     <li>
                         <a href="#">Doctor</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <div class="jen-navbar-dropdown">
+                            <ul class="jen-nav jen-navbar-dropdown-nav">
                                 <li><a href="/addDoctor.aspx">Add Doctor</a></li>
-                                <li class="uk-nav-divider"></li>
+                                <li class="jen-nav-divider"></li>
                                 <li><a href="/updateDoctor.aspx">Update Doctor</a></li>
                             </ul>
                         </div>
                     </li>
                     <li>
                         <a href="#">Prescription</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <div class="jen-navbar-dropdown">
+                            <ul class="jen-nav jen-navbar-dropdown-nav">
                                 <li><a href="/addPrescription.aspx">Add Prescription</a></li>
-                                <li class="uk-nav-divider"></li>
+                                <li class="jen-nav-divider"></li>
                                 <li><a href="/updatePrescription.aspx">Update Prescription</a></li>
-                                <li class="uk-nav-divider"></li>
+                                <li class="jen-nav-divider"></li>
                                 <li><a href="/deletePrescription.aspx">Delete Prescription</a></li>
                             </ul>
                         </div>
@@ -58,12 +58,12 @@
         </nav>
     </div>
 
-    <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -510" style="background-image: url('img/pills.jpg');">
-        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-            <h1 uk-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%;">Louis Pharmacy</h1>
+    <div class="jen-height-large jen-background-cover jen-light jen-flex" jen-parallax="bgy: -510" style="background-image: url('img/pills.jpg');">
+        <div class="jen-width-1-2@m jen-text-center jen-margin-auto jen-margin-auto-vertical">
+            <h1 jen-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%;">Louis Pharmacy</h1>
         </div>
     </div>
-        <div class="uk-card uk-card-hover uk-card-body">
+        <div class="jen-card jen-card-hover jen-card-body">
             <asp:ContentPlaceHolder ID="Body" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -81,8 +81,8 @@
         </div>
     </footer>
     <script>
-        //UIkit.navbar(element, options);
-        //UIkit.parallax(element, options);
+        //jen.navbar(element, options);
+        //jen.parallax(element, options);
     </script>
 </body>
 </html>
