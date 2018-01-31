@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursing full time employmen after graduating from TSCT.</p>
+                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursing full time employment after graduating from TSCT.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/nicholas-luongo-19b147149/" class="jen-button jen-button-text">Contact</a>
