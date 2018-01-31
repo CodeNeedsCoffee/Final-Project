@@ -19,12 +19,12 @@
                         </div>
                         <div class="jen-width-expand">
                             <h3 class="jen-card-title jen-margin-remove-bottom">Jesse Killinger</h3>
-                            <p class="jen-text-meta jen-margin-remove-top">CNSA Student at Thaddeus Stevens College of Technology</p>
+                            <p class="jen-text-meta jen-margin-remove-top">CNSA Student at Thaddeus Stevens College of Technology.</p>
                         </div>
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <p> He is the took charge of the "Code Behind" while working along side both Evan and Nick. Shortly He will be graduating from TSCT and looking for full time employment.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/jesse-killinger-a38902137/" class="jen-button jen-button-text">Contact</a>
