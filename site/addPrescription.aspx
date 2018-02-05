@@ -83,8 +83,8 @@
 
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
-                                <asp:TextBox ID="txtDateOrdered" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;"></asp:TextBox>
-                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtDateOrdered"/>
+                                <asp:TextBox ID="txtClientDOB" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtClientDOB"/>
                             </ContentTemplate>
 
                         </asp:UpdatePanel>
