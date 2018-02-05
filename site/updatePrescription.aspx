@@ -65,23 +65,26 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: tag"></span>
-                        <asp:TextBox ID="txtClientFname" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtClientFname" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 0);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
                     <label>Medicine Name</label>
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: bookmark"></span>
-                        <asp:TextBox ID="txtClientMidInt" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtMedName" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 1);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
                     <label>Date Ordered</label>
                     <br />
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: calendar"></span>
-                        <asp:TextBox ID="txtClientLname" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtOrdered" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 2);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                 </div>
             </div>
             <br />
@@ -92,37 +95,42 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: info"></span>
-                        <asp:TextBox ID="txtClientEmail" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtMedicine" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 3);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
                     <label>Dosage</label>
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: nut"></span>
-                        <asp:TextBox ID="txtClientPhone" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtDosage" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 4);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
                     <label>Intake Method</label>
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: sign-in"></span>
-                        <asp:TextBox ID="txtClientStreet" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtMethod" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 5);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
-                    <label>Dosage</label>
+                    <label>Dispense</label>
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: menu"></span>
-                        <asp:TextBox ID="txtClientCity" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtDispense" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 6);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
                     <label>Frequency</label>
                     <br />
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: thumbnails"></span>
-                        <asp:TextBox ID="txtClientState" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                        <asp:TextBox ID="txtFrequency" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 7);"></asp:TextBox>
                     </div>
+                    <div class="numbersofChart"></div>
                     <br />
                 </div>
             </div>
