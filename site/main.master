@@ -11,6 +11,19 @@
     <script src="js/jen.min.js"></script>
     <script src="js/jen-icons.min.js"></script>
     <link rel="shortcut icon" href="./img/logo.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            function countChar(val, num, ind) {
+                var len = val.value.length;
+                var ber = num;
+                if (len >= ber) {
+                    val.value = val.value.substring(0, ber - 1);
+                } else {
+                    var charts = $('.numbersofChart')[ind];
+                    charts.innerHTML = ber - len - 1;
+                }
+            };
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -22,7 +35,7 @@
                 <ul class="jen-navbar-nav">
                     <li class="jen-active"><a href="index.aspx">Loius Pharmacy</a></li>
                     <li>
-                        <a href="#">Client</a>
+                        <a href="/addClient.aspx">Client</a>
                         <div class="jen-navbar-dropdown">
                             <ul class="jen-nav jen-navbar-dropdown-nav">
                                 <li><a href="/addClient.aspx">Add Client</a></li>
@@ -32,7 +45,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Doctor</a>
+                        <a href="/addDoctor.aspx">Doctor</a>
                         <div class="jen-navbar-dropdown">
                             <ul class="jen-nav jen-navbar-dropdown-nav">
                                 <li><a href="/addDoctor.aspx">Add Doctor</a></li>
@@ -42,7 +55,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Prescription</a>
+                        <a href="/addPrescription.aspx">Prescription</a>
                         <div class="jen-navbar-dropdown">
                             <ul class="jen-nav jen-navbar-dropdown-nav">
                                 <li><a href="/addPrescription.aspx">Add Prescription</a></li>
@@ -50,6 +63,14 @@
                                 <li><a href="/updatePrescription.aspx">Update Prescription</a></li>
                                 <li class="jen-nav-divider"></li>
                                 <li><a href="/deletePrescription.aspx">Delete Prescription</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/aboutus.aspx">About US</a>
+                        <div class="jen-navbar-dropdown">
+                            <ul class="jen-nav jen-navbar-dropdown-nav">
+                                <li><a href="/aboutus.aspx">About Us</a></li>
                             </ul>
                         </div>
                     </li>
@@ -63,10 +84,10 @@
             <h1 jen-parallax="opacity: 0,1; y: 100,0; scale: 2,1; viewport: 0.5;" style="color: #27513f; margin-top: 30%;">Louis Pharmacy</h1>
         </div>
     </div>
-        <div class="jen-card jen-card-hover jen-card-body">
-            <asp:ContentPlaceHolder ID="Body" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+    <div class="jen-card jen-card-hover jen-card-body">
+        <asp:ContentPlaceHolder ID="Body" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
     <footer>
         <div>
             <div>
@@ -74,7 +95,7 @@
                     <h5>Louis Pharmacy</h5>
                     <p>Copyright | Jesse Killinger, Evan Tempelin, Nick Luongo | Team JEN | 2018.</p>
                     <p>
-                        <asp:HyperLink ID="HplAboutUs" runat="server" navigateurl="aboutus.aspx">About Us</asp:HyperLink>
+                        <asp:HyperLink ID="HplAboutUs" runat="server" NavigateUrl="aboutus.aspx">About Us</asp:HyperLink>
                     </p>
                 </div>
             </div>
