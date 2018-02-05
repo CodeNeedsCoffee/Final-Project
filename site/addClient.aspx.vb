@@ -4,6 +4,7 @@ Partial Class addClient
 
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob As String
+        Dim aclienttier As New ClientDataTier
         ClientID = txtClientID.Text.Trim
         fname = txtClientFname.Text.Trim
         minit = txtClientMidInt.Text.Trim
@@ -16,5 +17,6 @@ Partial Class addClient
         zip = txtClientZip.Text.Trim
         gender = txtClientGender.Text.Trim
         dob = txtClientDOB.Text.Trim
+        aclienttier.AddClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob)
     End Sub
 End Class

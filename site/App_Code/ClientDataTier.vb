@@ -96,16 +96,16 @@ Public Class ClientDataTier
                 .CommandText = "AddClient"
                 .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = ClientID
                 .Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname
-                .Parameters.Add("@lname", SqlDbType.VarChar, 6).Value = lname
-                .Parameters.Add("@initial", SqlDbType.VarChar, 6).Value = minit
-                .Parameters.Add("@email1", SqlDbType.VarChar, 6).Value = email
-                .Parameters.Add("@phone1", SqlDbType.VarChar, 6).Value = phone
-                .Parameters.Add("@streetadd", SqlDbType.VarChar, 6).Value = street
-                .Parameters.Add("@city", SqlDbType.VarChar, 6).Value = city
-                .Parameters.Add("@stateabr", SqlDbType.VarChar, 6).Value = state
-                .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = zip
-                .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = gender
-                .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = dob
+                .Parameters.Add("@lname", SqlDbType.VarChar, 30).Value = lname
+                .Parameters.Add("@initial", SqlDbType.VarChar, 1).Value = minit
+                .Parameters.Add("@email1", SqlDbType.VarChar, 100).Value = email
+                .Parameters.Add("@phone1", SqlDbType.VarChar, 15).Value = phone
+                .Parameters.Add("@streetadd", SqlDbType.VarChar, 40).Value = street
+                .Parameters.Add("@city", SqlDbType.VarChar, 60).Value = city
+                .Parameters.Add("@stateabr", SqlDbType.VarChar, 2).Value = state
+                .Parameters.Add("@zip", SqlDbType.VarChar, 5).Value = zip
+                .Parameters.Add("@gender", SqlDbType.VarChar, 1).Value = gender
+                .Parameters.Add("@dob", SqlDbType.Date).Value = dob
 
                 .ExecuteNonQuery()
             End With
