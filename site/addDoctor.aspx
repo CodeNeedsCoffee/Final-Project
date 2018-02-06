@@ -150,5 +150,38 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
         </div>
     </form>
+
+    <script>
+  $( function() {
+    function log( message ) {
+      $( "<div/>" ).text( message ).prependTo( "#log" );
+      $( "#log" ).attr( "scrollTop", 0 );
+    }
+ 
+    $.ajax({
+      url: "london.xml",
+      dataType: "xml",
+      success: function( xmlResponse ) {
+        var data = $( "geoname", xmlResponse ).map(function() {
+          return {
+            value: $( "name", this ).text() + ", " +
+              ( $.trim( $( "countryName", this ).text() ) || "(unknown country)" ),
+            id: $( "geonameId", this ).text()
+          };
+        }).get();
+        $( "#birds" ).autocomplete({
+          source: data,
+          minLength: 0,
+          select: function( event, ui ) {
+            log( ui.item ?
+              "Selected: " + ui.item.value + ", geonameId: " + ui.item.id :
+              "Nothing selected, input was " + this.value );
+          }
+        });
+      }
+    });
+  } );
+  </script>
+
 </asp:Content>
 

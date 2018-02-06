@@ -8,6 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/jen.min.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/jen.min.js"></script>
     <script src="js/jen-icons.min.js"></script>
     <link rel="shortcut icon" href="./img/logo.ico">
@@ -28,7 +30,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
- 
+
     <div class="jen-position-top">
         <nav class="jen-navbar-container jen-navbar-transparent" jen-navbar>
             <div class="jen-navbar-left">
@@ -82,7 +84,7 @@
         </nav>
     </div>
 
-       
+
 
 
     <div class="jen-height-large jen-background-cover jen-light jen-flex" jen-parallax="bgy: -510" style="background-image: url('img/pills.jpg');">
