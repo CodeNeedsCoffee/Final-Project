@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Jesse is the took charge of the "Code Behind" while working along side both Evan and Nick. Shortly He will be graduating from TSCT and looking for full time employment.</p>
+                    <p>Jesse took charge of the "Code Behind" while working alongside both Evan and Nick. Shortly he will be graduating from TSCT and looking for full time employment.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/jesse-killinger-a38902137/" class="jen-button jen-button-text">Contact</a>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Evan was focused on the styling of the page. He worked on not only the creation by the visual appeal of the website while colaboratin with both Jesse and Nick. Shortly He will be graduating from TSCT and looking to come back for Computer Software Engineering.</p>
+                    <p>Evan was focused on the styling of the page. He worked on not only the creation but the visual appeal of the website while collaboratingwith both Jesse and Nick. Shortly hHe will be graduating from TSCT and looking to return for Computer Software Engineering.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/evan-templin-ba862384/" class="jen-button jen-button-text">Contact</a>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursing full time employment after graduating from TSCT.</p>
+                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursuing full time employment after graduating from TSCT. You may remember him from his famous role as &quot;Beans&quot; in Disney&#39;s Even Stevens.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/nicholas-luongo-19b147149/" class="jen-button jen-button-text">Contact</a>
