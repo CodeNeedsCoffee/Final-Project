@@ -47,7 +47,7 @@ Public Class ClientDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 150
-                .CommandText = “GetClientID”
+                .CommandText = “GetclientID”
                 'Define input parameter
                 .Parameters.Add(“@CliID”, SqlDbType.VarChar, 6).Value = CliID
                 ''execute command

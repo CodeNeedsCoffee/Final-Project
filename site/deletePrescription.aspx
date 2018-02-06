@@ -29,7 +29,7 @@
                     <div>
                         <label style="vertical-align: text-top;">Client ID</label>
                         <div jen-form-custom="target: > * > span:first-child">
-                            <asp:DropDownList ID="ddlUpdateClientID" runat="server">
+                            <asp:DropDownList ID="ddlClientID" runat="server" Enabled="False">
                                 <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
                                 <asp:ListItem>01</asp:ListItem>
                                 <asp:ListItem>02</asp:ListItem>
@@ -43,7 +43,7 @@
                         </div>
                         <label style="vertical-align: text-top;">&nbsp Doctor ID</label>
                         <div jen-form-custom="target: > * > span:first-child">
-                            <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:DropDownList ID="ddlDoctorID" runat="server" Enabled="False">
                                 <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
                                 <asp:ListItem>01</asp:ListItem>
                                 <asp:ListItem>02</asp:ListItem>
@@ -62,14 +62,14 @@
                         <br />
                         <div class="jen-inline">
                             <span class="jen-form-icon" jen-icon="icon: tag"></span>
-                            <asp:TextBox ID="txtClientFname" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientFname" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                         <label>Medicine Name</label>
                         <br />
                         <div class="jen-inline">
                             <span class="jen-form-icon" jen-icon="icon: bookmark"></span>
-                            <asp:TextBox ID="txtClientMidInt" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientMidInt" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                         <label>Date Ordered</label>
@@ -77,7 +77,7 @@
                         <div class="jen-inline">
 
                             <span class="jen-form-icon" jen-icon="icon: calendar"></span>
-                            <asp:TextBox ID="txtClientLname" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientLname" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -89,28 +89,28 @@
                         <br />
                         <div class="jen-inline">
                             <span class="jen-form-icon" jen-icon="icon: info"></span>
-                            <asp:TextBox ID="txtClientEmail" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientEmail" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                         <label>Dosage</label>
                         <br />
                         <div class="jen-inline">
                             <span class="jen-form-icon" jen-icon="icon: nut"></span>
-                            <asp:TextBox ID="txtClientPhone" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientPhone" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                         <label>Intake Method</label>
                         <br />
                         <div class="jen-inline">
                             <span class="jen-form-icon" jen-icon="icon: sign-in"></span>
-                            <asp:TextBox ID="txtClientStreet" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientStreet" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                         <label>Dosage</label>
                         <br />
                         <div class="jen-inline">
                             <span class="jen-form-icon" jen-icon="icon: menu"></span>
-                            <asp:TextBox ID="txtClientCity" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientCity" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                         <label>Frequency</label>
@@ -118,7 +118,7 @@
                         <div class="jen-inline">
 
                             <span class="jen-form-icon" jen-icon="icon: thumbnails"></span>
-                            <asp:TextBox ID="txtClientState" runat="server" CssClass="jen-input" Style="width: 500px"></asp:TextBox>
+                            <asp:TextBox ID="txtClientState" runat="server" CssClass="jen-input" Style="width: 500px" disabled></asp:TextBox>
                         </div>
                         <br />
                     </div>

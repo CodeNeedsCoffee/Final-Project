@@ -12,23 +12,23 @@
     <script src="js/jen-icons.min.js"></script>
     <link rel="shortcut icon" href="./img/logo.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>
-            function countChar(val, num, ind) {
-                var len = val.value.length;
-                var ber = num;
-                if (len >= ber) {
-                    val.value = val.value.substring(0, ber - 1);
-                } else {
-                    var charts = $('.numbersofChart')[ind];
-                    charts.innerHTML = ber - len - 1;
-                }
-            };
+    <script>
+        function countChar(val, num, ind) {
+            var len = val.value.length;
+            var ber = num;
+            if (len >= ber) {
+                val.value = val.value.substring(0, ber - 1);
+            } else {
+                var charts = $('.numbersofChart')[ind];
+                charts.innerHTML = ber - len - 1;
+            }
+        };
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-
+ 
     <div class="jen-position-top">
         <nav class="jen-navbar-container jen-navbar-transparent" jen-navbar>
             <div class="jen-navbar-left">
@@ -76,8 +76,27 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="jen-navbar-right">
+
+                <a class="jen-navbar-toggle" href="#modal-full" jen-search-icon jen-toggle></a>
+
+            </div>
+
         </nav>
     </div>
+
+       <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
+        <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
+            <button class="jen-modal-close-full" type="button" jen-close></button>
+            <form class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data" runat="server" id="frmSearch">
+                <input class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus>
+            </form>
+
+
+        </div>
+    </div>
+
 
     <div class="jen-height-large jen-background-cover jen-light jen-flex" jen-parallax="bgy: -510" style="background-image: url('img/pills.jpg');">
         <div class="jen-width-1-2@m jen-text-center jen-margin-auto jen-margin-auto-vertical">
