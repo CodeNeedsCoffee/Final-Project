@@ -89,7 +89,7 @@
        <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
         <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
             <button class="jen-modal-close-full" type="button" jen-close></button>
-            <form class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data" runat="server" id="frmSearch">
+            <form class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
                 <input class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus>
             </form>
 
