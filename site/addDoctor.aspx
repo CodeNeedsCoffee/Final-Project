@@ -60,9 +60,22 @@
                     <label>Speciality</label>
                     <br />
                     <div class="jen-inline">
-
-                        <span class="jen-form-icon" jen-icon="icon: user"></span>
-                        <asp:TextBox ID="txtDoctorSpeciality" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,50, 3);"></asp:TextBox>
+                        <div class="uk-autocomplete uk-form" data-uk-autocomplete="{source:'degree.json'}">
+                            <span class="jen-form-icon" jen-icon="icon: user"></span>
+                            <asp:TextBox ID="txtDoctorSpecialty" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,50, 3);"></asp:TextBox>
+                            <script type="text/autocomplete">
+                                <ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">
+                                    {{~items}}
+                                    <li data-value="{{ $item.value }}">
+                                        <a>
+                                            {{ $item.title }}
+                                            <div>{{{ $item.text }}}</div>
+                                        </a>
+                                    </li>
+                                    {{/items}}
+                                </ul>
+                            </script>
+                        </div>
                     </div>
                     <div class="numbersofChart"></div>
                 </div>
@@ -159,15 +172,15 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: credit-card"></span>
-                        <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,9,11);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,7,11);"></asp:TextBox>
                     </div>
                 </div>
 
             </div>
-            </div>
-            <div class="jen-card jen-card-secondary jen-card-hover jen-card-body jen-light">
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
-            </div>
+        </div>
+        <div class="jen-card jen-card-secondary jen-card-hover jen-card-body jen-light">
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
+        </div>
     </form>
 
 </asp:Content>
