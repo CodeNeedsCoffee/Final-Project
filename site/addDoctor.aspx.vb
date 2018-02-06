@@ -18,6 +18,7 @@ Partial Class addDoctor
         gender = txtDoctorGender.Text.Trim
         dob = txtDoctorDOB.Text.Trim
         salary = txtDoctorSalary.Text.Trim
+        specialty = txtDoctorSpecialty.text.trim
         aDoctortier.AddDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
     End Sub
 End Class
