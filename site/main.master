@@ -68,11 +68,7 @@
                     </li>
                     <li>
                         <a href="/aboutus.aspx">About US</a>
-                        <div class="jen-navbar-dropdown">
-                            <ul class="jen-nav jen-navbar-dropdown-nav">
-                                <li><a href="/aboutus.aspx">About Us</a></li>
-                            </ul>
-                        </div>
+
                     </li>
                 </ul>
             </div>

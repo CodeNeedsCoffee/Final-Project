@@ -47,8 +47,7 @@
                     <div class="jen-card-header">
                         <div class="jen-grid-small jen-flex-middle" jen-grid>
                             <div class="jen-width-auto">
-                                <img class="jen-border-circle" width="40" height="40" src="./img/evan.jpg">
-                            </div>
+                                &nbsp;<img class="jen-border-circle" width="40" height="40" src="./img/evan.jpg"></div>
                             <div class="jen-width-expand">
                                 <h3 class="jen-card-title jen-margin-remove-bottom">Evan Templin</h3>
                                 <p class="jen-text-meta jen-margin-remove-top">CNSA Student at Thaddeus Stevens College of Technology.</p>
@@ -70,7 +69,7 @@
                         </div>
                         <div class="jen-width-expand">
                             <h3 class="jen-card-title jen-margin-remove-bottom">Nick Luongo</h3>
-                            <p class="jen-text-meta jen-margin-remove-top">Undergraduate at&nbsp; Thaddeus Stevens College of Technology CNSA</p>
+                            <p class="jen-text-meta jen-margin-remove-top">CNSA Student at Thaddeus Stevens College of Technology.</p>
                         </div>
                     </div>
                 </div>
