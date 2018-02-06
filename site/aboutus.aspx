@@ -3,6 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="Server">
+       <form runat="server" id="testing">
+
+        <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
+        <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
+            <button class="jen-modal-close-full" type="button" jen-close></button>
+            <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
+                <asp:TextBox ID="txtSearch" runat="server" class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus></asp:TextBox>
+            </div>
+
+
+        </div>
+    </div>
+    </form>
     <p>
         <h1 style="text-align: center">About Us</h1>
     </p>

@@ -7,6 +7,13 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="Server">
     <form id="form1" runat="server">
+        
+        <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
+        <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
+            <button class="jen-modal-close-full" type="button" jen-close></button>
+            <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
+                <asp:TextBox ID="txtSearch" runat="server" class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus></asp:TextBox>
+            </div>
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -150,5 +157,38 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
         </div>
     </form>
+
+    <script>
+  $( function() {
+    function log( message ) {
+      $( "<div/>" ).text( message ).prependTo( "#log" );
+      $( "#log" ).attr( "scrollTop", 0 );
+    }
+ 
+    $.ajax({
+      url: "london.xml",
+      dataType: "xml",
+      success: function( xmlResponse ) {
+        var data = $( "geoname", xmlResponse ).map(function() {
+          return {
+            value: $( "name", this ).text() + ", " +
+              ( $.trim( $( "countryName", this ).text() ) || "(unknown country)" ),
+            id: $( "geonameId", this ).text()
+          };
+        }).get();
+        $( "#birds" ).autocomplete({
+          source: data,
+          minLength: 0,
+          select: function( event, ui ) {
+            log( ui.item ?
+              "Selected: " + ui.item.value + ", geonameId: " + ui.item.id :
+              "Nothing selected, input was " + this.value );
+          }
+        });
+      }
+    });
+  } );
+  </script>
+
 </asp:Content>
 
