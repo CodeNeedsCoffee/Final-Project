@@ -30,12 +30,8 @@
                 <div>
                     <label style="vertical-align: text-top;">Client ID</label>
                     <div jen-form-custom="target: > * > span:first-child">
-                        <asp:DropDownList ID="ddlUpdateprescriptionCliID" runat="server">
+                        <asp:DropDownList ID="ddlCliID" runat="server">
                             <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
@@ -46,10 +42,6 @@
                     <div jen-form-custom="target: > * > span:first-child">
                         <asp:DropDownList ID="ddlDoctorID" runat="server">
                             <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
@@ -60,10 +52,6 @@
                     <div jen-form-custom="target: > * > span:first-child">
                         <asp:DropDownList ID="ddlRXNumber" runat="server">
                             <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
