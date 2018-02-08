@@ -23,22 +23,17 @@
              <h3 class="jen-card-title">Select Prescription</h3>
             <label style="vertical-align: text-top;">&nbsp RX Number</label>
                     <div jen-form-custom="target: > * > span:first-child">
-                        <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:DropDownList ID="ddlRxNumber" runat="server">
                             <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
                             <span jen-icon="icon: chevron-down"></span>
                         </button>
                     </div>
+                <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default" />
 
-            <div class="jen-card jen-card jen-card-hover jen-card-body jen-dark">
-                <asp:Button ID="btnSubmit" runat="server" Text="Select" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
-            </div>
+
         </div>
         <div class="jen-card jen-card-hover jen-card-body">
 
@@ -47,12 +42,7 @@
                 <div>
                     <label style="vertical-align: text-top;">Client ID</label>
                     <div jen-form-custom="target: > * > span:first-child">
-                        <asp:DropDownList ID="ddlUpdateClientID" runat="server">
-                            <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
+                        <asp:DropDownList ID="ddlUpdateClientID" runat="server"> 
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
@@ -61,12 +51,7 @@
                     </div>
                     <label style="vertical-align: text-top;">&nbsp Doctor ID</label>
                     <div jen-form-custom="target: > * > span:first-child">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
+                        <asp:DropDownList ID="ddlPhtID" runat="server">
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
@@ -80,7 +65,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: tag"></span>
-                        <asp:TextBox ID="txtClientFname" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 0);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionRefills" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 0);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -88,7 +73,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: bookmark"></span>
-                        <asp:TextBox ID="txtMedName" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 1);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionName" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 1);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -97,7 +82,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: calendar"></span>
-                        <asp:TextBox ID="txtOrdered" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 2);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionOrdered" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 2);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                 </div>
@@ -110,7 +95,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: info"></span>
-                        <asp:TextBox ID="txtMedicine" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 3);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionType" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 3);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -118,7 +103,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: nut"></span>
-                        <asp:TextBox ID="txtDosage" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 4);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionDosage" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 4);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -126,7 +111,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: sign-in"></span>
-                        <asp:TextBox ID="txtMethod" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 5);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionIntake" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 5);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -134,7 +119,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: menu"></span>
-                        <asp:TextBox ID="txtDispense" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 6);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionDispenses" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 6);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -143,7 +128,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: thumbnails"></span>
-                        <asp:TextBox ID="txtFrequency" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 7);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionFrequency" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 7);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
