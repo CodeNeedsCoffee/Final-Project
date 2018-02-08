@@ -37,6 +37,9 @@ Partial Class addPrescription
         txtprescriptionMedName.Text = String.Empty
         txtprescriptionMedType.Text = String.Empty
         txtprescriptionRefillNum.Text = String.Empty
+        ddlCliID.Items.Clear()
+        ddlDoctorID.Items.Clear()
+        ddlRXNumber.Items.Clear()
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
         ddatatable = ddatatier.GetAllDoctors().Tables(0)

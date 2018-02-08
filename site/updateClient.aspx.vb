@@ -33,6 +33,7 @@ Partial Class updateClient
         txtClientState.Text = String.Empty
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
+        ddlUpdateClientID.Items.Clear()
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
 

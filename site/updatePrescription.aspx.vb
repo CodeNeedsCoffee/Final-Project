@@ -12,6 +12,9 @@ Partial Class updatePrescription
         txtPrescriptionName.Text = String.Empty
         txtPrescriptionRefills.Text = String.Empty
         txtPrescriptionType.Text = String.Empty
+        ddlPhtID.Items.Clear()
+        ddlRxNumber.Items.Clear()
+        ddlUpdateClientID.Items.Clear()
 
         ddatatable = pdatatier.GetAllPrescriptions().Tables(0)
 

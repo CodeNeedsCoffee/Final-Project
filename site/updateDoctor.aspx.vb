@@ -26,7 +26,6 @@ Partial Class updateDoctor
         Dim ddatatier As New DoctorDataTier
         Dim ddatatable As New DataTable
         txtdoctorCity.Text = String.Empty
-        txtDoctorDOB.Text = String.Empty
         txtdoctorEmail.Text = String.Empty
         txtdoctorFname.Text = String.Empty
         txtdoctorGender.Text = String.Empty
@@ -38,6 +37,9 @@ Partial Class updateDoctor
         txtdoctorState.Text = String.Empty
         txtdoctorStreet.Text = String.Empty
         txtdoctorZip.Text = String.Empty
+        ddlUpdateDoctorID.Items.Clear()
+
+
         ddatatable = ddatatier.GetAllDoctors().Tables(0)
 
         For Each dr As DataRow In ddatatable.Rows
