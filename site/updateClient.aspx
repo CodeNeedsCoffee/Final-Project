@@ -168,7 +168,7 @@
             </div>
         </div>
         <div class="jen-card jen-card-secondary jen-card-hover jen-card-body jen-light">
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
+            <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
         </div>
     </form>
 </asp:Content>
