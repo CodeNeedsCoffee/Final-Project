@@ -45,5 +45,16 @@ Partial Class updateDoctor
         adatatable = adataset.Tables(0)
 
         txtdoctorFname.Text = adatatable.Rows(0)("fname")
+        txtdoctorLname.Text = adatatable.Rows(0)("lname")
+        txtdoctorMidInt.Text = adatatable.Rows(0)("initial")
+        txtDoctorSpecialty.Text = adatatable.Rows(0)("specialty")
+        txtdoctorEmail.Text = adatatable.Rows(0)("email")
+        txtdoctorPhone.Text = adatatable.Rows(0)("phone")
+        txtdoctorStreet.Text = adatatable.Rows(0)("streetadd")
+        txtdoctorState.Text = adatatable.Rows(0)("stateabr")
+        txtdoctorZip.Text = adatatable.Rows(0)("zip")
+        txtDoctorSalary.Text = adatatable.Rows(0)("salary")
+        txtdoctorGender.Text = adatatable.Rows(0)("gender")
+
     End Sub
 End Class
