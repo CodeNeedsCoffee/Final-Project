@@ -1,4 +1,5 @@
-﻿
+﻿Imports System.Data
+
 Partial Class addClient
     Inherits System.Web.UI.Page
 
@@ -18,5 +19,16 @@ Partial Class addClient
         gender = txtClientGender.Text.Trim
         dob = txtClientDOB.Text.Trim
         aclienttier.AddClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob)
+    End Sub
+
+    Private Sub addClient_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim clientId As String
+        Dim intcliendID As Int32
+        Dim adatatier As New ClientDataTier
+        Dim adatatable As New DataTable
+        adatatable = adatatier.GetGetLastClientID.Tables(0)
+        clientId = adatatable.Rows.Item(0).Item("MaxCliID")
+        intcliendID = CType(clientId, Int32) + 1
+        txtClientID.Text = intcliendID.ToString
     End Sub
 End Class

@@ -7,17 +7,26 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="Server">
     <form id="form1" runat="server">
-        
+
         <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
-        <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
-            <button class="jen-modal-close-full" type="button" jen-close></button>
-            <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
-                <asp:TextBox ID="txtSearch" runat="server" class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus></asp:TextBox>
+            <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
+                <button class="jen-modal-close-full" type="button" jen-close></button>
+                <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
+                    <%--<asp:TextBox ID="txtSearch" runat="server" class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus></asp:TextBox>
+                    <asp:Button ID="btnSearch" runat="server" Text="Button" OnClientClick="search();" Visible="false" />--%>
+
+                    <input type="text"
+                        class="jen-search-input jen-text-center"
+                        id="txtSearch"
+                        onkeydown="if (event.keyCode == 13)
+                        doSomething();"
+                        placeholder="Search..." autofocus />
+
+                </div>
+
+
             </div>
-
-
         </div>
-    </div>
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -156,5 +165,14 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
         </div>
     </form>
+    <script>
+        document.getElementById("txtSearch")
+            .addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("btnsearch").click();
+                }
+            });
+    </script>
 </asp:Content>
 
