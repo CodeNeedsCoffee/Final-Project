@@ -44,14 +44,14 @@ Partial Class addPrescription
 
         For Each dr As DataRow In ddatatable.Rows
 
-            ddlCliID.Items.Add(dr("CliID"))
+            ddlDoctorID.Items.Add(dr("PhyID"))
         Next
 
 
 
         For Each dr As DataRow In pdatatable.Rows
 
-            ddlCliID.Items.Add(dr("CliID"))
+            ddlRXNumber.Items.Add(dr("RxNumber"))
         Next
 
 

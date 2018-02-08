@@ -35,16 +35,13 @@
                     <div jen-form-custom="target: > * > span:first-child">
                         <asp:DropDownList ID="ddlUpdateDoctorID" runat="server">
                             <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
-                            <asp:ListItem>01</asp:ListItem>
-                            <asp:ListItem>02</asp:ListItem>
-                            <asp:ListItem>03</asp:ListItem>
-                            <asp:ListItem>04</asp:ListItem>
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>
                             <span jen-icon="icon: chevron-down"></span>
                         </button>
                     </div>
+                    <asp:Button ID="btnFill" runat="server" Text="Fill Data" />
 
                 </div>
                 <h3 class="jen-card-title">Personal Information</h3>

@@ -45,11 +45,11 @@ Public Class DoctorDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 150
-                .CommandText = “GetStudentID”
+                .CommandText = “GetDoctorID”
                 'Define input parameter
-                .Parameters.Add(“@PhyID”, SqlDbType.VarChar, 6).Value = PhyID
+                .Parameters.Add(“@DoctorID”, SqlDbType.VarChar, 6).Value = PhyID
                 ''execute command
-                '.ExecuteNonQuery()
+                .ExecuteNonQuery()
             End With
             Dim aAdapter As New SqlClient.SqlDataAdapter
             aAdapter.SelectCommand = cmdstring
