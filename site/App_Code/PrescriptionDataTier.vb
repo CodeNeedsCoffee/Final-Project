@@ -115,7 +115,7 @@ Public Class PrescriptionDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
-    Public Sub add_prescription(ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal dateordered As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
+    Public Sub add_prescription(ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
         Try
             connString.Open()
             cmdstring.Parameters.Clear()
@@ -139,7 +139,7 @@ Public Class PrescriptionDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
-    Public Sub Update_prescription(ByVal rxnumber As String, ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal dateordered As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
+    Public Sub Update_prescription(ByVal rxnumber As String, ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
         Try
             connString.Open()
             cmdstring.Parameters.Clear()

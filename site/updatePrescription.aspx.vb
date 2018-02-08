@@ -36,20 +36,19 @@ Partial Class updatePrescription
         ddlPhtID.Items.Add(adatatable.Rows(0)("PhyID"))
     End Sub
     Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim rxnumber, cliid, physid, refillnum, medname, dateordered, medtype, dosage, intake, dispense, frequency As String
+        Dim rxnumber, cliid, physid, refillnum, medname, medtype, dosage, intake, dispense, frequency As String
         Dim aprescripttier As New PrescriptionDataTier
         rxnumber = ddlRxNumber.SelectedValue()
         cliid = ddlUpdateClientID.SelectedValue()
         physid = ddlPhtID.SelectedValue()
         refillnum = txtPrescriptionRefills.Text.ToString
         medname = txtPrescriptionName.Text.ToString
-        dateordered = txtPrescriptionOrdered.Text.ToString
         medtype = txtPrescriptionType.Text.ToString
         dosage = txtPrescriptionDosage.Text.ToString
         intake = txtPrescriptionIntake.Text.ToString
         dispense = txtPrescriptionDispenses.Text.ToString
         frequency = txtPrescriptionFrequency.Text.ToString
-        aprescripttier.Update_prescription(rxnumber, cliid, physid, refillnum, medname, dateordered, medtype, dosage, intake, dispense, frequency)
+        aprescripttier.Update_prescription(rxnumber, cliid, physid, refillnum, medname, medtype, dosage, intake, dispense, frequency)
 
     End Sub
 End Class
