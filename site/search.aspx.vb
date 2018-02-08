@@ -33,8 +33,5 @@ Partial Class search
         End Try
 
     End Sub
-<<<<<<< HEAD
-=======
 
->>>>>>> 56dd2a4afa7dae9c9558f0090c152d7699834d78
 End Class
