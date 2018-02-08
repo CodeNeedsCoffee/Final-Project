@@ -14,6 +14,7 @@
     <script src="js/jen-icons.min.js"></script>
     <link rel="shortcut icon" href="./img/logo.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         function countChar(val, num, ind) {
             var len = val.value.length;
@@ -25,6 +26,11 @@
                 charts.innerHTML = ber - len - 1;
             }
         };
+    </script>
+    <script>
+        function doSomething(){
+            alert("Hello! I am an alert box!!");
+        }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

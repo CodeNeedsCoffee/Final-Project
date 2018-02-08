@@ -35,6 +35,36 @@ Public Class ClientDataTier
     End Function
 
 
+    Public Function GetGetLastClientID() As DataSet
+        Try
+            'open connection
+            connString.Open()
+            cmdstring.Parameters.Clear()
+            'command
+            cmdstring.Connection = connString
+            cmdstring.CommandType = CommandType.StoredProcedure
+            cmdstring.CommandTimeout = 1500
+            cmdstring.CommandText = "GetLastClientID"
+
+            'adapter and dataset
+            Dim aAdapter As New SqlClient.SqlDataAdapter
+            aAdapter.SelectCommand = cmdstring
+            Dim aDataSet As New DataSet
+
+            'fill adapater
+            aAdapter.Fill(aDataSet)
+
+            Return aDataSet
+            'Return
+
+        Catch ex As Exception
+            Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
+
+        End Try
+    End Function
+
     Public Function GetClientByID(ByVal CliID As String) As DataSet
 
         Try
