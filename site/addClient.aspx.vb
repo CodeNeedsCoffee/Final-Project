@@ -26,6 +26,19 @@ Partial Class addClient
         Dim intcliendID As Int32
         Dim adatatier As New ClientDataTier
         Dim adatatable As New DataTable
+        clientId = ddlClientID.Text.Trim
+        txtClientFname.Text = String.Empty
+        txtClientMidInt.Text = String.Empty
+        txtClientLname.Text = String.Empty
+        txtClientEmail.Text = String.Empty
+        txtClientPhone.Text = String.Empty
+        txtClientStreet.Text = String.Empty
+        txtClientCity.Text = String.Empty
+        txtClientState.Text = String.Empty
+        txtClientZip.Text = String.Empty
+        txtClientGender.Text = String.Empty
+        txtClientDOB.Text = String.Empty
+
         adatatable = adatatier.GetGetLastClientID.Tables(0)
         clientId = adatatable.Rows.Item(0).Item("MaxCliID")
         intcliendID = CType(clientId, Int32) + 1
