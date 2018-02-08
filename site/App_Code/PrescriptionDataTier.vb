@@ -92,7 +92,7 @@ Public Class PrescriptionDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 900
-                .CommandText = "add_prescription"
+                .CommandText = "add_perscription"
                 .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = cliID
                 .Parameters.Add("@PhyID", SqlDbType.VarChar, 6).Value = physid
                 .Parameters.Add("@perscriptionrefills", SqlDbType.Int).Value = refillnum

@@ -18,5 +18,9 @@ Partial Class updateClient
         zip = txtClientZip.Text.Trim
         gender = txtClientGender.Text.Trim
         dob = txtClientDOB.Text.Trim
+        aclienttier.updateclient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob)
+    End Sub
+    Protected Sub ddlUpdateClientID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlUpdateClientID.SelectedIndexChanged
+
     End Sub
 End Class
