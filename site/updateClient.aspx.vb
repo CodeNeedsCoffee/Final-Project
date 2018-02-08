@@ -23,6 +23,16 @@ Partial Class updateClient
     Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim cdatatier As New ClientDataTier
         Dim cdatatable As New DataTable
+        txtClientFname.Text = String.Empty
+        txtClientMidInt.Text = String.Empty
+        txtClientLname.Text = String.Empty
+        txtClientEmail.Text = String.Empty
+        txtClientPhone.Text = String.Empty
+        txtClientStreet.Text = String.Empty
+        txtClientCity.Text = String.Empty
+        txtClientState.Text = String.Empty
+        txtClientZip.Text = String.Empty
+        txtClientGender.Text = String.Empty
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
 

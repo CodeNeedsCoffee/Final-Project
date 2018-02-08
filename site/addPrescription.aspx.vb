@@ -30,7 +30,13 @@ Partial Class addPrescription
         Dim rxnumber As String
         Dim intrxnumber As Int32
         Dim adatatable As New DataTable
-
+        txtprescriptionDispense.Text = String.Empty
+        txtprescriptionDosage.Text = String.Empty
+        txtprescriptionFreq.Text = String.Empty
+        txtprescriptionIntake.Text = String.Empty
+        txtprescriptionMedName.Text = String.Empty
+        txtprescriptionMedType.Text = String.Empty
+        txtprescriptionRefillNum.Text = String.Empty
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
         ddatatable = ddatatier.GetAllDoctors().Tables(0)

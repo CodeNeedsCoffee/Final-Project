@@ -25,7 +25,19 @@ Partial Class updateDoctor
     Private Sub updateDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim ddatatier As New DoctorDataTier
         Dim ddatatable As New DataTable
-
+        txtdoctorCity.Text = String.Empty
+        txtDoctorDOB.Text = String.Empty
+        txtdoctorEmail.Text = String.Empty
+        txtdoctorFname.Text = String.Empty
+        txtdoctorGender.Text = String.Empty
+        txtdoctorLname.Text = String.Empty
+        txtdoctorMidInt.Text = String.Empty
+        txtdoctorPhone.Text = String.Empty
+        txtDoctorSalary.Text = String.Empty
+        txtDoctorSpecialty.Text = String.Empty
+        txtdoctorState.Text = String.Empty
+        txtdoctorStreet.Text = String.Empty
+        txtdoctorZip.Text = String.Empty
         ddatatable = ddatatier.GetAllDoctors().Tables(0)
 
         For Each dr As DataRow In ddatatable.Rows

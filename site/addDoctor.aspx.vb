@@ -27,6 +27,19 @@ Partial Class addDoctor
         Dim intphyid As Int32
         Dim pdatatier As New DoctorDataTier
         Dim adatatable As New DataTable
+        txtDoctorCity.Text = String.Empty
+        txtDoctorDOB.Text = String.Empty
+        txtDoctorEmail.Text = String.Empty
+        txtDoctorFname.Text = String.Empty
+        txtDoctorGender.Text = String.Empty
+        txtDoctorLname.Text = String.Empty
+        txtDoctorMidInt.Text = String.Empty
+        txtDoctorPhone.Text = String.Empty
+        txtDoctorSalary.Text = String.Empty
+        txtDoctorSpecialty.Text = String.Empty
+        txtDoctorState.Text = String.Empty
+        txtDoctorStreet.Text = String.Empty
+        txtDoctorZip.Text = String.Empty
 
 
         adatatable = pdatatier.getlastphyid.Tables(0)
