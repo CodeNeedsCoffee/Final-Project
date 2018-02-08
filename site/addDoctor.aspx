@@ -177,7 +177,9 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: credit-card"></span>
-                        <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,7,11);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,7,12);"></asp:TextBox>
+                                            <div class="numbersofChart"></div>
+
                     </div>
                 </div>
 

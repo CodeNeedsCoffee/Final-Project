@@ -21,4 +21,7 @@ Partial Class addDoctor
         specialty = txtDoctorSpecialty.text.trim
         aDoctortier.AddDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
     End Sub
+    Protected Sub txtDoctorSalary_TextChanged(sender As Object, e As EventArgs) Handles txtDoctorSalary.TextChanged
+
+    End Sub
 End Class
