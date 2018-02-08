@@ -28,8 +28,10 @@
         };
     </script>
     <script>
-        function doSomething(){
-           
+        function doSomething() {
+            var someValueToPass = document.getElementById('txtSearch').value;
+
+            __doPostBack('CustomPostBack', someValueToPass);
         }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
