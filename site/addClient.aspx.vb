@@ -6,7 +6,7 @@ Partial Class addClient
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob As String
         Dim aclienttier As New ClientDataTier
-        ClientID = txtClientID.Text.Trim
+        ClientID = ddlClientID.Text.Trim
         fname = txtClientFname.Text.Trim
         minit = txtClientMidInt.Text.Trim
         lname = txtClientLname.Text.Trim
@@ -29,6 +29,7 @@ Partial Class addClient
         adatatable = adatatier.GetGetLastClientID.Tables(0)
         clientId = adatatable.Rows.Item(0).Item("MaxCliID")
         intcliendID = CType(clientId, Int32) + 1
-        txtClientID.Text = intcliendID.ToString
+        ddlClientID.Items.Add(intcliendID.ToString)
+        ddlClientID.Enabled = False
     End Sub
 End Class

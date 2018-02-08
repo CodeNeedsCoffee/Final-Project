@@ -34,12 +34,19 @@
 
             <h3 class="jen-card-title">Add Client</h3>
             <div class="jen-card jen-card-secondary jen-card-hover jen-card-body jen-light">
-                <div>
-                    <label style="vertical-align: text-top;">Client ID</label>
-                    <div class="jen-margin">
-                        <asp:TextBox ID="txtClientID" runat="server" CssClass="jen-input" Style="width: 10%; height: 75%;"></asp:TextBox>
-                    </div>
-                </div>
+
+                <label style="vertical-align: text-top;">Client ID</label>
+            <div jen-form-custom="target: > * > span:first-child">
+                <asp:DropDownList ID="ddlClientID" runat="server">
+                </asp:DropDownList>
+                <button class="jen-button jen-button-default" type="button" tabindex="-1">
+                    <span></span>
+                    <span jen-icon="icon: chevron-down"></span>
+                </button>
+            </div>
+
+
+
                 <h3 class="jen-card-title">Personal Information</h3>
                 <div class="jen-margin">
                     <label>First</label>
