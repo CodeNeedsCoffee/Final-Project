@@ -41,7 +41,7 @@
         <nav class="jen-navbar-container jen-navbar-transparent" jen-navbar>
             <div class="jen-navbar-left">
                 <ul class="jen-navbar-nav">
-                    <li class="jen-active"><a href="index.aspx">Loius Pharmacy</a></li>
+                    <li class="jen-active"><a href="index.aspx">Louis Pharmacy</a></li>
                     <li>
                         <a href="/addClient.aspx">Client</a>
                         <div class="jen-navbar-dropdown">
