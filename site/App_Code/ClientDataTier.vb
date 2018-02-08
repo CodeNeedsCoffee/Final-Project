@@ -143,6 +143,7 @@ Public Class ClientDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
+<<<<<<< HEAD
     Public Sub UpdateClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String)
         Try
             connString.Open()
@@ -171,4 +172,54 @@ Public Class ClientDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
+=======
+
+
+
+    Public Function SearchClients(ByVal cliID As String, ByVal fname As String, ByVal lname As String) As DataSet
+        Try
+            'open connection
+            connString.Open()
+            cmdstring.Parameters.Clear()
+            'command
+            With cmdstring
+                .Connection = connString
+                .CommandType = CommandType.StoredProcedure
+                .CommandTimeout = 1500
+                .CommandText = "SearchClients"
+                .Parameters.Add("@cliID", SqlDbType.VarChar, 5).Value = cliID
+                .Parameters.Add("@FNAME", SqlDbType.VarChar, 25).Value = fname
+                .Parameters.Add("@LNAME", SqlDbType.VarChar, 25).Value = lname
+            End With
+
+
+
+            'adapter and dataset
+            Dim aAdapter As New SqlClient.SqlDataAdapter
+            aAdapter.SelectCommand = cmdstring
+            Dim aDataSet As New DataSet
+
+            'fill adapater
+            aAdapter.Fill(aDataSet)
+
+            'return dataSet
+            Return aDataSet
+
+        Catch ex As Exception
+            Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
+        End Try
+
+    End Function
+
+
+
+
+
+
+
+>>>>>>> 38170703316c0c5e0ca44d1ba5964f9b006b5c93
 End Class
+
+
