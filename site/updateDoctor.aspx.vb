@@ -19,7 +19,7 @@ Partial Class updateDoctor
         gender = txtdoctorGender.Text.Trim
         salary = txtDoctorSalary.Text.Trim
         specialty = txtDoctorSpecialty.Text.Trim
-        aDoctortier.UpdateDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
+        aDoctortier.UpdateDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, salary, specialty)
     End Sub
 
     Private Sub updateDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load

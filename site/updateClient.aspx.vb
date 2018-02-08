@@ -1,4 +1,4 @@
-﻿
+﻿Imports System.Data
 Partial Class updateClient
     Inherits System.Web.UI.Page
 
@@ -20,7 +20,16 @@ Partial Class updateClient
         dob = txtClientDOB.Text.Trim
         aclienttier.updateclient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob)
     End Sub
-    Protected Sub ddlUpdateClientID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlUpdateClientID.SelectedIndexChanged
 
+    Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim cdatatier As New ClientDataTier
+        Dim cdatatable As New DataTable
+
+        cdatatable = cdatatier.GetAllClients().Tables(0)
+
+        For Each dr As DataRow In cdatatable.Rows
+
+            ddlUpdateClientID.Items.Add(dr("CliID"))
+        Next
     End Sub
 End Class

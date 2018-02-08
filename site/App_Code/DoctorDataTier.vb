@@ -144,7 +144,7 @@ Public Class DoctorDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
-    Public Sub UpdateDoctor(ByVal DoctorID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String, ByVal salary As String, ByVal specialty As String)
+    Public Sub UpdateDoctor(ByVal DoctorID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal salary As String, ByVal specialty As String)
         Try
             connString.Open()
             cmdstring.Parameters.Clear()
