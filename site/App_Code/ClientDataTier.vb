@@ -143,10 +143,7 @@ Public Class ClientDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
-<<<<<<< HEAD
-=======
 
->>>>>>> 728ccb5e90de807ef87fff0c307ba6bc1a179501
     Public Sub UpdateClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String)
         Try
             connString.Open()
@@ -216,15 +213,6 @@ Public Class ClientDataTier
 
     End Function
 
-
-
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 728ccb5e90de807ef87fff0c307ba6bc1a179501
 End Class
 
 

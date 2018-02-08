@@ -6,25 +6,28 @@ Partial Class search
     Private Sub search_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim strSearch As String
         Dim aSearch As New searchclass
+
         Dim sDataset As New DataSet
-        strSearch =
+        strSearch = Request.QueryString("id")
+
         sDataset = aSearch.searching(strSearch)
 
         Try
             If sDataset.Tables(0).Rows.Count > 0 Then
                 'make it look nice
-                Me.dgvSearch.DataSource = sDataset.Tables(0)
+                dgvSearch.DataSource = sDataset.Tables(0)
 
                 'Data grid visible
-                Me.dgvSearch.Visible = True
-                Me.lblMessage.Visible = False
+                dgvSearch.Visible = True
+                lblMessage.Visible = False
+                dgvSearch.DataBind()
             Else
-                Me.dgvSearch.Visible = False
-                Me.lblMessage.Visible = True
-                Me.lblMessage.Text = "No Search Results"
+                dgvSearch.Visible = False
+                lblMessage.Visible = True
+                lblMessage.Text = "No Search Results"
             End If
 
-            txtSearch.Focus()
+            'txtSearch.Focus()
         Catch ex As Exception
 
         End Try
