@@ -92,7 +92,7 @@ Public Class DoctorDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 900
-                .CommandText = "AddDoctor"
+                .CommandText = "Add_Doctor"
                 .Parameters.Add("@PhyID", SqlDbType.VarChar, 6).Value = DoctorID
                 .Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname
                 .Parameters.Add("@lname", SqlDbType.VarChar, 30).Value = lname
