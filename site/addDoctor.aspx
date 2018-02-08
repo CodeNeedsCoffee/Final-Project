@@ -28,11 +28,14 @@
 
             <h3 class="jen-card-title">Add Doctor</h3>
             <div class="jen-card jen-card-secondary jen-card-hover jen-card-body jen-light">
-                <div>
-                    <label style="vertical-align: text-top;">Doctor ID</label>
-                    <div class="jen-margin">
-                        <asp:TextBox ID="txtDoctorID" runat="server" CssClass="jen-input" Style="width: 10%; height: 75%;"></asp:TextBox>
-                    </div>
+                <label style="vertical-align: text-top;">Doctor ID</label>
+                <div jen-form-custom="target: > * > span:first-child">
+                    <asp:DropDownList ID="ddlDoctorID" runat="server">
+                    </asp:DropDownList>
+                    <button class="jen-button jen-button-default" type="button" tabindex="-1">
+                        <span></span>
+                        <span jen-icon="icon: chevron-down"></span>
+                    </button>
                 </div>
                 <h3 class="jen-card-title">Personal Information</h3>
                 <div class="jen-margin">
@@ -178,7 +181,7 @@
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: credit-card"></span>
                         <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,7,12);"></asp:TextBox>
-                                            <div class="numbersofChart"></div>
+                        <div class="numbersofChart"></div>
 
                     </div>
                 </div>

@@ -33,6 +33,37 @@ Public Class DoctorDataTier
 
     End Function
 
+
+    Public Function getlastphyid() As DataSet
+        Try
+            'open connection
+            connString.Open()
+            cmdstring.Parameters.Clear()
+            'command
+            cmdstring.Connection = connString
+            cmdstring.CommandType = CommandType.StoredProcedure
+            cmdstring.CommandTimeout = 1500
+            cmdstring.CommandText = "getlastdoctor"
+
+            'adapter and dataset
+            Dim aAdapter As New SqlClient.SqlDataAdapter
+            aAdapter.SelectCommand = cmdstring
+            Dim aDataSet As New DataSet
+
+            'fill adapater
+            aAdapter.Fill(aDataSet)
+
+            Return aDataSet
+            'Return
+
+        Catch ex As Exception
+            Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
+        End Try
+
+    End Function
+
     Public Function GetDoctorByID(ByVal PhyID As String) As DataSet
 
         Try

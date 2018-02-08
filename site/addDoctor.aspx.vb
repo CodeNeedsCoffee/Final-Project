@@ -1,11 +1,11 @@
-﻿
+﻿Imports System.Data
 Partial Class addDoctor
     Inherits System.Web.UI.Page
 
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty As String
         Dim aDoctortier As New DoctorDataTier
-        DoctorID = txtDoctorID.Text.Trim
+        DoctorID = ddlDoctorID.Text.Trim
         fname = txtDoctorFname.Text.Trim
         minit = txtDoctorMidInt.Text.Trim
         lname = txtDoctorLname.Text.Trim
@@ -21,7 +21,18 @@ Partial Class addDoctor
         specialty = txtDoctorSpecialty.text.trim
         aDoctortier.AddDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
     End Sub
-    Protected Sub txtDoctorSalary_TextChanged(sender As Object, e As EventArgs) Handles txtDoctorSalary.TextChanged
 
+    Private Sub addDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim phyid As String
+        Dim intphyid As Int32
+        Dim pdatatier As New DoctorDataTier
+        Dim adatatable As New DataTable
+
+
+        adatatable = pdatatier.getlastphyid.Tables(0)
+        phyid = adatatable.Rows.Item(0).Item("maxPhyID")
+        intphyid = CType(phyid, Int32) + 1
+        ddlDoctorID.Items.Add(intphyid.ToString)
+        ddlDoctorID.Enabled = False
     End Sub
 End Class
