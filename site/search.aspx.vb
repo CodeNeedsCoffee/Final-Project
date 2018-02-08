@@ -10,15 +10,13 @@ Partial Class search
         Dim sDataset As New DataSet
         strSearch = txtSearch.Text.Trim
         intSearchIndex = cboSearch.SelectedIndex
-        sDataset = aSearch.searching(strSearch, intSearchIndex)
+        sDataset = aSearch.searching
 
         Try
             If sDataset.Tables(0).Rows.Count > 0 Then
                 'make it look nice
                 Me.dgvSearch.DataSource = sDataset.Tables(0)
-                Me.dgvSearch.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
-                Me.dgvSearch.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
-                Me.dgvSearch.EnableHeadersVisualStyles = False
+
                 'Data grid visible
                 Me.dgvSearch.Visible = True
                 Me.lblMessage.Visible = False

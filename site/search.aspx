@@ -26,10 +26,8 @@
 
         <div>
 
-     
-
-
-
+            <asp:GridView ID="dgvSearch" runat="server"></asp:GridView>
+            <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
 
     </form>
 
