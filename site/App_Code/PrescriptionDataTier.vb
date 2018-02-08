@@ -84,7 +84,7 @@ Public Class PrescriptionDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
-    Public Sub add_prescription(ByVal cliID As String, ByVal physid As Integer)
+    Public Sub add_prescription(ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal dateordered As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
         Try
             connString.Open()
             cmdstring.Parameters.Clear()
@@ -93,10 +93,19 @@ Public Class PrescriptionDataTier
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 900
                 .CommandText = "add_prescription"
-                .Parameters.Add()
+                .Parameters.Add("@CliID", SqlDbType.VarChar, 6).Value = cliID
+                .Parameters.Add("@PhyID", SqlDbType.VarChar, 6).Value = physid
+                .Parameters.Add("@perscriptionrefills", SqlDbType.Int).Value = refillnum
+                .Parameters.Add("@medname", SqlDbType.VarChar, 40).Value = medname
+                .Parameters.Add("@dosage", SqlDbType.VarChar, 15).Value = dosage
+                .Parameters.Add("@dispense", SqlDbType.VarChar, 15).Value = dispense
+                .Parameters.Add("@medtype", SqlDbType.VarChar, 15).Value = medtype
+                .Parameters.Add("@frequency", SqlDbType.VarChar, 20).Value = frequency
+                .Parameters.Add("@intake", SqlDbType.VarChar, 140).Value = intake
+                .ExecuteNonQuery()
             End With
         Catch ex As Exception
-
+            Throw New ArgumentException(ex.Message)
         End Try
     End Sub
 
