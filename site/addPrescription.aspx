@@ -76,22 +76,7 @@
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
-                    <label>Date Ordered</label>
-                    <br />
-                    <div class="jen-inline">
 
-                        <span class="jen-form-icon" jen-icon="icon: calendar"></span>
-
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <asp:TextBox ID="txtprescriptionDateOrdered" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;"></asp:TextBox>
-                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtprescriptionDateOrdered" />
-                            </ContentTemplate>
-
-                        </asp:UpdatePanel>
-
-
-                    </div>
                     <div class="numbersofChart"></div>
                 </div>
             </div>

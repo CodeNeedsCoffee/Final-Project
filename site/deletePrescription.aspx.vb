@@ -23,6 +23,8 @@ Partial Class deletePrescription
 
         adatatable = adataset.Tables(0)
 
+        ddlClientID.Items.Add(adatatable.Rows(0)("CliID"))
+        ddlDoctorID.Items.Add(adatatable.Rows(0)("PhyID"))
         txtPrescriptionRefills.Text = adatatable.Rows(0)("PerscriptionRefills")
         txtPrescriptionName.Text = adatatable.Rows(0)("MedName")
         txtPrescriptionOrdered.Text = adatatable.Rows(0)("OrderDateTime")
@@ -31,5 +33,12 @@ Partial Class deletePrescription
         txtPrescriptionIntake.Text = adatatable.Rows(0)("Intake")
         txtPrescriptionDispenses.Text = adatatable.Rows(0)("Dispense")
         txtPrescriptionFrequency.Text = adatatable.Rows(0)("Frequency")
+
+    End Sub
+
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Dim pdatatier As New PrescriptionDataTier
+
+        pdatatier.DeletePrescription(ddlrxnumber.SelectedValue)
     End Sub
 End Class

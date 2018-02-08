@@ -82,7 +82,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: calendar"></span>
-                        <asp:TextBox ID="txtPrescriptionOrdered" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 2);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionOrdered" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 2);" disabled></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                 </div>
