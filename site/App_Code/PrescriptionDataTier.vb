@@ -84,5 +84,21 @@ Public Class PrescriptionDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
+    Public Sub add_prescription(ByVal cliID As String, ByVal physid As Integer)
+        Try
+            connString.Open()
+            cmdstring.Parameters.Clear()
+            With cmdstring
+                .Connection = connString
+                .CommandType = CommandType.StoredProcedure
+                .CommandTimeout = 900
+                .CommandText = "add_prescription"
+                .Parameters.Add()
+            End With
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class
 
