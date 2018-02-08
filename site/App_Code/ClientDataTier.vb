@@ -144,7 +144,7 @@ Public Class ClientDataTier
         End Try
     End Sub
 
-    Public Sub UpdateClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String)
+    Public Sub UpdateClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String)
         Try
             connString.Open()
             cmdstring.Parameters.Clear()
@@ -164,7 +164,6 @@ Public Class ClientDataTier
                 .Parameters.Add("@stateabr", SqlDbType.VarChar, 2).Value = state
                 .Parameters.Add("@zip", SqlDbType.VarChar, 5).Value = zip
                 .Parameters.Add("@gender", SqlDbType.VarChar, 1).Value = gender
-                .Parameters.Add("@dob", SqlDbType.Date).Value = dob
 
                 .ExecuteNonQuery()
             End With

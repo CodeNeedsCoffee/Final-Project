@@ -41,7 +41,7 @@
                             <span jen-icon="icon: chevron-down"></span>
                         </button>
                     </div>
-                    <asp:Button ID="btnFill" runat="server" Text="Fill Data" />
+                    <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default" />
 
                 </div>
                 <h3 class="jen-card-title">Personal Information</h3>

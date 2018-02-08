@@ -40,6 +40,8 @@
                             <span jen-icon="icon: chevron-down"></span>
                         </button>
                     </div>
+                     <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default" />
+
 
                 </div>
                 <h3 class="jen-card-title">Personal Information</h3>
@@ -143,26 +145,13 @@
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
-                    <label>Date of Birth</label>
-                    <br />
-                    <div class="jen-inline">
-         
-                        <span class="jen-form-icon" jen-icon="icon: calendar"></span>
-
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>
-                                <asp:TextBox ID="txtClientDOB" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;"></asp:TextBox>
-                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtClientDOB" />
-                            </ContentTemplate>
-
-                        </asp:UpdatePanel>
+                    
 
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
                 </div>
             </div>
-        </div>
         <div class="jen-card jen-card-secondary jen-card-hover jen-card-body jen-light">
             <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="jen-button jen-button-secondary jen-width-1-1" Style="height: 50px; font-size: 25px;" />
         </div>
