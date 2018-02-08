@@ -5,12 +5,10 @@ Partial Class search
 
     Private Sub search_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim strSearch As String
-        Dim aSearch As New search
-        Dim intSearchIndex As Int32
+        Dim aSearch As New searchclass
         Dim sDataset As New DataSet
-        strSearch = txtSearch.Text.Trim
-        intSearchIndex = cboSearch.SelectedIndex
-        sDataset = aSearch.searching
+        strSearch =
+        sDataset = aSearch.searching(strSearch)
 
         Try
             If sDataset.Tables(0).Rows.Count > 0 Then
@@ -28,9 +26,9 @@ Partial Class search
 
             txtSearch.Focus()
         Catch ex As Exception
-            MessageBox.Show("Connection to database Failed", "Database Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
 
     End Sub
-    End Sub
+
 End Class
