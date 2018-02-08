@@ -29,7 +29,7 @@
     </script>
     <script>
         function doSomething(){
-            alert("Hello! I am an alert box!!");
+           
         }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
