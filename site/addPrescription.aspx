@@ -6,17 +6,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="Server">
     <form id="form1" runat="server">
-        
+
         <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
-        <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
-            <button class="jen-modal-close-full" type="button" jen-close></button>
-            <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
-                <asp:TextBox ID="txtSearch" runat="server" class="jen-search-input jen-text-center" type="search" placeholder="Search..." autofocus></asp:TextBox>
+            <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
+                <button class="jen-modal-close-full" type="button" jen-close></button>
+                <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
+                    <input type="text"
+                        class="jen-search-input jen-text-center"
+                        id="txtSearch"
+                        onkeydown="if (event.keyCode == 13)
+                        doSomething();"
+                        placeholder="Search..." autofocus />
+                </div>
             </div>
-
-
         </div>
-    </div>
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -82,9 +85,9 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: bookmark"></span>
-                        <asp:TextBox ID="txtprescriptionMedName" runat="server" CssClass="jen-input" Style="width: 500px"   onkeypress="countChar(this,40, 1);"></asp:TextBox>
+                        <asp:TextBox ID="txtprescriptionMedName" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,40, 1);"></asp:TextBox>
                     </div>
-                     <div class="numbersofChart"></div>
+                    <div class="numbersofChart"></div>
                     <br />
                     <label>Date Ordered</label>
                     <br />
@@ -95,12 +98,12 @@
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
                                 <asp:TextBox ID="txtprescriptionDateOrdered" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;"></asp:TextBox>
-                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtprescriptionDateOrdered"/>
+                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtprescriptionDateOrdered" />
                             </ContentTemplate>
 
                         </asp:UpdatePanel>
 
-                        
+
                     </div>
                     <div class="numbersofChart"></div>
                 </div>

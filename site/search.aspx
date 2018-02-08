@@ -4,5 +4,39 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" Runat="Server">
 
+
+    <form runat="server" id="form">
+
+        <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
+            <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
+                <button class="jen-modal-close-full" type="button" jen-close></button>
+                <div class="jen-search jen-search-large" action="/search.aspx" method="get" enctype="multipart/form-data">
+                    <input type="text"
+                        class="jen-search-input jen-text-center"
+                        id="txtSearch"
+                        onkeydown="if (event.keyCode == 13)
+                        doSomething();"
+                        placeholder="Search..." autofocus />
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+
 </asp:Content>
 
