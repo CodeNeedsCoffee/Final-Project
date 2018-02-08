@@ -113,4 +113,32 @@ Public Class DoctorDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
+    Public Sub UpdateDoctor(ByVal DoctorID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String, ByVal salary As String, ByVal specialty As String)
+        Try
+            connString.Open()
+            cmdstring.Parameters.Clear()
+            With cmdstring
+                .Connection = connString
+                .CommandType = CommandType.StoredProcedure
+                .CommandTimeout = 900
+                .CommandText = "Update_Doctor"
+                .Parameters.Add("@PhyID", SqlDbType.VarChar, 6).Value = DoctorID
+                .Parameters.Add("@fname", SqlDbType.VarChar, 25).Value = fname
+                .Parameters.Add("@lname", SqlDbType.VarChar, 30).Value = lname
+                .Parameters.Add("@initial", SqlDbType.VarChar, 1).Value = minit
+                .Parameters.Add("@email", SqlDbType.VarChar, 100).Value = email
+                .Parameters.Add("@phone", SqlDbType.VarChar, 15).Value = phone
+                .Parameters.Add("@streetadd", SqlDbType.VarChar, 40).Value = street
+                .Parameters.Add("@city", SqlDbType.VarChar, 60).Value = city
+                .Parameters.Add("@stateabr", SqlDbType.VarChar, 2).Value = state
+                .Parameters.Add("@zip", SqlDbType.VarChar, 5).Value = zip
+                .Parameters.Add("@gender", SqlDbType.VarChar, 1).Value = gender
+                .Parameters.Add("@specialty", SqlDbType.VarChar, 50).Value = specialty
+                .Parameters.Add("@salary", SqlDbType.VarChar, 7).Value = salary
+                .ExecuteNonQuery()
+            End With
+        Catch ex As Exception
+            Throw New ArgumentException(ex.Message)
+        End Try
+    End Sub
 End Class

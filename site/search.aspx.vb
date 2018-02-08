@@ -32,5 +32,4 @@ Partial Class search
         End Try
 
     End Sub
-    End Sub
 End Class

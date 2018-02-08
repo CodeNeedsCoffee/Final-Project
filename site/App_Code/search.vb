@@ -1,7 +1,8 @@
 ﻿Imports Microsoft.VisualBasic, System.Data, System.Web, System.Configuration.ConfigurationManager, System.Collections, System.Collections.Generic
 
 Public Class search
-
+    Dim connString As New SqlClient.SqlConnection(ConnectionStrings("connstring").ConnectionString)
+    Dim cmdstring As New SqlClient.SqlCommand
 
 
     Public Function searching(ByVal cliID As String, ByVal fname As String, ByVal lname As String) As DataSet
