@@ -28,11 +28,20 @@ Partial Class addPrescription
         Dim cdatatable As New DataTable
         Dim ddatatable As New DataTable
         Dim pdatatable As New DataTable
+        Dim rxnumber As String
+        Dim intrxnumber As Int32
+        Dim adatatable As New DataTable
+
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
         ddatatable = ddatatier.GetAllDoctors().Tables(0)
-        pdatatable = pdatatier.GetAllPrescriptions().Tables(0)
 
+
+        adatatable = pdatatier.getlastrxnumber.Tables(0)
+        rxnumber = adatatable.Rows.Item(0).Item("maxRxNumber")
+        intrxnumber = CType(rxnumber, Int32) + 1
+        ddlRXNumber.Items.Add(intrxnumber.ToString)
+        ddlRXNumber.Enabled = False
 
         For Each dr As DataRow In cdatatable.Rows
 
@@ -47,12 +56,6 @@ Partial Class addPrescription
             ddlDoctorID.Items.Add(dr("PhyID"))
         Next
 
-
-
-        For Each dr As DataRow In pdatatable.Rows
-
-            ddlRXNumber.Items.Add(dr("RxNumber"))
-        Next
 
 
     End Sub

@@ -51,7 +51,6 @@
                     <label style="vertical-align: text-top;">&nbsp RX Number</label>
                     <div jen-form-custom="target: > * > span:first-child">
                         <asp:DropDownList ID="ddlRXNumber" runat="server">
-                            <asp:ListItem Selected="True" disabled>Please Select</asp:ListItem>
                         </asp:DropDownList>
                         <button class="jen-button jen-button-default" type="button" tabindex="-1">
                             <span></span>

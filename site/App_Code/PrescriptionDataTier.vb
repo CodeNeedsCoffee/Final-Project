@@ -33,6 +33,37 @@ Public Class PrescriptionDataTier
 
     End Function
 
+
+    Public Function getlastrxnumber() As DataSet
+        Try
+            'open connection
+            connString.Open()
+            cmdstring.Parameters.Clear()
+            'command
+            cmdstring.Connection = connString
+            cmdstring.CommandType = CommandType.StoredProcedure
+            cmdstring.CommandTimeout = 1500
+            cmdstring.CommandText = "getlastrxnumber"
+
+            'adapter and dataset
+            Dim aAdapter As New SqlClient.SqlDataAdapter
+            aAdapter.SelectCommand = cmdstring
+            Dim aDataSet As New DataSet
+
+            'fill adapater
+            aAdapter.Fill(aDataSet)
+
+            Return aDataSet
+            'Return
+
+        Catch ex As Exception
+            Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
+        End Try
+
+    End Function
+
     Public Function GetPrescriptionsByRxNumber(ByVal RxNumber As String) As DataSet
 
         Try
