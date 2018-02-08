@@ -107,7 +107,7 @@
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
-                    <label>Dispense</label>
+                    <label>Dosage</label>
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: nut"></span>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
-                    <label>Dosage</label>
+                    <label>Dispense</label>
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: menu"></span>

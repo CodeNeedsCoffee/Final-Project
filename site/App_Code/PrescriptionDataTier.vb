@@ -76,9 +76,9 @@ Public Class PrescriptionDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 150
-                .CommandText = “GetStudentID”
+                .CommandText = “GetPerscriptionID”
                 'Define input parameter
-                .Parameters.Add(“@RxNumber”, SqlDbType.Int).Value = RxNumber
+                .Parameters.Add(“@PerscriptionID”, SqlDbType.Int).Value = RxNumber
                 ''execute command
                 '.ExecuteNonQuery()
             End With
