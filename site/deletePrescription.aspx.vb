@@ -3,7 +3,15 @@ Partial Class deletePrescription
     Inherits System.Web.UI.Page
 
     Private Sub deletePrescription_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim pdatatier As New PrescriptionDataTier
+        Dim ddatatable As New DataTable
 
+        ddatatable = pdatatier.GetAllPrescriptions().Tables(0)
+
+        For Each dr As DataRow In ddatatable.Rows
+
+            ddlrxnumber.Items.Add(dr("RxNumber"))
+        Next
     End Sub
 
     Private Sub btnFill_Click(sender As Object, e As EventArgs) Handles btnFill.Click
