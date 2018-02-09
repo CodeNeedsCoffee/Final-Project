@@ -209,7 +209,7 @@
 
             <div class="jen-navbar-right">
 
-                <a class="jen-navbar-toggle" href="#modal-full" jen-search-icon jen-toggle></a>
+                <a class="jen-navbar-toggle" href="#modal-full" jen-search-icon jen-toggle style="color: #297a44;"></a><p style="color: #297a44;">Search Prescription</p>
 
             </div>
 
@@ -238,7 +238,7 @@
             <div>
                 <div>
                     <h5>Louis Pharmacy</h5>
-                    <p>Copyright | Jesse Killinger, Evan Tempelin, Nick Luongo | Team JEN | 2018.&nbsp;&nbsp;                         <asp:HyperLink ID="HplAboutUs" runat="server" NavigateUrl="aboutus.aspx">About Us</asp:HyperLink></p>
+                    <p>Copyright | Jesse Killinger, Evan Tempelin, Nick Luongo | Team JEN | 2018. | <asp:HyperLink ID="HplAboutUs" runat="server" NavigateUrl="aboutus.aspx">About Us</asp:HyperLink></p>
 
                 </div>
             </div>
