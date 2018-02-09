@@ -46,19 +46,21 @@ Partial Class updateClient
 
 
     Private Sub btnFill_Click(sender As Object, e As EventArgs) Handles btnFill.Click
-        Dim ddatatier As New DoctorDataTier
+        Dim ddatatier As New ClientDataTier
         Dim adataset As New DataSet
         Dim adatatable As New DataTable
+        Dim cliid As String
+        cliid = ddlUpdateClientID.SelectedValue
 
-        adataset = ddatatier.GetDoctorByID(ddlUpdateClientID.SelectedValue)
+        adataset = ddatatier.GetClientByID(cliid)
 
         adatatable = adataset.Tables(0)
 
         txtClientFname.Text = adatatable.Rows(0)("fname")
         txtClientLname.Text = adatatable.Rows(0)("lname")
         txtClientMidInt.Text = adatatable.Rows(0)("initial")
-        txtClientEmail.Text = adatatable.Rows(0)("email")
-        txtClientPhone.Text = adatatable.Rows(0)("phone")
+        txtClientEmail.Text = adatatable.Rows(0)("email1")
+        txtClientPhone.Text = adatatable.Rows(0)("phone1")
         txtClientStreet.Text = adatatable.Rows(0)("streetadd")
         txtClientState.Text = adatatable.Rows(0)("stateabr")
         txtClientCity.Text = adatatable.Rows(0)("city")

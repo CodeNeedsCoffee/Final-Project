@@ -79,7 +79,7 @@ Public Class ClientDataTier
                 .CommandTimeout = 150
                 .CommandText = “GetclientID”
                 'Define input parameter
-                .Parameters.Add(“@CliID”, SqlDbType.VarChar, 6).Value = CliID
+                .Parameters.Add(“@clientID”, SqlDbType.VarChar, 6).Value = CliID
                 ''execute command
                 '.ExecuteNonQuery()
             End With
@@ -159,9 +159,9 @@ Public Class ClientDataTier
                 .Parameters.Add("@initial", SqlDbType.VarChar, 1).Value = minit
                 .Parameters.Add("@email1", SqlDbType.VarChar, 100).Value = email
                 .Parameters.Add("@phone1", SqlDbType.VarChar, 15).Value = phone
-                .Parameters.Add("@streetadd", SqlDbType.VarChar, 40).Value = street
+                .Parameters.Add("@street", SqlDbType.VarChar, 40).Value = street
                 .Parameters.Add("@city", SqlDbType.VarChar, 60).Value = city
-                .Parameters.Add("@stateabr", SqlDbType.VarChar, 2).Value = state
+                .Parameters.Add("@dstate", SqlDbType.VarChar, 2).Value = state
                 .Parameters.Add("@zip", SqlDbType.VarChar, 5).Value = zip
                 .Parameters.Add("@gender", SqlDbType.VarChar, 1).Value = gender
 
