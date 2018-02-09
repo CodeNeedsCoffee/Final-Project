@@ -44,6 +44,9 @@ Partial Class addClient
         Dim adatatier As New ClientDataTier
         Dim adatatable As New DataTable
 
+        If Not IsPostBack Then
+            ddlClientID.Items.Clear()
+        End If
 
         adatatable = adatatier.GetGetLastClientID.Tables(0)
         clientId = adatatable.Rows.Item(0).Item("MaxCliID")
