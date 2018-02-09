@@ -48,141 +48,120 @@
             currentCallback = callback;
         }
 
-        $(function () {
+        function good() {
 
-            // add listener for when our confirmation button is clicked
-            $('.confirmButton').click(function () {
-                $('.customAlert').css('animation', 'fadeOut 0.3s linear');
-                setTimeout(function () {
-                    $('.customAlert').css('animation', 'none');
-                    $('.customAlert').css('display', 'none');
-                }, 300);
-                currentCallback();
-            })
-
-            $('.rab').click(function () {
-                alert("If you think about anything, you are actually doing a recursive function which resolves your neurons into a deep pi calculation. You are then executing about 4294 threads in your brain, which do a parallel computation.", function () {
-                    console.log("Callback executed");
+                // add listener for when our confirmation button is clicked
+                $('.confirmButton').click(function () {
+                    $('.customAlert').css('animation', 'fadeOut 0.3s linear');
+                    setTimeout(function () {
+                        $('.customAlert').css('animation', 'none');
+                        $('.customAlert').css('display', 'none');
+                    }, 300);
+                    currentCallback();
                 })
-            });
 
-            // our custom alert box
-            setTimeout(function () {
-                alert('You are probably reading this alert box and have no clue why the heck you are even reading it, well guess what, the moon in reality is nothing else than a big ass pokemon, floating in space.', function () {
-                    console.log("Callback executed");
-                });
-            }, 500);
-        });
+                    alert("Update Successful", function () {
+                        console.log("Callback executed");
+
+            });
+        }
+
+        
 
     </script>
     <style>
-        
+        .customAlert {
+            display: none;
+            position: fixed;
+            max-width: 25%;
+            min-width: 250px !important;
+            min-height: 5%;
+            height: 85px;
+            left: 50%;
+            top: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-left: -12.5%;
+            margin-top: -5.2%;
+            background: #565656;
+            color: azure;
 
+            @media all and (max-width: 1300px) {
+                .message {
+                    font-size: 14px !important;
+                }
 
-.customAlert {
-    display: none;
-    position: fixed;
-    max-width: 25%;
-    min-width: 250px !important;
-    min-height: 20%;
-    height: 200px;
-    left: 50%;
-    top: 50%;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-left: -12.5%;
-    margin-top: -5.2%;
-    background: #088A68;
+                input[type='button'] {
+                    height: 15% !important;
+                }
+            }
 
-    @media all and (max-width: 1300px) {
-        .message {
-            font-size: 14px !important;
+            .message
+
+        {
+            padding: 5px;
+            color: white;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: justify;
         }
 
         input[type='button'] {
-            height: 15% !important;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 50%;
+            height: 36px;
+            margin-top: -45px;
+            margin-left: -25%;
+            outline: 0;
+            border: 0;
+            background: #04B486;
+            color: white;
+            &:hover
+
+        {
+            transition: 0.3s;
+            cursor: pointer;
+            background: lighten(#04B486, 5%);
         }
-    }
 
-    .message
+        }
+        }
 
-{
-    padding: 5px;
-    color: white;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: justify;
-}
+        .rab {
+            width: 200px;
+            height: 30px;
+            outline: 0;
+            border: 0;
+            color: white;
+            background: darken(#04B486, 5%);
+        }
 
-input[type='button'] {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 50%;
-    height: 36px;
-    margin-top: -45px;
-    margin-left: -25%;
-    outline: 0;
-    border: 0;
-    background: #04B486;
-    color: white;
-    &:hover
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
 
-{
-    transition: 0.3s;
-    cursor: pointer;
-    background: lighten(#04B486, 5%);
-}
+            to {
+                opacity: 0;
+            }
+        }
 
-}
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-.rab {
-    width: 200px;
-    height: 30px;
-    outline: 0;
-    border: 0;
-    color: white;
-    background: darken(#04B486, 5%);
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
+            to {
+                opacity: 1;
+            }
+        }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body id="Tagging" runat="server">
-
-
-
-
-    <div class='customAlert'>
-  <p class='message'></p>
-	<input type='button' class='confirmButton' value='Ok'>
-</div>
-  
-
-
-
-
 
     <div class="jen-position-top">
         <nav class="jen-navbar-container jen-navbar-transparent" jen-navbar>
@@ -246,8 +225,13 @@ input[type='button'] {
         </div>
     </div>
     <div class="jen-card jen-card-hover jen-card-body">
+        
         <asp:ContentPlaceHolder ID="Body" runat="server">
         </asp:ContentPlaceHolder>
+    </div>
+    <div class='customAlert'>
+        <p class='message'></p>
+        <input type='button' class='confirmButton' value='Ok'>
     </div>
     <footer>
         <div>

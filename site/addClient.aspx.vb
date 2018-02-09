@@ -31,6 +31,7 @@ Partial Class addClient
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
         txtClientDOB.Text = String.Empty
+        ddlClientID.Items.Clear()
 
 
         Master.BodyTag.Attributes.Add("onload", "good();")

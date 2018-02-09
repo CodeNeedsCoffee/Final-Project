@@ -42,9 +42,6 @@
             </div>
 
 
-                <input type='button' class='rab' value='Raise alert'>
-
-
 
                 <h3 class="jen-card-title">Personal Information</h3>
                 <div class="jen-margin">
