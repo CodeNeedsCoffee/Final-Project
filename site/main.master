@@ -50,23 +50,23 @@
 
         function good() {
 
-                // add listener for when our confirmation button is clicked
-                $('.confirmButton').click(function () {
-                    $('.customAlert').css('animation', 'fadeOut 0.3s linear');
-                    setTimeout(function () {
-                        $('.customAlert').css('animation', 'none');
-                        $('.customAlert').css('display', 'none');
-                    }, 300);
-                    currentCallback();
-                })
+            // add listener for when our confirmation button is clicked
+            $('.confirmButton').click(function () {
+                $('.customAlert').css('animation', 'fadeOut 0.3s linear');
+                setTimeout(function () {
+                    $('.customAlert').css('animation', 'none');
+                    $('.customAlert').css('display', 'none');
+                }, 300);
+                currentCallback();
+            })
 
-                    alert("Update Successful", function () {
-                        console.log("Callback executed");
+            alert("Update Successful", function () {
+                console.log("Callback executed");
 
             });
         }
 
-        
+
 
     </script>
     <style>
@@ -158,10 +158,43 @@
             }
         }
     </style>
+    <style>
+        .scrollbar {
+            background: #F5F5F5;
+            overflow-y: scroll;
+        }
+
+        .force-overflow {
+            min-height: 450px;
+        }
+
+        #wrapper {
+            text-align: center;
+            width: 500px;
+            margin: auto;
+        }
+
+        #Tagging::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #Tagging::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        #Tagging::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #232323;
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body id="Tagging" runat="server">
+<body id="Tagging" runat="server" class="scrollbar">
 
     <div class="jen-position-top">
         <nav class="jen-navbar-container jen-navbar-transparent" jen-navbar>
@@ -225,7 +258,7 @@
         </div>
     </div>
     <div class="jen-card jen-card-hover jen-card-body">
-        
+
         <asp:ContentPlaceHolder ID="Body" runat="server">
         </asp:ContentPlaceHolder>
     </div>
@@ -238,7 +271,8 @@
             <div>
                 <div>
                     <h5>Louis Pharmacy</h5>
-                    <p>Copyright | Jesse Killinger, Evan Tempelin, Nick Luongo | Team JEN | 2018. | <asp:HyperLink ID="HplAboutUs" runat="server" NavigateUrl="aboutus.aspx">About Us</asp:HyperLink></p>
+                    <p>Copyright | Jesse Killinger, Evan Tempelin, Nick Luongo | Team JEN | 2018. |
+                        <asp:HyperLink ID="HplAboutUs" runat="server" NavigateUrl="aboutus.aspx">About Us</asp:HyperLink></p>
 
                 </div>
             </div>

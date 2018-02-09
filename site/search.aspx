@@ -6,6 +6,8 @@
 
 
     <form runat="server" id="form">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
 
         <div id="modal-full" class="jen-modal-full jen-modal" jen-modal>
             <div class="jen-modal-dialog jen-flex jen-flex-center jen-flex-middle" jen-height-viewport>
@@ -21,15 +23,34 @@
             </div>
         </div>
 
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+            <ContentTemplate>
+
+                <div class="jen-overflow-auto">
 
 
+                    <div class="jen-search jen-search-navbar">
+                        <span jen-search-icon></span>
+                        <asp:TextBox ID="txtSearching" runat="server" class="jen-search-input" type="search" placeholder="Search..."></asp:TextBox>
+                    </div>
 
-        <div class="jen-overflow-auto" >
+                    <br />
+                    <br />
 
-            <asp:GridView ID="dgvSearch" runat="server" CssClass="jen-table jen-table-hover jen-table-middle jen-table-divider"></asp:GridView>
-            <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
+                    <asp:GridView ID="dgvSearch" runat="server" CssClass="jen-table jen-table-hover jen-table-middle jen-table-divider"></asp:GridView>
+                    <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
 
-        </div>
+                </div>
+
+
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="txtSearching" EventName="TextChanged" />
+            </Triggers>
+        </asp:UpdatePanel>
+
+
     </form>
 
 
