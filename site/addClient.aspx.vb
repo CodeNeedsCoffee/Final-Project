@@ -31,6 +31,10 @@ Partial Class addClient
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
         txtClientDOB.Text = String.Empty
+
+
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
     End Sub
 
     Private Sub addClient_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -45,5 +49,11 @@ Partial Class addClient
         intcliendID = CType(clientId, Int32) + 1
         ddlClientID.Items.Add(intcliendID.ToString)
         ddlClientID.Enabled = False
+
+        'If IsPostBack Then
+        '    Master.BodyTag.Attributes.Remove("onload")
+        'End If
+
+
     End Sub
 End Class

@@ -26,16 +26,19 @@ Partial Class MasterPage
             End If
         End If
 
-        If IsPostBack Then
-            If (Not Page.ClientScript.IsStartupScriptRegistered("alert")) Then
-                Page.ClientScript.RegisterStartupScript _
-                (Me.GetType(), "snackbar", "var x = document.getElementById('snackbar') x.className = 'show'; setTimeout(Function() {x.className = x.className.replace('show', ''); }, 3000);", True)
-            End If
-        End If
-
-
 
     End Sub
+
+
+
+    Public Property BodyTag As HtmlGenericControl
+        Get
+            Return Tagging
+        End Get
+        Set(value As HtmlGenericControl)
+            Tagging = value
+        End Set
+    End Property
 
 
 

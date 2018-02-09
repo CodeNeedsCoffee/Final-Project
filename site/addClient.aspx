@@ -2,6 +2,8 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
+<%@ MasterType VirtualPath="~/main.master" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 
@@ -38,6 +40,9 @@
                     <span jen-icon="icon: chevron-down"></span>
                 </button>
             </div>
+
+
+                <input type='button' class='rab' value='Raise alert'>
 
 
 
