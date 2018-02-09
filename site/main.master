@@ -209,7 +209,7 @@
 
             <div class="jen-navbar-right">
 
-                <a class="jen-navbar-toggle" href="#modal-full" jen-search-icon jen-toggle style="color: #297a44;"></a><p style="color: #297a44;">Search Prescription</p>
+                <a class="jen-navbar-toggle" href="#modal-full" jen-search-icon jen-toggle style="color: #297a44;">Search Prescription &nbsp;</a>
 
             </div>
 
