@@ -69,6 +69,7 @@ Partial Class updateDoctor
         txtDoctorSpecialty.Text = adatatable.Rows(0)("specialty")
         txtdoctorEmail.Text = adatatable.Rows(0)("email")
         txtdoctorPhone.Text = adatatable.Rows(0)("phone")
+        txtdoctorCity.Text = adatatable.Rows(0)("city")
         txtdoctorStreet.Text = adatatable.Rows(0)("streetadd")
         txtdoctorState.Text = adatatable.Rows(0)("stateabr")
         txtdoctorZip.Text = adatatable.Rows(0)("zip")
