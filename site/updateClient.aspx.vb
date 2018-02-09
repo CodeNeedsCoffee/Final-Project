@@ -18,11 +18,6 @@ Partial Class updateClient
         zip = txtClientZip.Text.Trim
         gender = txtClientGender.Text.Trim
         aclienttier.UpdateClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender)
-    End Sub
-
-    Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim cdatatier As New ClientDataTier
-        Dim cdatatable As New DataTable
         txtClientFname.Text = String.Empty
         txtClientMidInt.Text = String.Empty
         txtClientLname.Text = String.Empty
@@ -34,6 +29,12 @@ Partial Class updateClient
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
         ddlUpdateClientID.Items.Clear()
+    End Sub
+
+    Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim cdatatier As New ClientDataTier
+        Dim cdatatable As New DataTable
+
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
 

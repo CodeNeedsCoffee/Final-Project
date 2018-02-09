@@ -17,7 +17,16 @@ Partial Class addPrescription
         dosage = txtprescriptionDosage.Text.Trim
         frequency = txtprescriptionFreq.Text.Trim
         aprescription.add_prescription(CliID, PhysID, refillnum, medname, medtype, dispense, intake, dosage, frequency)
-
+        txtprescriptionDispense.Text = String.Empty
+        txtprescriptionDosage.Text = String.Empty
+        txtprescriptionFreq.Text = String.Empty
+        txtprescriptionIntake.Text = String.Empty
+        txtprescriptionMedName.Text = String.Empty
+        txtprescriptionMedType.Text = String.Empty
+        txtprescriptionRefillNum.Text = String.Empty
+        ddlCliID.Items.Clear()
+        ddlDoctorID.Items.Clear()
+        ddlRXNumber.Items.Clear()
     End Sub
 
     Private Sub addPrescription_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -30,16 +39,7 @@ Partial Class addPrescription
         Dim rxnumber As String
         Dim intrxnumber As Int32
         Dim adatatable As New DataTable
-        txtprescriptionDispense.Text = String.Empty
-        txtprescriptionDosage.Text = String.Empty
-        txtprescriptionFreq.Text = String.Empty
-        txtprescriptionIntake.Text = String.Empty
-        txtprescriptionMedName.Text = String.Empty
-        txtprescriptionMedType.Text = String.Empty
-        txtprescriptionRefillNum.Text = String.Empty
-        ddlCliID.Items.Clear()
-        ddlDoctorID.Items.Clear()
-        ddlRXNumber.Items.Clear()
+
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
         ddatatable = ddatatier.GetAllDoctors().Tables(0)

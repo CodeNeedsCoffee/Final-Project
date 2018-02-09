@@ -115,7 +115,7 @@ Public Class ClientDataTier
             Throw New ArgumentException(ex.Message)
         End Try
     End Sub
-    Public Sub AddClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As Date)
+    Public Sub AddClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String)
         Try
             connString.Open()
             cmdstring.Parameters.Clear()

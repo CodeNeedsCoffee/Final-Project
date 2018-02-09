@@ -5,17 +5,7 @@ Partial Class deletePrescription
     Private Sub deletePrescription_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim pdatatier As New PrescriptionDataTier
         Dim ddatatable As New DataTable
-        ddlClientID.Items.Clear()
-        ddlDoctorID.Items.Clear()
-        ddlrxnumber.Items.Clear()
-        txtPrescriptionRefills.Text = String.Empty
-        txtPrescriptionName.Text = String.Empty
-        txtPrescriptionOrdered.Text = String.Empty
-        txtPrescriptionDosage.Text = String.Empty
-        txtPrescriptionType.Text = String.Empty
-        txtPrescriptionIntake.Text = String.Empty
-        txtPrescriptionDispenses.Text = String.Empty
-        txtPrescriptionFrequency.Text = String.Empty
+
 
 
 
@@ -54,5 +44,18 @@ Partial Class deletePrescription
         Dim pdatatier As New PrescriptionDataTier
 
         pdatatier.DeletePrescription(ddlrxnumber.SelectedValue)
+
+        ddlClientID.Items.Clear()
+        ddlDoctorID.Items.Clear()
+        ddlrxnumber.Items.Clear()
+        txtPrescriptionRefills.Text = String.Empty
+        txtPrescriptionName.Text = String.Empty
+        txtPrescriptionOrdered.Text = String.Empty
+        txtPrescriptionDosage.Text = String.Empty
+        txtPrescriptionType.Text = String.Empty
+        txtPrescriptionIntake.Text = String.Empty
+        txtPrescriptionDispenses.Text = String.Empty
+        txtPrescriptionFrequency.Text = String.Empty
+
     End Sub
 End Class

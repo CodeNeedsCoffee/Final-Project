@@ -5,16 +5,7 @@ Partial Class updatePrescription
     Private Sub updatePrescription_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim pdatatier As New PrescriptionDataTier
         Dim ddatatable As New DataTable
-        txtPrescriptionDispenses.Text = String.Empty
-        txtPrescriptionDosage.Text = String.Empty
-        txtPrescriptionFrequency.Text = String.Empty
-        txtPrescriptionIntake.Text = String.Empty
-        txtPrescriptionName.Text = String.Empty
-        txtPrescriptionRefills.Text = String.Empty
-        txtPrescriptionType.Text = String.Empty
-        ddlPhtID.Items.Clear()
-        ddlRxNumber.Items.Clear()
-        ddlUpdateClientID.Items.Clear()
+
 
         ddatatable = pdatatier.GetAllPrescriptions().Tables(0)
 
@@ -59,6 +50,15 @@ Partial Class updatePrescription
         dispense = txtPrescriptionDispenses.Text.ToString
         frequency = txtPrescriptionFrequency.Text.ToString
         aprescripttier.Update_prescription(rxnumber, cliid, physid, refillnum, medname, medtype, dosage, intake, dispense, frequency)
-
+        txtPrescriptionDispenses.Text = String.Empty
+        txtPrescriptionDosage.Text = String.Empty
+        txtPrescriptionFrequency.Text = String.Empty
+        txtPrescriptionIntake.Text = String.Empty
+        txtPrescriptionName.Text = String.Empty
+        txtPrescriptionRefills.Text = String.Empty
+        txtPrescriptionType.Text = String.Empty
+        ddlPhtID.Items.Clear()
+        ddlRxNumber.Items.Clear()
+        ddlUpdateClientID.Items.Clear()
     End Sub
 End Class

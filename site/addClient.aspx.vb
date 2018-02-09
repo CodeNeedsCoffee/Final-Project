@@ -17,16 +17,9 @@ Partial Class addClient
         state = txtClientState.Text.Trim
         zip = txtClientZip.Text.Trim
         gender = txtClientGender.Text.Trim
-        dob = CType(txtClientDOB.Text.Trim, Date)
+        dob = txtClientDOB.Text.Trim
         aclienttier.AddClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob)
-    End Sub
-
-    Private Sub addClient_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim clientId As String
-        Dim intcliendID As Int32
-        Dim adatatier As New ClientDataTier
-        Dim adatatable As New DataTable
-        clientId = ddlClientID.Text.Trim
+        ClientID = ddlClientID.Text.Trim
         txtClientFname.Text = String.Empty
         txtClientMidInt.Text = String.Empty
         txtClientLname.Text = String.Empty
@@ -38,6 +31,14 @@ Partial Class addClient
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
         txtClientDOB.Text = String.Empty
+    End Sub
+
+    Private Sub addClient_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim clientId As String
+        Dim intcliendID As Int32
+        Dim adatatier As New ClientDataTier
+        Dim adatatable As New DataTable
+
 
         adatatable = adatatier.GetGetLastClientID.Tables(0)
         clientId = adatatable.Rows.Item(0).Item("MaxCliID")

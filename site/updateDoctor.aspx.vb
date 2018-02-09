@@ -20,11 +20,6 @@ Partial Class updateDoctor
         salary = txtDoctorSalary.Text.Trim
         specialty = txtDoctorSpecialty.Text.Trim
         aDoctortier.UpdateDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, salary, specialty)
-    End Sub
-
-    Private Sub updateDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim ddatatier As New DoctorDataTier
-        Dim ddatatable As New DataTable
         txtdoctorCity.Text = String.Empty
         txtdoctorEmail.Text = String.Empty
         txtdoctorFname.Text = String.Empty
@@ -38,6 +33,12 @@ Partial Class updateDoctor
         txtdoctorStreet.Text = String.Empty
         txtdoctorZip.Text = String.Empty
         ddlUpdateDoctorID.Items.Clear()
+    End Sub
+
+    Private Sub updateDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim ddatatier As New DoctorDataTier
+        Dim ddatatable As New DataTable
+
 
 
         ddatatable = ddatatier.GetAllDoctors().Tables(0)

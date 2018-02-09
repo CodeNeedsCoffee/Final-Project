@@ -18,15 +18,8 @@ Partial Class addDoctor
         gender = txtDoctorGender.Text.Trim
         dob = txtDoctorDOB.Text.Trim
         salary = txtDoctorSalary.Text.Trim
-        specialty = txtDoctorSpecialty.text.trim
+        specialty = txtDoctorSpecialty.text.Trim
         aDoctortier.AddDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
-    End Sub
-
-    Private Sub addDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim phyid As String
-        Dim intphyid As Int32
-        Dim pdatatier As New DoctorDataTier
-        Dim adatatable As New DataTable
         txtDoctorCity.Text = String.Empty
         txtDoctorDOB.Text = String.Empty
         txtDoctorEmail.Text = String.Empty
@@ -40,6 +33,14 @@ Partial Class addDoctor
         txtDoctorState.Text = String.Empty
         txtDoctorStreet.Text = String.Empty
         txtDoctorZip.Text = String.Empty
+
+    End Sub
+
+    Private Sub addDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim phyid As String
+        Dim intphyid As Int32
+        Dim pdatatier As New DoctorDataTier
+        Dim adatatable As New DataTable
 
 
         adatatable = pdatatier.getlastphyid.Tables(0)
