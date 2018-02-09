@@ -78,8 +78,6 @@
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
-
-                    <div class="numbersofChart"></div>
                 </div>
             </div>
             <br />
