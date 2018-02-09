@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursuing full time employment after graduating from TSCT. You may remember him from his famous role as &quot;Beans&quot; in Disney&#39;s Even Stevens.</p>
+                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursuing full time employment after graduating from TSCT.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/nicholas-luongo-19b147149/" class="jen-button jen-button-text">Contact</a>
