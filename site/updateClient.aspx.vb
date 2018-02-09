@@ -29,6 +29,10 @@ Partial Class updateClient
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
         ddlUpdateClientID.Items.Clear()
+
+
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
     End Sub
 
     Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load

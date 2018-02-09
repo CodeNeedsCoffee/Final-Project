@@ -57,5 +57,7 @@ Partial Class deletePrescription
         txtPrescriptionDispenses.Text = String.Empty
         txtPrescriptionFrequency.Text = String.Empty
 
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
     End Sub
 End Class

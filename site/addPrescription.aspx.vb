@@ -27,6 +27,10 @@ Partial Class addPrescription
         ddlCliID.Items.Clear()
         ddlDoctorID.Items.Clear()
         ddlRXNumber.Items.Clear()
+
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
+
     End Sub
 
     Private Sub addPrescription_Load(sender As Object, e As EventArgs) Handles Me.Load

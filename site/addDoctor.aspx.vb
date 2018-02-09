@@ -34,6 +34,8 @@ Partial Class addDoctor
         txtDoctorStreet.Text = String.Empty
         txtDoctorZip.Text = String.Empty
 
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
     End Sub
 
     Private Sub addDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load

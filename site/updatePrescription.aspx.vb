@@ -60,5 +60,10 @@ Partial Class updatePrescription
         ddlPhtID.Items.Clear()
         ddlRxNumber.Items.Clear()
         ddlUpdateClientID.Items.Clear()
+
+
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
+
     End Sub
 End Class

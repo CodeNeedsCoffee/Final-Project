@@ -107,7 +107,7 @@ Public Class PrescriptionDataTier
                 .Connection = connString
                 .CommandType = CommandType.StoredProcedure
                 .CommandTimeout = 900
-                .CommandText = "DeleteStudentByID"
+                .CommandText = "DeletePrescription"
                 .Parameters.Add("@RxNumber", SqlDbType.Int).Value = RxNumber
                 .ExecuteNonQuery()
             End With

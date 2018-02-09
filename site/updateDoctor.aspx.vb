@@ -33,6 +33,10 @@ Partial Class updateDoctor
         txtdoctorStreet.Text = String.Empty
         txtdoctorZip.Text = String.Empty
         ddlUpdateDoctorID.Items.Clear()
+
+        Master.BodyTag.Attributes.Add("onload", "good();")
+
+
     End Sub
 
     Private Sub updateDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
