@@ -1,6 +1,3 @@
-/*! jen 3.0.0-beta.35 | http://www.getjen.com | (c) 2014 - 2017 YOOtheme | MIT License */
-
-
 
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -8,9 +5,7 @@
 	(global.jen = factory());
 }(this, (function () { 'use strict';
 
-/**
- * Promises/A+ polyfill v1.1.4 (https://github.com/bramstein/promis)
- */
+
 
 var RESOLVED = 0;
 var REJECTED = 1;
