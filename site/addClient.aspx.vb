@@ -17,7 +17,7 @@ Partial Class addClient
         state = txtClientState.Text.Trim
         zip = txtClientZip.Text.Trim
         gender = txtClientGender.Text.Trim
-        dob = txtClientDOB.Text.Trim
+        dob = CType(txtClientDOB.Text.Trim, Date)
         aclienttier.AddClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob)
     End Sub
 
