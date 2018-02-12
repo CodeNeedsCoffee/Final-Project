@@ -94,6 +94,8 @@ Public Class PrescriptionDataTier
 
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Function
 
@@ -113,6 +115,8 @@ Public Class PrescriptionDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
     Public Sub add_prescription(ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
@@ -137,6 +141,8 @@ Public Class PrescriptionDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
     Public Sub Update_prescription(ByVal rxnumber As String, ByVal cliID As String, ByVal physid As Integer, ByVal refillnum As String, ByVal medname As String, ByVal medtype As String, ByVal dispense As String, ByVal intake As String, ByVal dosage As String, ByVal frequency As String)
@@ -162,6 +168,8 @@ Public Class PrescriptionDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
 

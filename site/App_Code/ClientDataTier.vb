@@ -95,6 +95,8 @@ Public Class ClientDataTier
 
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Function
 
@@ -113,6 +115,8 @@ Public Class ClientDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
     Public Sub AddClient(ByVal ClientID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String)
@@ -141,6 +145,8 @@ Public Class ClientDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
 
@@ -169,6 +175,8 @@ Public Class ClientDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
 

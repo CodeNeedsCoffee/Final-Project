@@ -33,7 +33,7 @@
                             <span jen-icon="icon: chevron-down"></span>
                         </button>
                     </div>
-                <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default"  />
+                <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default" formnovalidate UseSubmitBehavior="False"  />
 
 
         </div>

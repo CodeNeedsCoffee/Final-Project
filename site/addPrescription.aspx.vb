@@ -6,9 +6,9 @@ Partial Class addPrescription
         Dim CliID, PhysID, rxnumber As Integer
         Dim refillnum, medname, medtype, dispense, intake, dosage, frequency As String
         Dim aprescription As New PrescriptionDataTier
-        CliID = ddlCliID.SelectedIndex()
-        PhysID = ddlDoctorID.SelectedIndex()
-        rxnumber = ddlRXNumber.SelectedIndex()
+        CliID = ddlCliID.SelectedItem.Text
+        PhysID = ddlDoctorID.SelectedItem.Text
+        rxnumber = ddlRXNumber.SelectedItem.Text
         refillnum = txtprescriptionRefillNum.Text.Trim
         medname = txtprescriptionMedName.Text.Trim
         medtype = txtprescriptionMedType.Text.Trim

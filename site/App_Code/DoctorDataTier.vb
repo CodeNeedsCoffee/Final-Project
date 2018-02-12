@@ -94,6 +94,8 @@ Public Class DoctorDataTier
 
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Function
 
@@ -113,6 +115,8 @@ Public Class DoctorDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
     Public Sub AddDoctor(ByVal DoctorID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal dob As String, ByVal salary As String, ByVal specialty As String)
@@ -142,6 +146,8 @@ Public Class DoctorDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
     Public Sub UpdateDoctor(ByVal DoctorID As String, ByVal fname As String, ByVal minit As String, ByVal lname As String, ByVal email As String, ByVal phone As String, ByVal street As String, ByVal city As String, ByVal state As String, ByVal zip As String, ByVal gender As String, ByVal salary As String, ByVal specialty As String)
@@ -170,6 +176,8 @@ Public Class DoctorDataTier
             End With
         Catch ex As Exception
             Throw New ArgumentException(ex.Message)
+        Finally
+            connString.Close()
         End Try
     End Sub
 End Class

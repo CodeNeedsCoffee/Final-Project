@@ -5,7 +5,7 @@ Partial Class addDoctor
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty As String
         Dim aDoctortier As New DoctorDataTier
-        DoctorID = ddlDoctorID.Text.Trim
+        DoctorID = ddlDoctorID.SelectedItem.Text
         fname = txtDoctorFname.Text.Trim
         minit = txtDoctorMidInt.Text.Trim
         lname = txtDoctorLname.Text.Trim
