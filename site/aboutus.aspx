@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Evan was focused on the styling of the page. He worked on not only the creation but the visual appeal of the website while collaboratingwith both Jesse and Nick. Shortly hHe will be graduating from TSCT and looking to return for Computer Software Engineering.</p>
+                    <p>Evan was focused on the styling of the page. He worked on not only the creation but the visual appeal of the website while collaborating with both Jesse and Nick. Shortly he will be graduating from TSCT and looking to return for Computer Software Engineering.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/evan-templin-ba862384/" class="jen-button jen-button-text">Contact</a>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="jen-card-body">
-                    <p>Nick was found working away at the database integration with Luis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursuing full time employment after graduating from TSCT.</p>
+                    <p>Nick was found working away at the database integration with Louis Pharmacy while teaming up with both Evan and Jesse. Shortly Nick will be pursuing full time employment after graduating from TSCT.</p>
                 </div>
                 <div class="jen-card-footer">
                     <a href="https://www.linkedin.com/in/nicholas-luongo-19b147149/" class="jen-button jen-button-text">Contact</a>
@@ -110,11 +110,11 @@
                     </div>
                     <div class="jen-card-body">
                         <h1>Team JEN</h1>
-                        <p>Team JEN was created by three mind that worked well as collaborators. Jesse, Evan, and Nick (or JEN), started off by responding to a request maybe by Luis Pharmacy on GitHub. The three amigos quickly formed together a well knit thinking machine and produced a brand new website for Luis Pharamacy baseed on the modern material website style.</p>
+                        <p>Team JEN was created by three minds that worked well as collaborators. Jesse, Evan, and Nick (or JEN), started off by responding to a request made by Louis Pharmacy on GitHub. The three amigos quickly formed together a well knit thinking machine and produced a brand new website for Louis Pharamacy based on the modern material website style.</p>
                     </div>
                     <div class="jen-card-body">
                         <h1>What is CNSA?</h1>
-                        <p>CNSA stands for Computer and Network Systems Administation. This is a degree that is held to the highest standards at the prestigous Thaddeus Stevens College of Technology. The technoloigy has been recognized by ASPEN as the one of the top 150 technical colleges in the country for 5 consectives times.</p>
+                        <p>CNSA stands for Computer and Network Systems Administation. This is a degree that is held to the highest standards at the prestigiousThaddeus Stevens College of Technology. The small technical college has been recognized by ASPEN as the one of the top 150 technical colleges in the country for 5 consectives times.</p>
                         <div class="jen-card-footer">
                             <a href="https://stevenscollege.edu/academics/associate-degrees/computer-network-systems-administration/" class="jen-button jen-button-text">Read more</a>
 
