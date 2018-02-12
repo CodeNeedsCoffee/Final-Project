@@ -34,33 +34,4 @@ Partial Class search
 
     End Sub
 
-    Private Sub UpdatePanel1_Load(sender As Object, e As EventArgs) Handles UpdatePanel1.Load
-        Dim strSearch As String
-        Dim aSearch As New searchclass
-
-        Dim sDataset As New DataSet
-        strSearch = txtSearching.Text.Trim
-
-        sDataset = aSearch.searching(strSearch)
-
-        Try
-            If sDataset.Tables(0).Rows.Count > 0 Then
-                'make it look nice
-                dgvSearch.DataSource = sDataset.Tables(0)
-
-                'Data grid visible
-                dgvSearch.Visible = True
-                lblMessage.Visible = False
-                dgvSearch.DataBind()
-            Else
-                dgvSearch.Visible = False
-                lblMessage.Visible = True
-                lblMessage.Text = "No Search Results"
-            End If
-
-            'txtSearch.Focus()
-        Catch ex As Exception
-
-        End Try
-    End Sub
 End Class

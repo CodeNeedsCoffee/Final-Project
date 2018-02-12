@@ -35,6 +35,13 @@
         }
     </script>
     <script>
+        function doSomethingelse() {
+            var someValueToPass = document.getElementById('txtSearching').value;
+
+            __doPostBack('CustomPostBack', someValueToPass);
+        }
+    </script>
+    <script>
         var currentCallback;
 
         // override default browser alert

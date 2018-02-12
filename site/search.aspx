@@ -32,7 +32,10 @@
 
                     <div class="jen-search jen-search-navbar">
                         <span jen-search-icon></span>
-                        <asp:TextBox ID="txtSearching" runat="server" class="jen-search-input" type="search" placeholder="Search..."></asp:TextBox>
+                        <input type="text" class="jen-search-input" id="txtSearching"
+                        onkeydown="if (event.keyCode == 13)
+                        doSomethingelse();"
+                        placeholder="Search Perscription..." autofocus />
                     </div>
 
                     <br />
@@ -45,9 +48,6 @@
 
 
             </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="txtSearching" EventName="TextChanged" />
-            </Triggers>
         </asp:UpdatePanel>
 
 
