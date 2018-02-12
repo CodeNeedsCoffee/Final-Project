@@ -45,7 +45,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: user"></span>
-                        <asp:TextBox ID="txtDoctorFname" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,25, 0);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorFname" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,25, 0);" pattern="[a-zA-Z]+" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -53,7 +53,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: user"></span>
-                        <asp:TextBox ID="txtDoctorMidInt" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,1, 1);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorMidInt" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,1, 1);" pattern="[a-zA-Z]+" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -62,7 +62,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: user"></span>
-                        <asp:TextBox ID="txtDoctorLname" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,30, 2);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorLname" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,30, 2);" pattern="[a-zA-Z]+" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
 
@@ -72,19 +72,7 @@
                     <div class="jen-inline">
                         <div class="uk-autocomplete uk-form" data-uk-autocomplete="{source:'degree.json'}">
                             <span class="jen-form-icon" jen-icon="icon: user"></span>
-                            <asp:TextBox ID="txtDoctorSpecialty" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,50, 3);"></asp:TextBox>
-                            <script type="text/autocomplete">
-                                <ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">
-                                    {{~items}}
-                                    <li data-value="{{ $item.value }}">
-                                        <a>
-                                            {{ $item.title }}
-                                            <div>{{{ $item.text }}}</div>
-                                        </a>
-                                    </li>
-                                    {{/items}}
-                                </ul>
-                            </script>
+                            <asp:TextBox ID="txtDoctorSpecialty" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,50, 3);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="numbersofChart"></div>
@@ -98,7 +86,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: mail"></span>
-                        <asp:TextBox ID="txtDoctorEmail" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,100, 4);"></asp:TextBox>
+                        <asp:TextBox type="email" ID="txtDoctorEmail" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,100, 4);"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -106,7 +94,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: receiver"></span>
-                        <asp:TextBox ID="txtDoctorPhone" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 5);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorPhone" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 5);" pattern="\d{3}[\-]\d{3}[\-]\d{4}"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -120,7 +108,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: home"></span>
-                        <asp:TextBox ID="txtDoctorStreet" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,40, 6);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorStreet" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,40, 6);" pattern="[[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*]+"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -128,7 +116,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: menu"></span>
-                        <asp:TextBox ID="txtDoctorCity" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,60, 7);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorCity" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,60, 7);" pattern="[a-zA-Z]+"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -137,7 +125,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: thumbnails"></span>
-                        <asp:TextBox ID="txtDoctorState" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this, 2, 8);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorState" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this, 2, 8);" pattern="[a-zA-Z]+"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -146,7 +134,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: location"></span>
-                        <asp:TextBox ID="txtDoctorZip" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,5, 9);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorZip" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,5, 9);" pattern="\d*"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                 </div>
@@ -159,7 +147,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: pencil"></span>
-                        <asp:TextBox ID="txtDoctorGender" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,1, 10);"></asp:TextBox>
+                        <asp:TextBox ID="txtDoctorGender" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,1, 10);" pattern="[a-zA-Z]+"></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -170,8 +158,8 @@
 
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
-                                <asp:TextBox ID="txtDoctorDOB" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;" onkeypress="countChar(this,7, 11);"></asp:TextBox>
-                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtDoctorDOB" />
+                                <asp:TextBox ID="txtDoctorDOB" runat="server" CssClass="jen-input" Style="width: 500px; padding-left: 40px;" onkeypress="countChar(this,7, 11);" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" required></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtDoctorDOB" Format="MM/dd/yyyy" />
                             </ContentTemplate>
 
                         </asp:UpdatePanel>
@@ -182,10 +170,11 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: credit-card"></span>
-                        <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,7,12);"></asp:TextBox>
-                        <div class="numbersofChart"></div>
+                        <asp:TextBox ID="txtDoctorSalary" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,7,12);" pattern="\d+(\.\d{2})?"></asp:TextBox>
+                        
 
                     </div>
+                    <div class="numbersofChart"></div>
                 </div>
 
             </div>

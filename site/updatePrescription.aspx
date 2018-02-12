@@ -33,7 +33,7 @@
                             <span jen-icon="icon: chevron-down"></span>
                         </button>
                     </div>
-                <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default" />
+                <asp:Button ID="btnFill" runat="server" Text="Fill Data" CssClass="jen-button jen-button-default"  />
 
 
         </div>
@@ -67,7 +67,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: tag"></span>
-                        <asp:TextBox ID="txtPrescriptionRefills" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 0);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionRefills" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,3, 0);"  pattern="\d*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -75,7 +75,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: bookmark"></span>
-                        <asp:TextBox ID="txtPrescriptionName" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,40, 1);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionName" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,40, 1);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -97,7 +97,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: info"></span>
-                        <asp:TextBox ID="txtPrescriptionType" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 3);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionType" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 3);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -105,7 +105,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: nut"></span>
-                        <asp:TextBox ID="txtPrescriptionDosage" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 4);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionDosage" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 4);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -113,7 +113,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: sign-in"></span>
-                        <asp:TextBox ID="txtPrescriptionIntake" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,140, 5);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionIntake" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,140, 5);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -121,7 +121,7 @@
                     <br />
                     <div class="jen-inline">
                         <span class="jen-form-icon" jen-icon="icon: menu"></span>
-                        <asp:TextBox ID="txtPrescriptionDispenses" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 6);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionDispenses" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,15, 6);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />
@@ -130,7 +130,7 @@
                     <div class="jen-inline">
 
                         <span class="jen-form-icon" jen-icon="icon: thumbnails"></span>
-                        <asp:TextBox ID="txtPrescriptionFrequency" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,20, 7);"></asp:TextBox>
+                        <asp:TextBox ID="txtPrescriptionFrequency" runat="server" CssClass="jen-input" Style="width: 500px" onkeypress="countChar(this,20, 7);" pattern="[a-zA-Z0-9_&-]+([ ]?[a-zA-Z0-9_&-]+)*" required></asp:TextBox>
                     </div>
                     <div class="numbersofChart"></div>
                     <br />

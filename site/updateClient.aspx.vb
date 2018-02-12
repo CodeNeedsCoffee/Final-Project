@@ -47,6 +47,8 @@ Partial Class updateClient
 
             ddlUpdateClientID.Items.Add(dr("CliID"))
         Next
+
+
     End Sub
 
 
