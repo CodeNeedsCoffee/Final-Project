@@ -44,19 +44,13 @@ Partial Class addClient
         Dim adatatier As New ClientDataTier
         Dim adatatable As New DataTable
 
-        If Not IsPostBack Then
-            ddlClientID.Items.Clear()
-        End If
+        ddlClientID.Items.Clear()
 
         adatatable = adatatier.GetGetLastClientID.Tables(0)
         clientId = adatatable.Rows.Item(0).Item("MaxCliID")
         intcliendID = CType(clientId, Int32) + 1
         ddlClientID.Items.Add(intcliendID.ToString)
         ddlClientID.Enabled = False
-
-        'If IsPostBack Then
-        '    Master.BodyTag.Attributes.Remove("onload")
-        'End If
 
 
     End Sub

@@ -43,7 +43,7 @@ Partial Class updateDoctor
         Dim ddatatier As New DoctorDataTier
         Dim ddatatable As New DataTable
 
-
+        ddlUpdateDoctorID.Items.Clear()
 
         ddatatable = ddatatier.GetAllDoctors().Tables(0)
 

@@ -33,6 +33,7 @@ Partial Class addDoctor
         txtDoctorState.Text = String.Empty
         txtDoctorStreet.Text = String.Empty
         txtDoctorZip.Text = String.Empty
+        ddlDoctorID.Items.Clear()
 
         Master.BodyTag.Attributes.Add("onload", "good();")
 
@@ -44,6 +45,7 @@ Partial Class addDoctor
         Dim pdatatier As New DoctorDataTier
         Dim adatatable As New DataTable
 
+        ddlDoctorID.Items.Clear()
 
         adatatable = pdatatier.getlastphyid.Tables(0)
         phyid = adatatable.Rows.Item(0).Item("maxPhyID")

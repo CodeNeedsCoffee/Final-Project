@@ -6,6 +6,9 @@ Partial Class updatePrescription
         Dim pdatatier As New PrescriptionDataTier
         Dim ddatatable As New DataTable
 
+        ddlPhtID.Items.Clear()
+        ddlRxNumber.Items.Clear()
+        ddlUpdateClientID.Items.Clear()
 
         ddatatable = pdatatier.GetAllPrescriptions().Tables(0)
 

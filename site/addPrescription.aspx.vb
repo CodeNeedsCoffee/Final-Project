@@ -44,6 +44,9 @@ Partial Class addPrescription
         Dim intrxnumber As Int32
         Dim adatatable As New DataTable
 
+        ddlCliID.Items.Clear()
+        ddlDoctorID.Items.Clear()
+        ddlRXNumber.Items.Clear()
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
         ddatatable = ddatatier.GetAllDoctors().Tables(0)

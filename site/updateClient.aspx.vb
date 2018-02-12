@@ -39,6 +39,7 @@ Partial Class updateClient
         Dim cdatatier As New ClientDataTier
         Dim cdatatable As New DataTable
 
+        ddlUpdateClientID.Items.Clear()
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
 
