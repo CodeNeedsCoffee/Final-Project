@@ -4,32 +4,19 @@ Partial Class updatePrescription
 
     Private Sub updatePrescription_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim pdatatier As New PrescriptionDataTier
-        Dim ddatatable, pdatatable, cdatatabe As New DataTable
-        Dim ddatatier As New DoctorDataTier
-        Dim cdatatier As New ClientDataTier
+        Dim pdatatable As New DataTable
 
-        ddlPhtID.Items.Clear()
+        If Not IsPostBack Then
+            pdatatable = pdatatier.GetAllPrescriptions().Tables(0)
 
-        ddlUpdateClientID.Items.Clear()
 
-        pdatatable = pdatatier.GetAllPrescriptions().Tables(0)
-        ddatatable = ddatatier.GetAllDoctors().Tables(0)
-        cdatatabe = cdatatier.GetAllClients().Tables(0)
+            For Each dr As DataRow In pdatatable.Rows
 
-        For Each dr As DataRow In pdatatable.Rows
+                ddlRxNumber.Items.Add(dr("RxNumber"))
+            Next
+        End If
 
-            ddlRxNumber.Items.Add(dr("RxNumber"))
-        Next
 
-        For Each dr As DataRow In ddatatable.Rows
-
-            ddlPhtID.Items.Add(dr("PhyID"))
-        Next
-
-        For Each dr As DataRow In cdatatabe.Rows
-
-            ddlUpdateClientID.Items.Add(dr("CliID"))
-        Next
 
     End Sub
 
@@ -42,10 +29,15 @@ Partial Class updatePrescription
         Dim rxstr As String
 
         rxstr = ddlRxNumber.SelectedItem.Text
-
         adataset = pdatatier.GetPrescriptionsByRxNumber(rxstr)
-
         adatatable = adataset.Tables(0)
+
+        ViewState("rxnumber") = rxstr
+
+        ddlRxNumber.Items.Clear()
+        ddlPhtID.Items.Clear()
+        ddlUpdateClientID.Items.Clear()
+
 
         txtPrescriptionRefills.Text = adatatable.Rows(0)("PerscriptionRefills")
         txtPrescriptionName.Text = adatatable.Rows(0)("MedName")
@@ -55,13 +47,10 @@ Partial Class updatePrescription
         txtPrescriptionIntake.Text = adatatable.Rows(0)("Intake")
         txtPrescriptionDispenses.Text = adatatable.Rows(0)("Dispense")
         txtPrescriptionFrequency.Text = adatatable.Rows(0)("Frequency")
-        ddlUpdateClientID.Items.Add(adatatable.Rows(0)("CliID"))
-        ddlPhtID.Items.Add(adatatable.Rows(0)("PhyID"))
 
-        ddlRxNumber.Items.Clear()
-        ddlPhtID.Items.Clear()
-        ddlUpdateClientID.Items.Clear()
 
+        ddatatable = ddatatier.GetAllDoctors().Tables(0)
+        cdatatabe = cdatatier.GetAllClients().Tables(0)
         pdatatable = pdatatier.GetAllPrescriptions().Tables(0)
 
         For Each dr As DataRow In pdatatable.Rows
@@ -79,11 +68,23 @@ Partial Class updatePrescription
             ddlUpdateClientID.Items.Add(dr("CliID"))
         Next
 
+        ddlUpdateClientID.SelectedValue = (adatatable.Rows(0)("CliID"))
+        ddlPhtID.SelectedValue = (adatatable.Rows(0)("PhyID"))
+
+        ddlRxNumber.Items.Remove(ViewState("rxnumber"))
+        ddlRxNumber.SelectedItem.Text = ViewState("rxnumber")
+
+        txtPrescriptionRefills.Focus()
+
+        Master.BodyTag.Attributes.Remove("onload")
+
 
     End Sub
     Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim rxnumber, cliid, physid, refillnum, medname, medtype, dosage, intake, dispense, frequency As String
-        Dim aprescripttier As New PrescriptionDataTier
+        Dim pdatatier As New PrescriptionDataTier
+        Dim pdatatable As New DataTable
+
         rxnumber = ddlRxNumber.SelectedItem.Text
         cliid = ddlUpdateClientID.SelectedItem.Text
         physid = ddlPhtID.SelectedItem.Text
@@ -94,7 +95,7 @@ Partial Class updatePrescription
         intake = txtPrescriptionIntake.Text.ToString
         dispense = txtPrescriptionDispenses.Text.ToString
         frequency = txtPrescriptionFrequency.Text.ToString
-        aprescripttier.Update_prescription(rxnumber, cliid, physid, refillnum, medname, medtype, dosage, intake, dispense, frequency)
+        pdatatier.Update_prescription(rxnumber, cliid, physid, refillnum, medname, medtype, dosage, intake, dispense, frequency)
         txtPrescriptionDispenses.Text = String.Empty
         txtPrescriptionDosage.Text = String.Empty
         txtPrescriptionFrequency.Text = String.Empty
@@ -109,6 +110,13 @@ Partial Class updatePrescription
 
         Master.BodyTag.Attributes.Add("onload", "good();")
 
+        pdatatable = pdatatier.GetAllPrescriptions().Tables(0)
+
+
+        For Each dr As DataRow In pdatatable.Rows
+
+            ddlRxNumber.Items.Add(dr("RxNumber"))
+        Next
 
     End Sub
 End Class

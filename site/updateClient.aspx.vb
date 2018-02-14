@@ -5,7 +5,8 @@ Partial Class updateClient
 
     Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender As String
-        Dim aclienttier As New ClientDataTier
+        Dim cdatatier As New ClientDataTier
+        Dim cdatatable As New DataTable
         ClientID = ddlUpdateClientID.Text.Trim
         fname = txtClientFname.Text.Trim
         minit = txtClientMidInt.Text.Trim
@@ -17,7 +18,7 @@ Partial Class updateClient
         state = txtClientState.Text.Trim
         zip = txtClientZip.Text.Trim
         gender = txtClientGender.Text.Trim
-        aclienttier.UpdateClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender)
+        cdatatier.UpdateClient(ClientID, fname, minit, lname, email, phone, street, city, state, zip, gender)
         txtClientFname.Text = String.Empty
         txtClientMidInt.Text = String.Empty
         txtClientLname.Text = String.Empty
@@ -28,18 +29,11 @@ Partial Class updateClient
         txtClientState.Text = String.Empty
         txtClientZip.Text = String.Empty
         txtClientGender.Text = String.Empty
+        txtClientDOB.Text = String.Empty
         ddlUpdateClientID.Items.Clear()
 
 
         Master.BodyTag.Attributes.Add("onload", "good();")
-
-    End Sub
-
-    Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim cdatatier As New ClientDataTier
-        Dim cdatatable As New DataTable
-
-        ddlUpdateClientID.Items.Clear()
 
         cdatatable = cdatatier.GetAllClients().Tables(0)
 
@@ -47,6 +41,25 @@ Partial Class updateClient
 
             ddlUpdateClientID.Items.Add(dr("CliID"))
         Next
+
+    End Sub
+
+    Private Sub updateClient_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim cdatatier As New ClientDataTier
+        Dim cdatatable As New DataTable
+
+        ViewState("cliid") = ddlUpdateClientID.SelectedItem.Text
+
+        If Not IsPostBack Then
+            ddlUpdateClientID.Items.Clear()
+
+            cdatatable = cdatatier.GetAllClients().Tables(0)
+
+            For Each dr As DataRow In cdatatable.Rows
+
+                ddlUpdateClientID.Items.Add(dr("CliID"))
+            Next
+        End If
 
 
     End Sub
@@ -57,10 +70,9 @@ Partial Class updateClient
         Dim adataset As New DataSet
         Dim adatatable As New DataTable
         Dim cliid As String
-        cliid = ddlUpdateClientID.SelectedValue
 
+        cliid = ddlUpdateClientID.SelectedItem.Text
         adataset = ddatatier.GetClientByID(cliid)
-
         adatatable = adataset.Tables(0)
 
         txtClientFname.Text = adatatable.Rows(0)("fname")
@@ -73,8 +85,16 @@ Partial Class updateClient
         txtClientCity.Text = adatatable.Rows(0)("city")
         txtClientZip.Text = adatatable.Rows(0)("zip")
         txtClientGender.Text = adatatable.Rows(0)("gender")
+        txtClientDOB.Text = adatatable.Rows(0)("dob")
+        txtClientDOB.Enabled = False
+
+        Master.BodyTag.Attributes.Remove("onload")
+
+
+        ddlUpdateClientID.SelectedItem.Text = ViewState("cliid")
 
     End Sub
+
 
 
 

@@ -4,7 +4,10 @@ Partial Class addDoctor
 
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty As String
-        Dim aDoctortier As New DoctorDataTier
+        Dim ddatatier As New DoctorDataTier
+        Dim phyid As String
+        Dim intphyid As Int32
+        Dim adatatable As New DataTable
         DoctorID = ddlDoctorID.SelectedItem.Text
         fname = txtDoctorFname.Text.Trim
         minit = txtDoctorMidInt.Text.Trim
@@ -19,7 +22,7 @@ Partial Class addDoctor
         dob = txtDoctorDOB.Text.Trim
         salary = txtDoctorSalary.Text.Trim
         specialty = txtDoctorSpecialty.text.Trim
-        aDoctortier.AddDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
+        ddatatier.AddDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty)
         txtDoctorCity.Text = String.Empty
         txtDoctorDOB.Text = String.Empty
         txtDoctorEmail.Text = String.Empty
@@ -37,17 +40,23 @@ Partial Class addDoctor
 
         Master.BodyTag.Attributes.Add("onload", "good();")
 
+        adatatable = ddatatier.getlastphyid.Tables(0)
+        phyid = adatatable.Rows.Item(0).Item("maxPhyID")
+        intphyid = CType(phyid, Int32) + 1
+        ddlDoctorID.Items.Add(intphyid.ToString)
+        ddlDoctorID.Enabled = False
+
     End Sub
 
     Private Sub addDoctor_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim phyid As String
         Dim intphyid As Int32
-        Dim pdatatier As New DoctorDataTier
+        Dim ddatatier As New DoctorDataTier
         Dim adatatable As New DataTable
 
         ddlDoctorID.Items.Clear()
 
-        adatatable = pdatatier.getlastphyid.Tables(0)
+        adatatable = ddatatier.getlastphyid.Tables(0)
         phyid = adatatable.Rows.Item(0).Item("maxPhyID")
         intphyid = CType(phyid, Int32) + 1
         ddlDoctorID.Items.Add(intphyid.ToString)

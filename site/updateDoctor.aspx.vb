@@ -4,8 +4,9 @@ Partial Class updateDoctor
 
 
     Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, dob, salary, specialty As String
-        Dim aDoctortier As New DoctorDataTier
+        Dim DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, salary, specialty As String
+        Dim ddatatier As New DoctorDataTier
+        Dim ddatatable As New DataTable
         DoctorID = ddlUpdateDoctorID.Text.Trim
         fname = txtDoctorFname.Text.Trim
         minit = txtDoctorMidInt.Text.Trim
@@ -19,8 +20,8 @@ Partial Class updateDoctor
         gender = txtdoctorGender.Text.Trim
         salary = txtDoctorSalary.Text.Trim
         specialty = txtDoctorSpecialty.Text.Trim
-        aDoctortier.UpdateDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, salary, specialty)
-        txtdoctorCity.Text = String.Empty
+        ddatatier.UpdateDoctor(DoctorID, fname, minit, lname, email, phone, street, city, state, zip, gender, salary, specialty)
+        txtDoctorCity.Text = String.Empty
         txtdoctorEmail.Text = String.Empty
         txtdoctorFname.Text = String.Empty
         txtdoctorGender.Text = String.Empty
@@ -31,10 +32,20 @@ Partial Class updateDoctor
         txtDoctorSpecialty.Text = String.Empty
         txtdoctorState.Text = String.Empty
         txtdoctorStreet.Text = String.Empty
-        txtdoctorZip.Text = String.Empty
+        txtDoctorZip.Text = String.Empty
+        txtDoctorDOB.Text = String.Empty
         ddlUpdateDoctorID.Items.Clear()
 
         Master.BodyTag.Attributes.Add("onload", "good();")
+
+        ddatatable = ddatatier.GetAllDoctors().Tables(0)
+
+        For Each dr As DataRow In ddatatable.Rows
+
+            ddlUpdateDoctorID.Items.Add(dr("PhyID"))
+        Next
+
+
 
 
     End Sub
@@ -74,7 +85,11 @@ Partial Class updateDoctor
         txtdoctorState.Text = adatatable.Rows(0)("stateabr")
         txtdoctorZip.Text = adatatable.Rows(0)("zip")
         txtDoctorSalary.Text = adatatable.Rows(0)("salary")
-        txtdoctorGender.Text = adatatable.Rows(0)("gender")
+        txtDoctorGender.Text = adatatable.Rows(0)("gender")
+        txtDoctorDOB.Text = adatatable.Rows(0)("dob")
+        txtDoctorDOB.Enabled = False
+
+        Master.BodyTag.Attributes.Remove("onload")
 
     End Sub
 End Class

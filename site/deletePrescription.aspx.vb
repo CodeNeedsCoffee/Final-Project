@@ -6,10 +6,6 @@ Partial Class deletePrescription
         Dim pdatatier As New PrescriptionDataTier
         Dim ddatatable As New DataTable
 
-
-
-
-
         ddatatable = pdatatier.GetAllPrescriptions().Tables(0)
 
         For Each dr As DataRow In ddatatable.Rows
@@ -38,10 +34,13 @@ Partial Class deletePrescription
         txtPrescriptionDispenses.Text = adatatable.Rows(0)("Dispense")
         txtPrescriptionFrequency.Text = adatatable.Rows(0)("Frequency")
 
+        Master.BodyTag.Attributes.Remove("onload")
+
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim pdatatier As New PrescriptionDataTier
+        Dim ddatatable As New DataTable
 
         pdatatier.DeletePrescription(ddlrxnumber.SelectedValue)
 
@@ -58,6 +57,13 @@ Partial Class deletePrescription
         txtPrescriptionFrequency.Text = String.Empty
 
         Master.BodyTag.Attributes.Add("onload", "good();")
+
+        ddatatable = pdatatier.GetAllPrescriptions().Tables(0)
+
+        For Each dr As DataRow In ddatatable.Rows
+
+            ddlrxnumber.Items.Add(dr("RxNumber"))
+        Next
 
     End Sub
 End Class
